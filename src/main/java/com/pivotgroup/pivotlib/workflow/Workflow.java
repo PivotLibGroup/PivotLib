@@ -5,14 +5,9 @@ import com.pivotgroup.pivotlib.ActionSimulator;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 工作流：按顺序执行一组步骤
- */
 public class Workflow {
 
     private String name;
-
-    private int index;
 
     private List<Step> steps = new ArrayList<>();
 
@@ -21,7 +16,8 @@ public class Workflow {
     }
 
     /**
-     * 按顺序执行所有步骤
+     * 依次执行步骤
+     * @param actionSimulator
      */
     public void exec(ActionSimulator actionSimulator) {
         for (Step step : steps) {
@@ -29,14 +25,26 @@ public class Workflow {
         }
     }
 
+    /**
+     * 添加步骤
+     * @param step
+     */
     public void addStep(Step step) {
         steps.add(step);
     }
 
+    /**
+     * 获取名字
+     * @return
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * 获得所有步骤
+     * @return 步骤集
+     */
     public List<Step> getSteps() {
         return steps;
     }

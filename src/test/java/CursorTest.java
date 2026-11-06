@@ -9,7 +9,7 @@ import org.junit.jupiter.api.Test;
 import java.awt.*;
 import java.awt.event.InputEvent;
 
-public class TestMain {
+public class CursorTest {
 
     @Test
     public void main() throws AWTException {
