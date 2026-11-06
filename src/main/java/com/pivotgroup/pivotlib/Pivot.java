@@ -24,15 +24,15 @@ public class Pivot {
 
     /**
      * 按名称查找并执行工作流
+     *
      * @return 0=成功，-1=未找到
      */
     public int executeWorkflow(String name) {
-        for (Workflow wf : workflows) {
-            if (wf.getName().equals(name)) {
-                return executeWorkflow(wf);
-            }
+        Workflow wf = findWorkflow(name);
+        if (wf == null) {
+            return -1;
         }
-        return -1;
+        return executeWorkflow(wf);
     }
 
     /**
@@ -42,6 +42,15 @@ public class Pivot {
     public int executeWorkflow(Workflow workflow) {
         workflow.exec(actionSimulator);
         return 0;
+    }
+
+    public Workflow findWorkflow(String name) {
+        for (Workflow wf : workflows) {
+            if (wf.getName().equals(name)) {
+                return wf;
+            }
+        }
+        return null;
     }
 
     public List<Workflow> getWorkflows() {

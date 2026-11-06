@@ -39,8 +39,9 @@ public class ActionSimulator {
 
     /**
      * 点击：移动到(x,y) → 按下 → 停留 → 抬起
-     * @param x 点击坐标x
-     * @param y 点击坐标y
+     *
+     * @param x        点击坐标x
+     * @param y        点击坐标y
      * @param duration 按下时长(ms)
      */
     public void tap(int x, int y, long duration) {
@@ -52,12 +53,13 @@ public class ActionSimulator {
 
     /**
      * 滑动/拖拽：按下起点 → 逐步平滑移动到终点 → 抬起
-     * @param startX 起点x
-     * @param startY 起点y
-     * @param endX 终点x
-     * @param endY 终点y
+     *
+     * @param startX        起点x
+     * @param startY        起点y
+     * @param endX          终点x
+     * @param endY          终点y
      * @param totalDuration 总时长(ms)
-     * @param steps 移动步数，越多越平滑
+     * @param steps         移动步数，越多越平滑
      */
     public void swipe(int startX, int startY, int endX, int endY, long totalDuration, int steps) {
         if (steps <= 0) steps = 1;
@@ -89,7 +91,7 @@ public class ActionSimulator {
         this.upExecutor = upExecutor;
     }
 
-    private static void sleep(long ms) {
+    public void sleep(long ms) {
         if (ms <= 0) return;
         try {
             Thread.sleep(ms);
