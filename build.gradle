@@ -5,11 +5,8 @@ plugins {
 group = 'com.pivotgroup'
 version = '1.0-SNAPSHOT'
 
-repositories {
-    mavenCentral()
-}
-
 dependencies {
+    implementation 'org.bytedeco:opencv-platform:4.10.0-1.5.11'
     testImplementation platform('org.junit:junit-bom:6.0.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
