@@ -1,38 +1,32 @@
-import com.pivotgroup.privotlib.Pivot;
-import com.pivotgroup.privotlib.workflow.Workflow;
+import com.pivotgroup.pivotlib.ActionSimulator;
+import com.pivotgroup.pivotlib.Pivot;
+import com.pivotgroup.pivotlib.workflow.Workflow;
+import com.pivotgroup.pivotlib.workflow.step.SwipeStep;
+import com.pivotgroup.pivotlib.workflow.step.TapStep;
+import com.pivotgroup.pivotlib.workflow.step.WaitStep;
 import org.junit.jupiter.api.Test;
 
 public class TestMain {
 
     @Test
-    public void main(){
-        // 1.创建中枢，自动化脚本的核心
-        Pivot pivot = new Pivot();
+    public void main() {
+        // 1. 创建动作模拟器，挂载三个原子执行器（这里用打印模拟，实际接PC Robot / Android ADB）
+        ActionSimulator actionSimulator = new ActionSimulator();
+        actionSimulator.mountDown(() -> System.out.println("  [DOWN]"));
+        actionSimulator.mountMove((x, y) -> System.out.println("  [MOVE] -> (" + x + ", " + y + ")"));
+        actionSimulator.mountUp(() -> System.out.println("  [UP]"));
 
-        // 2.添加工作流
-        pivot.addWorkflow(new Workflow());
+        // 2. 创建中枢
+        Pivot pivot = new Pivot(actionSimulator);
 
-        // 确定当前的状态。可以由主机自由判断
-        // 前提：当前内存中没有运行主程序
-        // 3.执行进入游戏主体操作
-        pivot.executeWorkflow("goto_game");
+        // 3. 组装一个工作流：点击登录按钮 → 等待 → 滑动界面
+        Workflow loginFlow = new Workflow("login");
+        loginFlow.addStep(new TapStep(500, 800, 50));    // 点击(500,800)，按下50ms
+        loginFlow.addStep(new WaitStep(1000));            // 等待1秒
+        loginFlow.addStep(new SwipeStep(100, 1500, 100, 500, 300, 20)); // 从下往上滑，300ms分20步
+        loginFlow.addStep(new WaitStep(500));              // 再等500ms
 
-        // 确定当前的状态。可以由主机自由判断
-        // 前提：识别到当前已经进入游戏界面，但还未登录状态。
-        // 4.1.执行登录操作
-        pivot.executeWorkflow("login");
-
-        // 确定当前的状态。可以由主机自由判断
-        // 前提：识别到当前已经进入游戏界面, 已经登录（自动）状态。
-        // 4.2.执行开始戏操作
-        pivot.executeWorkflow("start_game");
-
-        // 检查当前状态操作可以包装到执行操作中
-        // 包装到工作流中。开始的状态，和结束的状态。
-        // 若没有达到期望，则直接返回状态码
-
-
+        // 4. 执行
+        loginFlow.exec(actionSimulator);
     }
-
-
 }

@@ -1,4 +1,4 @@
-package com.pivotgroup.privotlib;
+package com.pivotgroup.pivotlib;
 
 /**
  * 统一动作类型枚举

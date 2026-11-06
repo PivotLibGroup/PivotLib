@@ -1,4 +1,4 @@
-package com.pivotgroup.privotlib.simulator;
+package com.pivotgroup.pivotlib.simulator;
 
 public interface Simulator {
 

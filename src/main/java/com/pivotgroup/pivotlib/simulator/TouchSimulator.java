@@ -1,6 +1,6 @@
-package com.pivotgroup.privotlib.simulator;
+package com.pivotgroup.pivotlib.simulator;
 
-public class TouchSimulator implements com.pivotgroup.privotlib.simulator.Simulator {
+public class TouchSimulator implements com.pivotgroup.pivotlib.simulator.Simulator {
 
     private int x, y;
 
