@@ -1,6 +1,6 @@
-package com.pivotgroup;
+package com.pivotgroup.privotlib;
 
-import com.pivotgroup.workflow.Workflow;
+import com.pivotgroup.privotlib.workflow.Workflow;
 
 import java.util.ArrayList;
 import java.util.List;

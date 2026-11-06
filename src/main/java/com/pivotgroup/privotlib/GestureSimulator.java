@@ -1,4 +1,6 @@
-package com.pivotgroup.simulator;
+package com.pivotgroup.privotlib.simulator;
+
+import com.pivotgroup.privotlib.Simulator;
 
 /**
  * 插个眼，可能 Action 做后缀更合适

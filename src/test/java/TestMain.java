@@ -1,5 +1,5 @@
-import com.pivotgroup.Pivot;
-import com.pivotgroup.workflow.Workflow;
+import com.pivotgroup.privotlib.Pivot;
+import com.pivotgroup.privotlib.workflow.Workflow;
 import org.junit.jupiter.api.Test;
 
 public class TestMain {
