@@ -15,7 +15,6 @@ public class ActionSimulator {
     private BiExecutor<Integer, Integer> moveExecutor = (x, y) -> {
     };
 
-
     /**
      * 按下触点（保持按下状态）
      */

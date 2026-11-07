@@ -5,17 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627f1380-1532-4223-8693-533b6cdf340a" name="更改" comment="msg">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/StepContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/MatchStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/ActionSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/ActionSimulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/Pivot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/Pivot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Step.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Step.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Workflow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/SwipeStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/SwipeStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/TapStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/TapStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/WaitStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/WaitStep.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,28 +83,56 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.TestMain.main.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TestMain.register.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TestMain.robotTest.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Administrator/Desktop/SelfServiceLoginSystem/PivotLib/src/main/java/com/pivotgroup/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.CursorTest.main.executor": "Run",
+    "Gradle.TestMain.main.executor": "Run",
+    "Gradle.TestMain.register.executor": "Run",
+    "Gradle.TestMain.robotTest.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "onboarding.tips.debug.path": "C:/Users/Administrator/Desktop/SelfServiceLoginSystem/PivotLib/src/main/java/com/pivotgroup/Main.java",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Gradle.TestMain.main">
+}]]></component>
+  <component name="RunManager" selected="Gradle.CursorTest.main">
+    <configuration name="CursorTest.main" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;CursorTest.main&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
     <configuration name="TestMain.main" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -197,6 +216,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CursorTest.main" />
         <item itemvalue="Gradle.TestMain.main" />
         <item itemvalue="Gradle.TestMain.robotTest" />
         <item itemvalue="Gradle.TestMain.register" />
@@ -213,7 +233,7 @@
       <workItem from="1793962262846" duration="120000" />
       <workItem from="1793962544383" duration="11486000" />
       <workItem from="1793977864036" duration="15953000" />
-      <workItem from="1794017686380" duration="1480000" />
+      <workItem from="1794017686380" duration="2024000" />
     </task>
     <task id="LOCAL-00001" summary="msg">
       <option name="closed" value="true" />
@@ -303,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1793994215633</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="msg">
+      <option name="closed" value="true" />
+      <created>1794019204160</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1794019204160</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
