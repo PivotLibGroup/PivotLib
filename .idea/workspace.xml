@@ -5,24 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627f1380-1532-4223-8693-533b6cdf340a" name="更改" comment="msg">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/actionsimulator/TouchPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/canvas/CanvasHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/Anchor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/matchstep/MatchInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/RobotTouchPoint.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/ActionSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/simulator/ActionSimulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/ActionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/simulator/ActionType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/Pivot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/Pivot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/simulator/GestureSimulator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/simulator/Simulator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/simulator/TouchSimulator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/MatMatchUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/MatMatchUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Step.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Step.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/simulator/ActionSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/actionsimulator/ActionSimulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/simulator/ActionType.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/StepContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/StepContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/MatchStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/matchstep/MatchStep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/OperateMatchStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/OperateMatchStep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/SwipeStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/SwipeStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/TapMatchedStep.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/TapStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/TapStep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/WaitStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/WaitStep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CursorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CursorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/opencv/MatchDemoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/opencv/MatchDemoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +57,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -103,6 +103,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.CursorTest.cursorTest.executor": "Run",
     "Gradle.CursorTest.main.executor": "Run",
     "Gradle.MatchDemoTest.matchDemo.executor": "Run",
     "Gradle.OpenCVTest.example.executor": "Run",
@@ -126,7 +127,7 @@
     "project.structure.last.edited": "模块",
     "project.structure.proportion": "0.15820312",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "fileTemplates",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -135,7 +136,34 @@
       <recent name="C:\Users\Administrator\Desktop\PivotLib\src\test\resources" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CursorTest.main">
+  <component name="RunManager" selected="Gradle.CursorTest.cursorTest">
+    <configuration name="CursorTest.cursorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;CursorTest.cursorTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
     <configuration name="CursorTest.main" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -217,33 +245,6 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
-    <configuration name="OpenCVTest.example" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;OpenCVTest.example&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <GradleProfilingDisabled>false</GradleProfilingDisabled>
-      <GradleCoverageDisabled>false</GradleCoverageDisabled>
-      <method v="2" />
-    </configuration>
     <configuration name="ScreenshotTest.example" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -273,11 +274,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.CursorTest.cursorTest" />
         <item itemvalue="Gradle.CursorTest.main" />
         <item itemvalue="Gradle.ScreenshotTest.example" />
         <item itemvalue="Gradle.MatchDemoTest.matchDemo" />
         <item itemvalue="Gradle.OpenCVTest" />
-        <item itemvalue="Gradle.OpenCVTest.example" />
       </list>
     </recent_temporary>
   </component>
@@ -291,7 +292,8 @@
       <workItem from="1793962262846" duration="120000" />
       <workItem from="1793962544383" duration="11486000" />
       <workItem from="1793977864036" duration="15953000" />
-      <workItem from="1794017686380" duration="35169000" />
+      <workItem from="1794017686380" duration="39260000" />
+      <workItem from="1794069722238" duration="3201000" />
     </task>
     <task id="LOCAL-00001" summary="msg">
       <option name="closed" value="true" />
@@ -421,7 +423,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794061748624</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="msg">
+      <option name="closed" value="true" />
+      <created>1794065581099</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1794065581099</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

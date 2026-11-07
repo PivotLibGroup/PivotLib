@@ -1,14 +1,11 @@
 package com.pivotgroup.pivotlib.workflow;
 
-import com.pivotgroup.pivotlib.simulator.ActionSimulator;
+import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
 import com.pivotgroup.pivotlib.util.MatUtils;
 import org.opencv.core.Mat;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.simulator;
+package com.pivotgroup.pivotlib.actionsimulator;
 
 import com.pivotgroup.pivotlib.util.function.BiExecutor;
 import com.pivotgroup.pivotlib.util.function.Executor;
@@ -8,36 +8,36 @@ import com.pivotgroup.pivotlib.util.function.Executor;
  */
 public class ActionSimulator {
 
-    private Executor downExecutor = () -> {
-    };
-    private Executor upExecutor = () -> {
-    };
-    private BiExecutor<Integer, Integer> moveExecutor = (x, y) -> {
-    };
+    private final TouchPoint touchPoint;
+
+    public ActionSimulator(TouchPoint touchPoint) {
+        this.touchPoint = touchPoint;
+    }
 
     /**
-     * 按下触点（保持按下状态）
+     * 按下触点
      */
     public void down() {
-        downExecutor.exec();
+        touchPoint.press();
     }
 
     /**
      * 移动触点到指定坐标
      */
     public void move(int x, int y) {
-        moveExecutor.exec(x, y);
+        touchPoint.move(x, y);
     }
 
     /**
      * 抬起触点
      */
     public void up() {
-        upExecutor.exec();
+        touchPoint.release();
     }
 
     /**
      * 轻击指定坐标位置
+     *
      * @param x        点击坐标x
      * @param y        点击坐标y
      * @param duration 按下时长(ms)
@@ -51,6 +51,7 @@ public class ActionSimulator {
 
     /**
      * 指定坐标拖拽
+     *
      * @param startX        起点x
      * @param startY        起点y
      * @param endX          终点x
@@ -73,19 +74,6 @@ public class ActionSimulator {
         }
 
         up();
-    }
-
-
-    public void mountDown(Executor downExecutor) {
-        this.downExecutor = downExecutor;
-    }
-
-    public void mountMove(BiExecutor<Integer, Integer> moveExecutor) {
-        this.moveExecutor = moveExecutor;
-    }
-
-    public void mountUp(Executor upExecutor) {
-        this.upExecutor = upExecutor;
     }
 
     public void sleep(long ms) {

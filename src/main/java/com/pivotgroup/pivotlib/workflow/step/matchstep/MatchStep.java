@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.workflow.step;
+package com.pivotgroup.pivotlib.workflow.step.matchstep;
 
 import com.pivotgroup.pivotlib.util.Loc;
 import com.pivotgroup.pivotlib.util.MatMatchUtils;
@@ -26,7 +26,7 @@ public class MatchStep extends Step {
         Mat screenshot = context.screenshotMat();
         try {
             Loc loc = MatMatchUtils.matchMultiScale(screenshot, template);
-            context.setData(RESULT_KEY, loc);
+            context.setData(RESULT_KEY, new MatchInfo(screenshot, template, loc));
         } finally {
             screenshot.release();
         }

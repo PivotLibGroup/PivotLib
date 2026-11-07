@@ -1,31 +1,37 @@
 package com.pivotgroup.pivotlib.workflow.step;
 
-import com.pivotgroup.pivotlib.simulator.ActionSimulator;
+import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
+import com.pivotgroup.pivotlib.util.Anchor;
 import com.pivotgroup.pivotlib.util.Loc;
 import com.pivotgroup.pivotlib.util.MatMatchUtils;
 import com.pivotgroup.pivotlib.workflow.Step;
 import com.pivotgroup.pivotlib.workflow.StepContext;
+import com.pivotgroup.pivotlib.workflow.step.matchstep.MatchInfo;
+import com.pivotgroup.pivotlib.workflow.step.matchstep.MatchStep;
 
 public class OperateMatchStep extends Step {
 
     private final double minScore;
     private final Action action;
+    private Anchor anchor;
 
-    public OperateMatchStep(Action action) {
-        this(MatMatchUtils.DEFAULT_MIN_SCORE, action);
+    public OperateMatchStep(Action action,Anchor anchor) {
+        this(MatMatchUtils.DEFAULT_MIN_SCORE, action,anchor);
     }
 
-    public OperateMatchStep(double minScore, Action action) {
+    public OperateMatchStep(double minScore, Action action,Anchor anchor) {
         this.minScore = minScore;
         this.action = action;
+        this.anchor = anchor;
     }
 
     @Override
     public void exec(StepContext context) {
         Object data = context.getData(MatchStep.RESULT_KEY);
-        if (!(data instanceof Loc loc)) {
+        if (!(data instanceof MatchInfo info)) {
             return;
         }
+        Loc loc = info.loc;
         if (loc.matchResult < minScore) {
             return;
         }
