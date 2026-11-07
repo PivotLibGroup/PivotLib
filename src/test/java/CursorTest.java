@@ -1,8 +1,8 @@
-import com.pivotgroup.pivotlib.ActionSimulator;
 import com.pivotgroup.pivotlib.Pivot;
-import com.pivotgroup.pivotlib.util.MatUtils;
+import com.pivotgroup.pivotlib.simulator.ActionSimulator;
 import com.pivotgroup.pivotlib.workflow.Workflow;
-import com.pivotgroup.pivotlib.workflow.step.*;
+import com.pivotgroup.pivotlib.workflow.step.MatchStep;
+import com.pivotgroup.pivotlib.workflow.step.OperateMatchStep;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
@@ -23,13 +23,9 @@ public class CursorTest {
 
         Workflow loginFlow = new Workflow("login");
         loginFlow.addStep(new MatchStep("src/test/resources/qq.png"));
-        loginFlow.addStep(new TapMatchedStep());
+        loginFlow.addStep(new OperateMatchStep(new OperateMatchStep.Swipe(-100, 0, 0, 30)));
 
         loginFlow.exec(actionSimulator);
     }
 
-    @Test
-    public void robotTest() throws AWTException {
-
-    }
 }

@@ -6,10 +6,6 @@ import org.opencv.core.*;
 import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
-/**
- * 图像匹配最小演示：只做一件事——拿着模板去大图里找它。
- * 每一步都打印/存图，能肉眼对上。
- */
 public class MatchDemoTest {
 
     @Test

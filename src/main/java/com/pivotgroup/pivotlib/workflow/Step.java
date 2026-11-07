@@ -1,7 +1,5 @@
 package com.pivotgroup.pivotlib.workflow;
 
-import com.pivotgroup.pivotlib.ActionSimulator;
-
 public abstract class Step {
 
     /**

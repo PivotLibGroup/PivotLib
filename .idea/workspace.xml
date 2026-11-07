@@ -5,12 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627f1380-1532-4223-8693-533b6cdf340a" name="更改" comment="msg">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/ActionSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/simulator/ActionSimulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/ActionType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/simulator/ActionType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/Pivot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/Pivot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/simulator/GestureSimulator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/simulator/Simulator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/simulator/TouchSimulator.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/MatMatchUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/MatMatchUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/MatUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/MatUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/MatchStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/MatchStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/OpMatchedStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/OpMatchedStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Step.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Step.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/StepContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/StepContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/OperateMatchStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/OperateMatchStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/SwipeStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/SwipeStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/TapMatchedStep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/TapStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/TapStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/WaitStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/WaitStep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CursorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CursorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/MultiScaleProbe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/opencv/MatchDemoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/opencv/MatchDemoTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +291,7 @@
       <workItem from="1793962262846" duration="120000" />
       <workItem from="1793962544383" duration="11486000" />
       <workItem from="1793977864036" duration="15953000" />
-      <workItem from="1794017686380" duration="31285000" />
+      <workItem from="1794017686380" duration="35169000" />
     </task>
     <task id="LOCAL-00001" summary="msg">
       <option name="closed" value="true" />
@@ -401,7 +413,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794061141604</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="msg">
+      <option name="closed" value="true" />
+      <created>1794061748624</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1794061748624</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

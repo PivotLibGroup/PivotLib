@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib;
+package com.pivotgroup.pivotlib.simulator;
 
 /**
  * 统一动作类型枚举

@@ -42,25 +42,11 @@ public class MatMatchUtils {
         }
     }
 
-    /**
-     * Multi-scale match.
-     * <p>
-     * matchTemplate only slides the template around; it never rescales it. So a template
-     * taken under a different DPI scale will not match. This method tries the original size
-     * first (the common case), and only when the score is too low does it shrink/grow the
-     * template and scan again, keeping the best score over all scales.
-     */
     public static Loc matchMultiScale(Mat canvas, Mat template) {
         return matchMultiScale(canvas, template,
                 DEFAULT_MIN_SCORE, DEFAULT_MIN_SCALE, DEFAULT_MAX_SCALE, DEFAULT_SCALE_STEP);
     }
 
-    /**
-     * @param minScore score high enough to accept immediately at the original size
-     * @param minScale smallest scale factor to try
-     * @param maxScale largest scale factor to try
-     * @param scaleStep step between scale factors
-     */
     public static Loc matchMultiScale(Mat canvas, Mat template, double minScore,
                                       double minScale, double maxScale, double scaleStep) {
         Loc best = match(canvas, template);
@@ -82,7 +68,6 @@ public class MatMatchUtils {
                 if (loc.matchResult > best.matchResult) {
                     best = loc;
                 }
-                // good enough: stop scanning further scales
                 if (best.matchResult >= minScore) {
                     break;
                 }

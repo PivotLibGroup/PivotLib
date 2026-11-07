@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib;
+package com.pivotgroup.pivotlib.simulator;
 
 import com.pivotgroup.pivotlib.util.function.BiExecutor;
 import com.pivotgroup.pivotlib.util.function.Executor;

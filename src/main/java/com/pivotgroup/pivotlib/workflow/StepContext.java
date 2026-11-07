@@ -1,6 +1,6 @@
 package com.pivotgroup.pivotlib.workflow;
 
-import com.pivotgroup.pivotlib.ActionSimulator;
+import com.pivotgroup.pivotlib.simulator.ActionSimulator;
 import com.pivotgroup.pivotlib.util.MatUtils;
 import org.opencv.core.Mat;
 
@@ -51,13 +51,6 @@ public class StepContext {
     public Mat screenshotMat() {
         Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
         BufferedImage img = robot.createScreenCapture(new Rectangle(d));
-        File file = new File("screenshot.png");
-        try {
-            ImageIO.write(img, "png", file);
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
         return MatUtils.bufferedImageToMat(img);
     }
 

@@ -1,5 +1,6 @@
 package com.pivotgroup.pivotlib;
 
+import com.pivotgroup.pivotlib.simulator.ActionSimulator;
 import com.pivotgroup.pivotlib.workflow.Workflow;
 
 import java.util.ArrayList;

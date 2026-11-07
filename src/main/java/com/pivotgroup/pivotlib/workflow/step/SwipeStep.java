@@ -1,6 +1,6 @@
 package com.pivotgroup.pivotlib.workflow.step;
 
-import com.pivotgroup.pivotlib.ActionSimulator;
+import com.pivotgroup.pivotlib.simulator.ActionSimulator;
 import com.pivotgroup.pivotlib.workflow.Step;
 import com.pivotgroup.pivotlib.workflow.StepContext;
 
