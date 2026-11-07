@@ -10,7 +10,7 @@ public class MatMatchUtils {
     public static final double DEFAULT_MIN_SCORE = 0.85;
     public static final double DEFAULT_MIN_SCALE = 0.40;
     public static final double DEFAULT_MAX_SCALE = 1.60;
-    public static final double DEFAULT_SCALE_STEP = 0.05;
+    public static final double DEFAULT_SCALE_STEP = 0.10;
 
     public static Loc match(Mat canvas, Mat template) {
         if (canvas == null || canvas.empty()) {
@@ -81,6 +81,10 @@ public class MatMatchUtils {
                 Loc loc = match(canvas, scaled);
                 if (loc.matchResult > best.matchResult) {
                     best = loc;
+                }
+                // good enough: stop scanning further scales
+                if (best.matchResult >= minScore) {
+                    break;
                 }
             } finally {
                 scaled.release();

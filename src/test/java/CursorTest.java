@@ -22,8 +22,8 @@ public class CursorTest {
         Pivot pivot = new Pivot(actionSimulator);
 
         Workflow loginFlow = new Workflow("login");
-        loginFlow.addStep(new MatchStep(MatUtils.loadImage("src/test/resources/qq.png")));
-        loginFlow.addStep(new OpMatchedStep());
+        loginFlow.addStep(new MatchStep("src/test/resources/qq.png"));
+        loginFlow.addStep(new TapMatchedStep());
 
         loginFlow.exec(actionSimulator);
     }

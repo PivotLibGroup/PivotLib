@@ -2,11 +2,14 @@ package com.pivotgroup.pivotlib.workflow.step;
 
 import com.pivotgroup.pivotlib.util.Loc;
 import com.pivotgroup.pivotlib.util.MatMatchUtils;
+import com.pivotgroup.pivotlib.util.MatUtils;
 import com.pivotgroup.pivotlib.workflow.Step;
 import com.pivotgroup.pivotlib.workflow.StepContext;
 import org.opencv.core.Mat;
 
 public class MatchStep extends Step {
+
+    public static final String RESULT_KEY = "match";
 
     private Mat template;
 
@@ -14,11 +17,18 @@ public class MatchStep extends Step {
         this.template = template;
     }
 
+    public MatchStep(String templatePath) {
+        this.template = MatUtils.loadImage(templatePath);
+    }
+
     @Override
     public void exec(StepContext context) {
         Mat screenshot = context.screenshotMat();
-        Loc loc = MatMatchUtils.match(screenshot, template);
-        context.setData("matching_x", loc.x);
-        context.setData("matching_y", loc.y);
+        try {
+            Loc loc = MatMatchUtils.matchMultiScale(screenshot, template);
+            context.setData(RESULT_KEY, loc);
+        } finally {
+            screenshot.release();
+        }
     }
 }
