@@ -4,9 +4,6 @@ import com.pivotgroup.pivotlib.ActionSimulator;
 import com.pivotgroup.pivotlib.workflow.Step;
 import com.pivotgroup.pivotlib.workflow.StepContext;
 
-/**
- * 滑动/拖拽步骤：按下起点 → 逐步平滑移动到终点 → 抬起
- */
 public class SwipeStep extends Step {
 
     private final int startX;

@@ -1,9 +1,8 @@
 import com.pivotgroup.pivotlib.ActionSimulator;
 import com.pivotgroup.pivotlib.Pivot;
+import com.pivotgroup.pivotlib.util.MatUtils;
 import com.pivotgroup.pivotlib.workflow.Workflow;
-import com.pivotgroup.pivotlib.workflow.step.SwipeStep;
-import com.pivotgroup.pivotlib.workflow.step.TapStep;
-import com.pivotgroup.pivotlib.workflow.step.WaitStep;
+import com.pivotgroup.pivotlib.workflow.step.*;
 import org.junit.jupiter.api.Test;
 
 import java.awt.*;
@@ -23,10 +22,8 @@ public class CursorTest {
         Pivot pivot = new Pivot(actionSimulator);
 
         Workflow loginFlow = new Workflow("login");
-        loginFlow.addStep(new TapStep(500, 800, 50));
-        loginFlow.addStep(new WaitStep(1000));
-        loginFlow.addStep(new SwipeStep(600, 200, 600, 500, 300, 20));
-        loginFlow.addStep(new WaitStep(500));
+        loginFlow.addStep(new MatchStep(MatUtils.loadImage("src/test/resources/qq.png")));
+        loginFlow.addStep(new OpMatchedStep());
 
         loginFlow.exec(actionSimulator);
     }

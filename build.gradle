@@ -6,7 +6,7 @@ group = 'com.pivotgroup'
 version = '1.0-SNAPSHOT'
 
 dependencies {
-    implementation 'org.bytedeco:opencv-platform:4.10.0-1.5.11'
+    implementation 'org.openpnp:opencv:4.9.0-0'
     testImplementation platform('org.junit:junit-bom:6.0.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -14,4 +14,9 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+// 源码里有中文时 javac 必须按 UTF-8 读，否则中文字面量会变成乱码
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
 }
