@@ -5,9 +5,6 @@ import com.pivotgroup.pivotlib.workflow.Workflow;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * PivotLib 中枢：管理工作流并执行
- */
 public class Pivot {
 
     private ActionSimulator actionSimulator;
@@ -24,7 +21,6 @@ public class Pivot {
 
     /**
      * 按名称查找并执行工作流
-     *
      * @return 0=成功，-1=未找到
      */
     public int executeWorkflow(String name) {

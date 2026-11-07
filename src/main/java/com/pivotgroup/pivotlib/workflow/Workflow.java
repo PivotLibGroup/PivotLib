@@ -11,6 +11,8 @@ public class Workflow {
 
     private List<Step> steps = new ArrayList<>();
 
+    private StepContext stepContext = new StepContext();
+
     public Workflow(String name) {
         this.name = name;
     }
@@ -20,8 +22,13 @@ public class Workflow {
      * @param actionSimulator
      */
     public void exec(ActionSimulator actionSimulator) {
+        // 构建上下文
+        stepContext.close();
+        stepContext.setActionSimulator(actionSimulator);
         for (Step step : steps) {
-            step.exec(actionSimulator);
+            if (!stepContext.isStoping()) {
+                step.exec(stepContext);
+            }
         }
     }
 

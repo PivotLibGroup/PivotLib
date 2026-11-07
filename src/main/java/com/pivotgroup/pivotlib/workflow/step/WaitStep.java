@@ -2,6 +2,7 @@ package com.pivotgroup.pivotlib.workflow.step;
 
 import com.pivotgroup.pivotlib.ActionSimulator;
 import com.pivotgroup.pivotlib.workflow.Step;
+import com.pivotgroup.pivotlib.workflow.StepContext;
 
 public class WaitStep extends Step {
 
@@ -15,7 +16,8 @@ public class WaitStep extends Step {
     }
 
     @Override
-    public void exec(ActionSimulator simulator) {
-        simulator.sleep(ms);
+    public void exec(StepContext context) {
+        ActionSimulator actionSimulator = context.getActionSimulator();
+        actionSimulator.sleep(ms);
     }
 }

@@ -31,15 +31,14 @@ public class ActionSimulator {
     }
 
     /**
-     * 抬起触点，结束本次交互
+     * 抬起触点
      */
     public void up() {
         upExecutor.exec();
     }
 
     /**
-     * 点击：移动到(x,y) → 按下 → 停留 → 抬起
-     *
+     * 轻击指定坐标位置
      * @param x        点击坐标x
      * @param y        点击坐标y
      * @param duration 按下时长(ms)
@@ -52,8 +51,7 @@ public class ActionSimulator {
     }
 
     /**
-     * 滑动/拖拽：按下起点 → 逐步平滑移动到终点 → 抬起
-     *
+     * 指定坐标拖拽
      * @param startX        起点x
      * @param startY        起点y
      * @param endX          终点x

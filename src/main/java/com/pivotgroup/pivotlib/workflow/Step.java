@@ -6,7 +6,7 @@ public abstract class Step {
 
     /**
      * 执行本步骤
-     * @param simulator 底层动作模拟器
+     * @param context 步骤上下文
      */
-    public abstract void exec(ActionSimulator simulator);
+    public abstract void exec(StepContext context);
 }

@@ -2,6 +2,7 @@ package com.pivotgroup.pivotlib.workflow.step;
 
 import com.pivotgroup.pivotlib.ActionSimulator;
 import com.pivotgroup.pivotlib.workflow.Step;
+import com.pivotgroup.pivotlib.workflow.StepContext;
 
 /**
  * 滑动/拖拽步骤：按下起点 → 逐步平滑移动到终点 → 抬起
@@ -33,7 +34,8 @@ public class SwipeStep extends Step {
     }
 
     @Override
-    public void exec(ActionSimulator simulator) {
-        simulator.swipe(startX, startY, endX, endY, duration, steps);
+    public void exec(StepContext context) {
+        ActionSimulator actionSimulator = context.getActionSimulator();
+        actionSimulator.swipe(startX, startY, endX, endY, duration, steps);
     }
 }

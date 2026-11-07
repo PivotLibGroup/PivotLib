@@ -2,6 +2,7 @@ package com.pivotgroup.pivotlib.workflow.step;
 
 import com.pivotgroup.pivotlib.ActionSimulator;
 import com.pivotgroup.pivotlib.workflow.Step;
+import com.pivotgroup.pivotlib.workflow.StepContext;
 
 public class TapStep extends Step {
 
@@ -21,7 +22,8 @@ public class TapStep extends Step {
     }
 
     @Override
-    public void exec(ActionSimulator simulator) {
-        simulator.tap(x, y, duration);
+    public void exec(StepContext context) {
+        ActionSimulator actionSimulator = context.getActionSimulator();
+        actionSimulator.tap(x, y, duration);
     }
 }
