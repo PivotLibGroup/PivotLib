@@ -8,17 +8,17 @@ import com.pivotgroup.pivotlib.workflow.Step;
 import com.pivotgroup.pivotlib.workflow.WorkflowContext;
 import org.opencv.core.Mat;
 
-public class MatchStep extends Step {
+public class FindImageStep extends Step {
 
     public static final String RESULT_KEY = "match";
 
     private Mat template;
 
-    public MatchStep(Mat template) {
+    public FindImageStep(Mat template) {
         this.template = template;
     }
 
-    public MatchStep(String templatePath) {
+    public FindImageStep(String templatePath) {
         this.template = MatUtils.loadImage(templatePath);
     }
 

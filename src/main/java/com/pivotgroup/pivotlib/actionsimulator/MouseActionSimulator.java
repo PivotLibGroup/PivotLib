@@ -14,8 +14,6 @@ public class MouseActionSimulator implements ActionSimulator {
         this.mouseTouchPoint = mouseTouchPoint;
     }
 
-    // ==================== 带按键的重载方法 ====================
-
     public void down(MouseButton button) {
         mouseTouchPoint.press(button);
     }

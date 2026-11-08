@@ -1,26 +1,29 @@
-package com.pivotgroup.pivotlib.workflow.step;
+package com.pivotgroup.pivotlib.workflow.step.action;
 
 import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
-import com.pivotgroup.pivotlib.actionsimulator.SimpleActionSimulator;
 import com.pivotgroup.pivotlib.util.Anchor;
 import com.pivotgroup.pivotlib.util.Loc;
 import com.pivotgroup.pivotlib.util.MatMatchUtils;
 import com.pivotgroup.pivotlib.util.MatchInfo;
 import com.pivotgroup.pivotlib.workflow.Step;
 import com.pivotgroup.pivotlib.workflow.WorkflowContext;
+import com.pivotgroup.pivotlib.workflow.step.FindImageStep;
 import org.opencv.core.Mat;
 
-public class OperateMatchStep extends Step {
+/**
+ * 找到图后执行动作：从 FindImageStep 的结果中取坐标，做锚点转换后执行指定动作
+ */
+public class OperateFindStep extends Step {
 
     private final double minScore;
     private final Action action;
     private Anchor anchor;
 
-    public OperateMatchStep(Action action, Anchor anchor) {
+    public OperateFindStep(Action action, Anchor anchor) {
         this(MatMatchUtils.DEFAULT_MIN_SCORE, action, anchor);
     }
 
-    public OperateMatchStep(double minScore, Action action, Anchor anchor) {
+    public OperateFindStep(double minScore, Action action, Anchor anchor) {
         this.minScore = minScore;
         this.action = action;
         this.anchor = anchor;
@@ -28,7 +31,7 @@ public class OperateMatchStep extends Step {
 
     @Override
     public void exec(WorkflowContext context) {
-        Object data = context.getData(MatchStep.RESULT_KEY);
+        Object data = context.getData(FindImageStep.RESULT_KEY);
         if (!(data instanceof MatchInfo info)) {
             return;
         }
@@ -41,9 +44,9 @@ public class OperateMatchStep extends Step {
             return;
         }
 
-        // 已经抽象出一层MatchInfo了，从中拿到模板Mat可以做锚点处理
-        int tx = 0;
-        int ty = 0;
+        // 根据锚点计算实际操作坐标
+        int tx;
+        int ty;
 
         Mat template = info.template;
 
@@ -84,74 +87,11 @@ public class OperateMatchStep extends Step {
                 tx = loc.x + template.cols();
                 ty = loc.y + template.rows();
                 break;
+            default:
+                tx = loc.x;
+                ty = loc.y;
         }
 
         action.exec(actionSimulator, tx, ty);
-    }
-
-    public interface Action {
-        void exec(ActionSimulator actionSimulator, int x, int y);
-    }
-
-    public static class Tap implements Action {
-
-        private final int duration;
-
-        public Tap() {
-            this(50);
-        }
-
-        public Tap(int duration) {
-            this.duration = duration;
-        }
-
-        @Override
-        public void exec(ActionSimulator actionSimulator, int x, int y) {
-            actionSimulator.tap(x, y, duration);
-        }
-    }
-
-    public static class DoubleTap implements Action {
-
-        private final int duration;
-
-        public DoubleTap() {
-            this(50);
-        }
-
-        public DoubleTap(int duration) {
-            this.duration = duration;
-        }
-
-        @Override
-        public void exec(ActionSimulator actionSimulator, int x, int y) {
-            actionSimulator.tap(x, y, duration);
-            actionSimulator.sleep(duration);
-            actionSimulator.tap(x, y, duration);
-        }
-    }
-
-    public static class Swipe implements Action {
-
-        private final int dx;
-        private final int dy;
-        private final long totalDuration;
-        private final int steps;
-
-        public Swipe(int dx, int dy) {
-            this(dx, dy, 300, 10);
-        }
-
-        public Swipe(int dx, int dy, long totalDuration, int steps) {
-            this.dx = dx;
-            this.dy = dy;
-            this.totalDuration = totalDuration;
-            this.steps = steps;
-        }
-
-        @Override
-        public void exec(ActionSimulator actionSimulator, int x, int y) {
-            actionSimulator.swipe(x, y, x + dx, y + dy, totalDuration, steps);
-        }
     }
 }
