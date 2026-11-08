@@ -24,7 +24,7 @@ public class FindImageStep extends Step {
 
     @Override
     public void exec(WorkflowContext context) {
-        Mat screenshot = context.screenshotMat();
+        Mat screenshot = context.canvasMat();
         try {
             Loc loc = MatMatchUtils.matchMultiScale(screenshot, template);
             context.setData(RESULT_KEY, new MatchInfo(screenshot, template, loc));

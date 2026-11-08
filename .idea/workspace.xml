@@ -5,14 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627f1380-1532-4223-8693-533b6cdf340a" name="更改" comment="msg">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/ActionStep.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/mouse/MouseTapStep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/TapType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/BiFindSwipeStep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/MatchSwipeStep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/MatchTapStep.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/test_file.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/trashcan.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/actionsimulator/MouseActionSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/actionsimulator/MouseActionSimulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/MatchStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/FindImageStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/OperateMatchStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/OperateFindStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/SwipeStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/simple/SwipeStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/TapStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/simple/TapStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/Anchor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/Anchor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/WorkflowContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/WorkflowContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/FindImageStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/FindImageStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/actionsimulator/action/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/DoubleTap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/actionsimulator/action/DoubleTap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/OperateFindStep.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/Swipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/actionsimulator/action/Swipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/Tap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/actionsimulator/action/Tap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/simple/SwipeStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/simple/SwipeStep.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/simple/TapStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/action/simple/TapStep.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/CursorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CursorTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -93,42 +102,70 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.CursorTest.cursorTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.CursorTest.main.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.MatchDemoTest.matchDemo.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OpenCVTest.example.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OpenCVTest.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.OpenCVTest.syntheticMatch.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ScoreProbe.probe.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.ScreenshotTest.example.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TestMain.main.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TestMain.register.executor&quot;: &quot;Run&quot;,
-    &quot;Gradle.TestMain.robotTest.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Desktop/PivotLib/src/test/resources&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Administrator/Desktop/SelfServiceLoginSystem/PivotLib/src/main/java/com/pivotgroup/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15820312&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;fileTemplates&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.CursorTest.biFindSwipeStepTest.executor": "Run",
+    "Gradle.CursorTest.cursorTest.executor": "Run",
+    "Gradle.CursorTest.main.executor": "Run",
+    "Gradle.MatchDemoTest.matchDemo.executor": "Run",
+    "Gradle.OpenCVTest.example.executor": "Run",
+    "Gradle.OpenCVTest.executor": "Run",
+    "Gradle.OpenCVTest.syntheticMatch.executor": "Run",
+    "Gradle.ScoreProbe.probe.executor": "Run",
+    "Gradle.ScreenshotTest.example.executor": "Run",
+    "Gradle.TestMain.main.executor": "Run",
+    "Gradle.TestMain.register.executor": "Run",
+    "Gradle.TestMain.robotTest.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/Administrator/Desktop/PivotLib/src/test/resources",
+    "onboarding.tips.debug.path": "C:/Users/Administrator/Desktop/SelfServiceLoginSystem/PivotLib/src/main/java/com/pivotgroup/Main.java",
+    "project.structure.last.edited": "模块",
+    "project.structure.proportion": "0.15820312",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "fileTemplates",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Desktop\PivotLib\src\test\resources" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.CursorTest.cursorTest">
+    <configuration name="CursorTest.biFindSwipeStepTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;CursorTest.biFindSwipeStepTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
     <configuration name="CursorTest.cursorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -210,33 +247,6 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
-    <configuration name="OpenCVTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;OpenCVTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <GradleProfilingDisabled>false</GradleProfilingDisabled>
-      <GradleCoverageDisabled>false</GradleCoverageDisabled>
-      <method v="2" />
-    </configuration>
     <configuration name="ScreenshotTest.example" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -267,10 +277,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.CursorTest.cursorTest" />
+        <item itemvalue="Gradle.CursorTest.biFindSwipeStepTest" />
         <item itemvalue="Gradle.CursorTest.main" />
         <item itemvalue="Gradle.ScreenshotTest.example" />
         <item itemvalue="Gradle.MatchDemoTest.matchDemo" />
-        <item itemvalue="Gradle.OpenCVTest" />
       </list>
     </recent_temporary>
   </component>
@@ -286,7 +296,7 @@
       <workItem from="1793977864036" duration="15953000" />
       <workItem from="1794017686380" duration="39260000" />
       <workItem from="1794069722238" duration="3346000" />
-      <workItem from="1794097777519" duration="16041000" />
+      <workItem from="1794097777519" duration="27393000" />
     </task>
     <task id="LOCAL-00001" summary="msg">
       <option name="closed" value="true" />
@@ -448,7 +458,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794112915426</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="msg">
+      <option name="closed" value="true" />
+      <created>1794119098560</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1794119098560</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

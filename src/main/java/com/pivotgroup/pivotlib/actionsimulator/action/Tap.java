@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.workflow.step.action;
+package com.pivotgroup.pivotlib.actionsimulator.action;
 
 import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
 
@@ -7,13 +7,13 @@ import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
  */
 public class Tap implements Action {
 
-    private final int duration;
+    private final long duration;
 
     public Tap() {
         this(50);
     }
 
-    public Tap(int duration) {
+    public Tap(long duration) {
         this.duration = duration;
     }
 

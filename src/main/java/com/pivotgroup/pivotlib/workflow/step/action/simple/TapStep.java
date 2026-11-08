@@ -1,12 +1,13 @@
 package com.pivotgroup.pivotlib.workflow.step.action.simple;
 
 import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
+import com.pivotgroup.pivotlib.actionsimulator.action.Tap;
 import com.pivotgroup.pivotlib.workflow.WorkflowContext;
 import com.pivotgroup.pivotlib.workflow.step.action.ActionStep;
 
 public class TapStep extends ActionStep {
 
-    private final long duration;
+    private Tap tapAction;
 
     /**
      * @param x        点击坐标x
@@ -15,12 +16,12 @@ public class TapStep extends ActionStep {
      */
     public TapStep(int x, int y, long duration) {
         super(x, y);
-        this.duration = duration;
+        tapAction = new Tap(duration);
     }
 
     @Override
     public void exec(WorkflowContext context) {
         ActionSimulator actionSimulator = context.getActionSimulator();
-        actionSimulator.tap(getStartX(), getStartY(), duration);
+        tapAction.exec(actionSimulator, getStartX(), getStartY());
     }
 }

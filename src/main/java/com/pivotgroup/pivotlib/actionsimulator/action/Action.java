@@ -1,9 +1,9 @@
-package com.pivotgroup.pivotlib.workflow.step.action;
+package com.pivotgroup.pivotlib.actionsimulator.action;
 
 import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
 
 /**
- * 手势动作接口：在指定坐标上执行一个动作
+ * 手势动作接口, 在指定坐标上执行一个动作
  */
 public interface Action {
 
