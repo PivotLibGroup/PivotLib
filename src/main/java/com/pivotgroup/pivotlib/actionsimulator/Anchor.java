@@ -1,5 +1,6 @@
-package com.pivotgroup.pivotlib.util;
+package com.pivotgroup.pivotlib.actionsimulator;
 
+import com.pivotgroup.pivotlib.util.Loc;
 import org.opencv.core.Mat;
 
 public enum Anchor {

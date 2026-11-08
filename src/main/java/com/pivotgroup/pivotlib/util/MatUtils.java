@@ -15,12 +15,12 @@ public class MatUtils {
         OpenCV.loadLocally();
     }
 
-    public static Mat loadImage(String path){
+    public static Mat loadImage(String path) {
         return Imgcodecs.imread(path);
     }
 
-    public static void saveImage(Mat matrix, String path){
-        Imgcodecs.imwrite(path,matrix);
+    public static void saveImage(Mat matrix, String path) {
+        Imgcodecs.imwrite(path, matrix);
     }
 
     public static Mat bufferedImageToMat(BufferedImage image) {
@@ -36,5 +36,9 @@ public class MatUtils {
         Mat mat = new Mat(h, w, CvType.CV_8UC3);
         mat.put(0, 0, bytes);
         return mat;
+    }
+
+    public static Loc toCenter(Loc l, Mat image) {
+        return new Loc(0, l.x + image.cols() / 2, l.y + image.rows() / 2);
     }
 }

@@ -1,5 +1,6 @@
 package com.pivotgroup.pivotlib.actionsimulator.action;
 
+import com.pivotgroup.pivotlib.actionsimulator.Action;
 import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
 
 /**
@@ -7,18 +8,21 @@ import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
  */
 public class Tap implements Action {
 
-    private final long duration;
+    private int x, y;
+    private long duration;
 
-    public Tap() {
-        this(50);
+    public Tap(int x, int y) {
+        this(x, y, 50);
     }
 
-    public Tap(long duration) {
+    public Tap(int y, int x, long duration) {
+        this.y = y;
+        this.x = x;
         this.duration = duration;
     }
 
     @Override
-    public void exec(ActionSimulator actionSimulator, int x, int y) {
+    public void exec(ActionSimulator actionSimulator) {
         actionSimulator.tap(x, y, duration);
     }
 }

@@ -1,35 +1,103 @@
 package com.pivotgroup.pivotlib.actionsimulator.action;
 
+import com.pivotgroup.pivotlib.actionsimulator.Action;
 import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
+import com.pivotgroup.pivotlib.actionsimulator.CoordMode;
+import com.pivotgroup.pivotlib.util.Loc;
+import com.pivotgroup.pivotlib.util.MatMatchUtils;
+import com.pivotgroup.pivotlib.util.MatUtils;
+import org.opencv.core.Mat;
 
 public class Swipe implements Action {
 
     private int startX;
     private int startY;
+    private int endX;
+    private int endY;
     private long totalDuration;
     private int steps;
+    private CoordMode coordMode;
 
-    public Swipe(int startX, int startY) {
-        this(startX, startY, 300, 10);
-    }
+    /**
+     * 能否执行验证标志位
+     */
+    private boolean valid = true;
 
-    public Swipe(int startX, int startY, long totalDuration, int steps) {
-        this.startX = startX;
-        this.startY = startY;
+    public Swipe(Mat canvas, Mat template, int endX, int endY, CoordMode coordMode, long totalDuration, int steps) {
+        Loc loc = MatMatchUtils.matchMultiScale(canvas, template);
+        if (loc.matchResult < MatMatchUtils.DEFAULT_MIN_SCORE) {
+            valid = false;
+            return;
+        }
+        Loc centerLoc = MatUtils.toCenter(loc, template);
+        this.startX = centerLoc.x;
+        this.startY = centerLoc.y;
+        this.endX = endX;
+        this.endY = endY;
+        this.coordMode = coordMode;
         this.totalDuration = totalDuration;
         this.steps = steps;
     }
 
-    public void setStartX(int startX) {
-        this.startX = startX;
+    public Swipe(Mat canvas, Mat sourceTemplate, Mat targetTemplate, long totalDuration, int steps) {
+        Loc sourceLoc = MatMatchUtils.matchMultiScale(canvas, sourceTemplate);
+        Loc targetLoc = MatMatchUtils.matchMultiScale(canvas, targetTemplate);
+        if (sourceLoc.matchResult < MatMatchUtils.DEFAULT_MIN_SCORE || targetLoc.matchResult < MatMatchUtils.DEFAULT_MIN_SCORE) {
+            valid = false;
+            return;
+        }
+        this.totalDuration = totalDuration;
+        this.steps = steps;
+
+        Loc sourceCenterLoc = MatUtils.toCenter(sourceLoc, sourceTemplate);
+        Loc targetCenterLoc = MatUtils.toCenter(targetLoc, targetTemplate);
+        this.startX = sourceCenterLoc.x;
+        this.startY = sourceCenterLoc.y;
+        this.endX = targetCenterLoc.x;
+        this.endY = targetCenterLoc.y;
+        this.coordMode = CoordMode.ABSOLUTE;
     }
 
-    public void setStartY(int startY) {
+    public Swipe(Loc l1, Loc l2, long totalDuration, int steps) {
+        if (l1.matchResult < MatMatchUtils.DEFAULT_MIN_SCORE || l2.matchResult < MatMatchUtils.DEFAULT_MIN_SCORE) {
+            valid = false;
+            return;
+        }
+
+        this.startX = l1.x;
+        this.startY = l1.y;
+        this.endX = l2.x;
+        this.endY = l2.y;
+        this.totalDuration = totalDuration;
+        this.steps = steps;
+        this.coordMode = CoordMode.ABSOLUTE;
+    }
+
+    public Swipe(int startX, int startY, int endX, int endY, CoordMode coordMode, long totalDuration, int steps) {
+        this.startX = startX;
         this.startY = startY;
+        this.endX = endX;
+        this.endY = endY;
+        this.coordMode = coordMode;
+        this.totalDuration = totalDuration;
+        this.steps = steps;
     }
 
     @Override
-    public void exec(ActionSimulator actionSimulator, int x, int y) {
-        actionSimulator.swipe(startX, startY, x, y, totalDuration, steps);
+    public void exec(ActionSimulator actionSimulator) {
+        if (!valid) {
+            return;
+        }
+        if (coordMode == CoordMode.RELATIVE) {
+            // 计算出移动目标位置
+            // 比如endX = 200 endY = 200
+            // 此时落点会在左上角
+            // 要想相对于第一个坐标移动200x200的话
+            //
+            endX += startX;
+            endX += startY;
+            // 好吧，这样就可以了。是我没睡好吗？
+        }
+        actionSimulator.swipe(startX, startY, endX, endY, totalDuration, steps);
     }
 }
