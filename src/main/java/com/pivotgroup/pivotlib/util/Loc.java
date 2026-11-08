@@ -12,8 +12,6 @@ public class Loc {
         this.y = y;
     }
 
-
-
     @Override
     public String toString() {
         return String.format("score=%.4f at (%d, %d)", matchResult, x, y);

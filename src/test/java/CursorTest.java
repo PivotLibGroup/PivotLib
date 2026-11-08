@@ -1,5 +1,6 @@
 import com.pivotgroup.pivotlib.Pivot;
-import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
+import com.pivotgroup.pivotlib.actionsimulator.MouseActionSimulator;
+import com.pivotgroup.pivotlib.actionsimulator.SimpleActionSimulator;
 import com.pivotgroup.pivotlib.screencapture.ScreenCapturer;
 import com.pivotgroup.pivotlib.util.Anchor;
 import com.pivotgroup.pivotlib.workflow.Workflow;
@@ -11,19 +12,16 @@ public class CursorTest {
 
     @Test
     public void cursorTest() {
-        ActionSimulator actionSimulator = new ActionSimulator(new RobotTouchPoint());
+        // 鼠标动作模拟器
+        MouseActionSimulator mas = new MouseActionSimulator(new RobotMouseTouchPoint());
+
         ScreenCapturer screenCapturer = new ScreenCapturer(new RobotScreenCapturer());
 
-        Pivot pivot = new Pivot(actionSimulator, screenCapturer);
-
-        long startTime = System.currentTimeMillis();
         Workflow loginFlow = new Workflow("login");
         loginFlow.addStep(new MatchStep("src/test/resources/qq.png"));
         loginFlow.addStep(new OperateMatchStep(new OperateMatchStep.Swipe(-100, 0, 2000, 300), Anchor.CENTER));
 
-        loginFlow.exec(actionSimulator, screenCapturer);
-
-        System.out.println(System.currentTimeMillis() - startTime + "ms");
+        loginFlow.exec(mas, screenCapturer);
     }
 
 }

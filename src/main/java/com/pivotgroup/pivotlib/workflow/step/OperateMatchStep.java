@@ -1,6 +1,7 @@
 package com.pivotgroup.pivotlib.workflow.step;
 
 import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
+import com.pivotgroup.pivotlib.actionsimulator.SimpleActionSimulator;
 import com.pivotgroup.pivotlib.util.Anchor;
 import com.pivotgroup.pivotlib.util.Loc;
 import com.pivotgroup.pivotlib.util.MatMatchUtils;

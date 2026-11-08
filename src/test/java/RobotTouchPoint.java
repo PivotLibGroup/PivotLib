@@ -1,4 +1,4 @@
-import com.pivotgroup.pivotlib.actionsimulator.TouchPoint;
+import com.pivotgroup.pivotlib.actionsimulator.touchpoint.TouchPoint;
 
 import java.awt.event.InputEvent;
 

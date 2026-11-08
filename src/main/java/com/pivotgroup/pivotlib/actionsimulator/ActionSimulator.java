@@ -1,88 +1,24 @@
 package com.pivotgroup.pivotlib.actionsimulator;
 
-import com.pivotgroup.pivotlib.util.function.BiExecutor;
-import com.pivotgroup.pivotlib.util.function.Executor;
-
 /**
- * 动作模拟器
+ * @author xinliu
+ * @email 3536370493@qq.com
+ * @date 2026/11/8 11:31
+ * @description
  */
-public class ActionSimulator {
 
-    private final TouchPoint touchPoint;
+public interface ActionSimulator {
 
-    public ActionSimulator(TouchPoint touchPoint) {
-        this.touchPoint = touchPoint;
-    }
+    void down();
 
-    /**
-     * 按下触点
-     */
-    public void down() {
-        touchPoint.press();
-    }
+    void move(int x, int y);
 
-    /**
-     * 移动触点到指定坐标
-     */
-    public void move(int x, int y) {
-        touchPoint.move(x, y);
-    }
+    void up();
 
-    /**
-     * 抬起触点
-     */
-    public void up() {
-        touchPoint.release();
-    }
+    void tap(int x, int y, long duration);
 
-    /**
-     * 轻击指定坐标位置
-     *
-     * @param x        点击坐标x
-     * @param y        点击坐标y
-     * @param duration 按下时长(ms)
-     */
-    public void tap(int x, int y, long duration) {
-        move(x, y);
-        down();
-        sleep(duration);
-        up();
-    }
+    void swipe(int startX, int startY, int endX, int endY, long totalDuration, int steps);
 
-    /**
-     * 指定坐标拖拽
-     *
-     * @param startX        起点x
-     * @param startY        起点y
-     * @param endX          终点x
-     * @param endY          终点y
-     * @param totalDuration 总时长(ms)
-     * @param steps         移动步数，越多越平滑
-     */
-    public void swipe(int startX, int startY, int endX, int endY, long totalDuration, int steps) {
-        if (steps <= 0) steps = 1;
-        long stepDelay = totalDuration / steps;
-
-        move(startX, startY);
-        down();
-
-        for (int i = 1; i <= steps; i++) {
-            int x = startX + (endX - startX) * i / steps;
-            int y = startY + (endY - startY) * i / steps;
-            sleep(stepDelay);
-            move(x, y);
-        }
-
-        up();
-    }
-
-    public void sleep(long ms) {
-        if (ms <= 0) return;
-        try {
-            Thread.sleep(ms);
-        } catch (InterruptedException e) {
-            Thread.currentThread().interrupt();
-        }
-    }
+    void sleep(long ms);
 
 }
