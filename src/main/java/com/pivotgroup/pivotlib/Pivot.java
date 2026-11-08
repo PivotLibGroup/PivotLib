@@ -1,6 +1,7 @@
 package com.pivotgroup.pivotlib;
 
 import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
+import com.pivotgroup.pivotlib.screencapture.ScreenCapturer;
 import com.pivotgroup.pivotlib.workflow.Workflow;
 
 import java.util.ArrayList;
@@ -8,12 +9,16 @@ import java.util.List;
 
 public class Pivot {
 
-    private ActionSimulator actionSimulator;
-
     private List<Workflow> workflows = new ArrayList<>();
 
-    public Pivot(ActionSimulator actionSimulator) {
+    private ActionSimulator actionSimulator;
+
+    private ScreenCapturer screenCapturer;
+
+    public Pivot(ActionSimulator actionSimulator, ScreenCapturer screenCapturer) {
         this.actionSimulator = actionSimulator;
+        this.screenCapturer = screenCapturer;
+
     }
 
     public void addWorkflow(Workflow workflow) {
@@ -22,6 +27,7 @@ public class Pivot {
 
     /**
      * 按名称查找并执行工作流
+     *
      * @return 0=成功，-1=未找到
      */
     public int executeWorkflow(String name) {
@@ -29,15 +35,7 @@ public class Pivot {
         if (wf == null) {
             return -1;
         }
-        return executeWorkflow(wf);
-    }
-
-    /**
-     * 直接执行指定工作流
-     * @return 0=成功
-     */
-    public int executeWorkflow(Workflow workflow) {
-        workflow.exec(actionSimulator);
+        wf.exec(actionSimulator, screenCapturer);
         return 0;
     }
 

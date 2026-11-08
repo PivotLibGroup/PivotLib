@@ -1,10 +1,11 @@
-package com.pivotgroup.pivotlib.workflow.step.matchstep;
+package com.pivotgroup.pivotlib.workflow.step;
 
 import com.pivotgroup.pivotlib.util.Loc;
 import com.pivotgroup.pivotlib.util.MatMatchUtils;
 import com.pivotgroup.pivotlib.util.MatUtils;
+import com.pivotgroup.pivotlib.util.MatchInfo;
 import com.pivotgroup.pivotlib.workflow.Step;
-import com.pivotgroup.pivotlib.workflow.StepContext;
+import com.pivotgroup.pivotlib.workflow.WorkflowContext;
 import org.opencv.core.Mat;
 
 public class MatchStep extends Step {
@@ -22,7 +23,7 @@ public class MatchStep extends Step {
     }
 
     @Override
-    public void exec(StepContext context) {
+    public void exec(WorkflowContext context) {
         Mat screenshot = context.screenshotMat();
         try {
             Loc loc = MatMatchUtils.matchMultiScale(screenshot, template);

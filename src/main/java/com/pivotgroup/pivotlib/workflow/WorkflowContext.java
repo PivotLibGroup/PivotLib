@@ -1,15 +1,14 @@
 package com.pivotgroup.pivotlib.workflow;
 
 import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
-import com.pivotgroup.pivotlib.util.MatUtils;
+import com.pivotgroup.pivotlib.screencapture.ScreenCapturer;
 import org.opencv.core.Mat;
 
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.Map;
 
-public class StepContext {
+public class WorkflowContext {
 
     private static final Robot robot;
 
@@ -23,32 +22,32 @@ public class StepContext {
     private ActionSimulator actionSimulator;
 
     // TODO 后续在这里放图像工具
+    // TODO 还需要像ActionSimulator一样，从调用者那里获得图像
+    // 然后把那个对象塞进context
+    private ScreenCapturer screenCapturer;
 
     static {
         try {
             robot = new Robot();
-
 
         } catch (AWTException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public StepContext() {
+    public WorkflowContext() {
 
+    }
+
+    public Mat screenshotMat() {
+        return screenCapturer.getScreen();
     }
 
     public void close() {
         stoping = false;
         actionSimulator = null;
+        screenCapturer = null;
         dataMap.clear();
-
-    }
-
-    public Mat screenshotMat() {
-        Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
-        BufferedImage img = robot.createScreenCapture(new Rectangle(d));
-        return MatUtils.bufferedImageToMat(img);
     }
 
     public void setData(String key, Object data) {
@@ -61,6 +60,10 @@ public class StepContext {
 
     public Map<String, Object> getDataMap() {
         return dataMap;
+    }
+
+    public void setScreenCapture(ScreenCapturer screenCapturer) {
+        this.screenCapturer = screenCapturer;
     }
 
     public void setActionSimulator(ActionSimulator actionSimulator) {
@@ -78,5 +81,6 @@ public class StepContext {
     public boolean isStoping() {
         return stoping;
     }
+
 
 }

@@ -4,10 +4,10 @@ import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
 import com.pivotgroup.pivotlib.util.Anchor;
 import com.pivotgroup.pivotlib.util.Loc;
 import com.pivotgroup.pivotlib.util.MatMatchUtils;
+import com.pivotgroup.pivotlib.util.MatchInfo;
 import com.pivotgroup.pivotlib.workflow.Step;
-import com.pivotgroup.pivotlib.workflow.StepContext;
-import com.pivotgroup.pivotlib.workflow.step.matchstep.MatchInfo;
-import com.pivotgroup.pivotlib.workflow.step.matchstep.MatchStep;
+import com.pivotgroup.pivotlib.workflow.WorkflowContext;
+import org.opencv.core.Mat;
 
 public class OperateMatchStep extends Step {
 
@@ -15,18 +15,18 @@ public class OperateMatchStep extends Step {
     private final Action action;
     private Anchor anchor;
 
-    public OperateMatchStep(Action action,Anchor anchor) {
-        this(MatMatchUtils.DEFAULT_MIN_SCORE, action,anchor);
+    public OperateMatchStep(Action action, Anchor anchor) {
+        this(MatMatchUtils.DEFAULT_MIN_SCORE, action, anchor);
     }
 
-    public OperateMatchStep(double minScore, Action action,Anchor anchor) {
+    public OperateMatchStep(double minScore, Action action, Anchor anchor) {
         this.minScore = minScore;
         this.action = action;
         this.anchor = anchor;
     }
 
     @Override
-    public void exec(StepContext context) {
+    public void exec(WorkflowContext context) {
         Object data = context.getData(MatchStep.RESULT_KEY);
         if (!(data instanceof MatchInfo info)) {
             return;
@@ -39,7 +39,53 @@ public class OperateMatchStep extends Step {
         if (actionSimulator == null) {
             return;
         }
-        action.exec(actionSimulator, loc.x, loc.y);
+
+        // 已经抽象出一层MatchInfo了，从中拿到模板Mat可以做锚点处理
+        int tx = 0;
+        int ty = 0;
+
+        Mat template = info.template;
+
+        switch (anchor) {
+            case TOP_LEFT:
+                tx = loc.x;
+                ty = loc.y;
+                break;
+            case TOP_CENTER:
+                tx = loc.x + template.cols() / 2;
+                ty = loc.y;
+                break;
+            case TOP_RIGHT:
+                tx = loc.x + template.cols();
+                ty = loc.y;
+                break;
+            case MIDDLE_LEFT:
+                tx = loc.x;
+                ty = loc.y + template.rows() / 2;
+                break;
+            case CENTER:
+                tx = loc.x + template.cols() / 2;
+                ty = loc.y + template.rows() / 2;
+                break;
+            case MIDDLE_RIGHT:
+                tx = loc.x + template.cols();
+                ty = loc.y + template.rows() / 2;
+                break;
+            case BOTTOM_LEFT:
+                tx = loc.x;
+                ty = loc.y + template.rows();
+                break;
+            case BOTTOM_CENTER:
+                tx = loc.x + template.cols() / 2;
+                ty = loc.y + template.rows();
+                break;
+            case BOTTOM_RIGHT:
+                tx = loc.x + template.cols();
+                ty = loc.y + template.rows();
+                break;
+        }
+
+        action.exec(actionSimulator, tx, ty);
     }
 
     public interface Action {

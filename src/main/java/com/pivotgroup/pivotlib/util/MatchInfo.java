@@ -1,6 +1,5 @@
-package com.pivotgroup.pivotlib.workflow.step.matchstep;
+package com.pivotgroup.pivotlib.util;
 
-import com.pivotgroup.pivotlib.util.Loc;
 import org.opencv.core.Mat;
 
 /**

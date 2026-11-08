@@ -1,6 +1,7 @@
 package com.pivotgroup.pivotlib.workflow;
 
 import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
+import com.pivotgroup.pivotlib.screencapture.ScreenCapturer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +12,7 @@ public class Workflow {
 
     private List<Step> steps = new ArrayList<>();
 
-    private StepContext stepContext = new StepContext();
+    private WorkflowContext workflowContext = new WorkflowContext();
 
     public Workflow(String name) {
         this.name = name;
@@ -19,15 +20,18 @@ public class Workflow {
 
     /**
      * 依次执行步骤
+     *
      * @param actionSimulator
+     * @param screenCapturer
      */
-    public void exec(ActionSimulator actionSimulator) {
+    public void exec(ActionSimulator actionSimulator, ScreenCapturer screenCapturer) {
         // 构建上下文
-        stepContext.close();
-        stepContext.setActionSimulator(actionSimulator);
+        workflowContext.close();
+        workflowContext.setActionSimulator(actionSimulator);
+        workflowContext.setScreenCapture(screenCapturer);
         for (Step step : steps) {
-            if (!stepContext.isStoping()) {
-                step.exec(stepContext);
+            if (!workflowContext.isStoping()) {
+                step.exec(workflowContext);
             }
         }
     }
