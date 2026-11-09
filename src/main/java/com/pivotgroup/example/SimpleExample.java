@@ -18,7 +18,7 @@ import org.opencv.core.Mat;
  * @author xinliu
  * @email 3536370493@qq.com
  * @date 2026/11/9 16:58
- * @description 最小识别点击示例，模板取自 classpath 的 /tpl/
+ * @description 最小识别点击示例
  */
 public class SimpleExample {
 
@@ -67,9 +67,6 @@ public class SimpleExample {
         }
     }
 
-    /**
-     * 从 classpath 读图：/tpl/chongwu.png 即 src/main/resources/tpl/chongwu.png，与工作目录无关。
-     */
     private static Mat load(String fileName) {
         return MatUtils.loadResourceImage("/tpl/" + fileName);
     }
