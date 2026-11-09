@@ -43,13 +43,10 @@ public final class TemplateLocator implements Locator, AutoCloseable {
     public Optional<Loc> find() {
         Mat canvas = screen.capture();
         try {
-  /*          MaxLocResult result = MatMatchUtils.matchMultiScale(canvas, template, minScore,
+           MaxLocResult result = MatMatchUtils.matchMultiScale(canvas, template, minScore,
                     MatMatchUtils.DEFAULT_MIN_SCALE,
                     MatMatchUtils.DEFAULT_MAX_SCALE,
-                    MatMatchUtils.DEFAULT_SCALE_STEP);*/
-
-            MaxLocResult result = MatMatchUtils.matchMultiScale(canvas, template, minScore);
-
+                    MatMatchUtils.DEFAULT_SCALE_STEP);
             if (!(result.maxVal >= minScore)) {
                 return Optional.empty();
             }

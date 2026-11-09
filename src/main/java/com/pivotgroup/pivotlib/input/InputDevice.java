@@ -8,8 +8,5 @@ public interface InputDevice {
 
     void release(InputButton button);
 
-    /**
-     * @param clicks 正数向上/远离用户（与 AWT Robot.mouseWheel 方向一致）
-     */
     void scroll(int clicks);
 }

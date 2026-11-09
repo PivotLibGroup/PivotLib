@@ -22,6 +22,7 @@ public class Workflow {
     }
 
     public boolean exec() {
+        System.out.println("[execute] name: " + name);
         context.reset();
         context.setPointer(pointer);
         context.setScreenCapture(screenCapturer);

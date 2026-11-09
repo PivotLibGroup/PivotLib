@@ -1,3 +1,4 @@
+/*
 package com.pivotgroup.example;
 
 import com.pivotgroup.pivotlib.capture.ScreenCapturer;
@@ -14,12 +15,14 @@ import com.pivotgroup.pivotlib.workflow.step.ActionStep;
 import com.pivotgroup.pivotlib.workflow.step.WaitStep;
 import org.opencv.core.Mat;
 
+*/
 /**
  * @author xinliu
  * @email 3536370493@qq.com
  * @date 2026/11/9 16:58
  * @description 最小识别点击示例
- */
+ *//*
+
 
 public class SimpleExample {
 
@@ -38,11 +41,13 @@ public class SimpleExample {
             workflow.addStep(new ActionStep(new Tap(Locator.retry(chongwu,
                     10000, 500), InputButton.LEFT, 1000)));
 
-            /*workflow.addStep(new ActionStep(
+            */
+/*workflow.addStep(new ActionStep(
                     new Swipe(Locator.retry(startBtn, 10_000, 500),
                             Locator.retry(trashcan, 10_000, 500),
                             InputButton.LEFT, 3000, 100)));
-*/
+*//*
+
             boolean ok = workflow.exec();
             System.out.println("workflow.exec() = " + ok);
             if (!ok) {
@@ -55,3 +60,4 @@ public class SimpleExample {
         return MatUtils.loadResourceImage("/tpl/" + fileName);
     }
 }
+*/

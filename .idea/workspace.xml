@@ -5,10 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627f1380-1532-4223-8693-533b6cdf340a" name="更改" comment="msg">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/example/ZmxyAutoLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tpl/zmxy/fanhuizhucheng.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tpl/zmxy/move/go_left.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tpl/zmxy/move/go_right.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tpl/zmxy/nanzhanbuzhou.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tpl/zmxy/qianwang.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tpl/zmxy/shengli.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tpl/zmxy/tiaozhan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tpl/zmxy/tongguan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tpl/zmxy/wuxingjie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/tpl/zmxy/zhan.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/example/SimpleExample.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/example/SimpleExample.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/input/InputDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/input/InputDevice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/input/Locator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/input/Locator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/vision/TemplateLocator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/vision/TemplateLocator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Workflow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tpl/chognwu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tpl/chongwu.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tpl/goto_game.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tpl/lishi.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tpl/qq.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tpl/start.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tpl/test_file.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tpl/trashcan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tpl/关闭.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tpl/背包.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tpl/装备第一格.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +127,7 @@
     "Gradle.OpenCVTest.syntheticMatch.executor": "Run",
     "Gradle.PivotLib [:com.pivotgroup.example.DailySignInExample.main()].executor": "Run",
     "Gradle.PivotLib [:com.pivotgroup.example.SimpleExample.main()].executor": "Run",
+    "Gradle.PivotLib [:com.pivotgroup.example.ZmxyAutoLevel.main()].executor": "Run",
     "Gradle.ScoreProbe.probe.executor": "Run",
     "Gradle.ScreenshotTest.example.executor": "Run",
     "Gradle.TestMain.main.executor": "Run",
@@ -132,8 +157,13 @@
       <recent name="C:\Users\Administrator\Desktop\PivotLib" />
       <recent name="C:\Users\Administrator\Desktop\PivotLib\src\test\resources" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\PivotLib\src\main\resources\tpl\zmxy\move" />
+      <recent name="C:\Users\Administrator\Desktop\PivotLib\src\main\resources\tpl\zmxy" />
+      <recent name="C:\Users\Administrator\Desktop\PivotLib\src\main\resources\tpl" />
+    </key>
   </component>
-  <component name="RunManager" selected="应用程序.SimpleExample">
+  <component name="RunManager" selected="应用程序.ZmxyAutoLevel">
     <configuration name="DailySignInExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pivotgroup.example.DailySignInExample" />
       <module name="PivotLib.main" />
@@ -160,32 +190,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CursorTest.biFindSwipeStepTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;CursorTest.biFindSwipeStepTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <GradleProfilingDisabled>false</GradleProfilingDisabled>
-      <GradleCoverageDisabled>false</GradleCoverageDisabled>
-      <method v="2" />
+    <configuration name="ZmxyAutoLevel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pivotgroup.example.ZmxyAutoLevel" />
+      <module name="PivotLib.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pivotgroup.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="CursorTest.cursorTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -243,11 +259,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="应用程序.ZmxyAutoLevel" />
         <item itemvalue="应用程序.SimpleExample" />
         <item itemvalue="应用程序.DailySignInExample" />
         <item itemvalue="Gradle.WorkflowTest.test" />
         <item itemvalue="Gradle.CursorTest.cursorTest" />
-        <item itemvalue="Gradle.CursorTest.biFindSwipeStepTest" />
       </list>
     </recent_temporary>
   </component>
@@ -264,7 +280,7 @@
       <workItem from="1794017686380" duration="39260000" />
       <workItem from="1794069722238" duration="3346000" />
       <workItem from="1794097777519" duration="47540000" />
-      <workItem from="1794191058650" duration="32442000" />
+      <workItem from="1794191058650" duration="38039000" />
     </task>
     <task id="LOCAL-00001" summary="msg">
       <option name="closed" value="true" />
@@ -490,7 +506,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794219937536</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="msg">
+      <option name="closed" value="true" />
+      <created>1794231306062</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1794231306062</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
