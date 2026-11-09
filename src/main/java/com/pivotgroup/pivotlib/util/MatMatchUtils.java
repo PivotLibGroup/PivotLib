@@ -1,5 +1,6 @@
 package com.pivotgroup.pivotlib.util;
 
+import com.pivotgroup.pivotlib.util.coordinate.Loc;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.Size;
@@ -12,7 +13,7 @@ public class MatMatchUtils {
     public static final double DEFAULT_MAX_SCALE = 1.60;
     public static final double DEFAULT_SCALE_STEP = 0.10;
 
-    public static Loc match(Mat canvas, Mat template) {
+    public static MaxLocResult match(Mat canvas, Mat template) {
         if (canvas == null || canvas.empty()) {
             throw new IllegalArgumentException("canvas is null or empty.");
         }
@@ -28,10 +29,10 @@ public class MatMatchUtils {
         Core.MinMaxLocResult best = Core.minMaxLoc(scores);
         scores.release();
 
-        return new Loc(best.maxVal, (int) best.maxLoc.x, (int) best.maxLoc.y);
+        return new MaxLocResult(best.maxVal, new Loc((int) best.maxLoc.x, (int) best.maxLoc.y));
     }
 
-    public static Loc match(String canvasPath, String templatePath) {
+    public static MaxLocResult match(String canvasPath, String templatePath) {
         Mat canvas = MatUtils.loadImage(canvasPath);
         Mat template = MatUtils.loadImage(templatePath);
         try {
@@ -42,15 +43,15 @@ public class MatMatchUtils {
         }
     }
 
-    public static Loc matchMultiScale(Mat canvas, Mat template) {
+    public static MaxLocResult matchMultiScale(Mat canvas, Mat template) {
         return matchMultiScale(canvas, template,
                 DEFAULT_MIN_SCORE, DEFAULT_MIN_SCALE, DEFAULT_MAX_SCALE, DEFAULT_SCALE_STEP);
     }
 
-    public static Loc matchMultiScale(Mat canvas, Mat template, double minScore,
+    public static MaxLocResult matchMultiScale(Mat canvas, Mat template, double minScore,
                                       double minScale, double maxScale, double scaleStep) {
-        Loc best = match(canvas, template);
-        if (best.matchResult >= minScore) {
+        MaxLocResult best = match(canvas, template);
+        if (best.maxVal >= minScore) {
             return best;
         }
 
@@ -64,11 +65,11 @@ public class MatMatchUtils {
                 continue;
             }
             try {
-                Loc loc = match(canvas, scaled);
-                if (loc.matchResult > best.matchResult) {
+                MaxLocResult loc = match(canvas, scaled);
+                if (loc.maxVal > best.maxVal) {
                     best = loc;
                 }
-                if (best.matchResult >= minScore) {
+                if (best.maxVal >= minScore) {
                     break;
                 }
             } finally {
@@ -78,7 +79,7 @@ public class MatMatchUtils {
         return best;
     }
 
-    public static Loc matchMultiScale(String canvasPath, String templatePath) {
+    public static MaxLocResult matchMultiScale(String canvasPath, String templatePath) {
         Mat canvas = MatUtils.loadImage(canvasPath);
         Mat template = MatUtils.loadImage(templatePath);
         try {

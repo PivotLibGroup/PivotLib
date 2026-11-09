@@ -1,5 +1,6 @@
 package com.pivotgroup.pivotlib.util;
 
+import com.pivotgroup.pivotlib.util.coordinate.Loc;
 import org.opencv.core.Mat;
 
 /**

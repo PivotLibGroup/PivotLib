@@ -1,5 +1,6 @@
 package com.pivotgroup.pivotlib.util;
 
+import com.pivotgroup.pivotlib.util.coordinate.Loc;
 import nu.pattern.OpenCV;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
@@ -39,6 +40,10 @@ public class MatUtils {
     }
 
     public static Loc toCenter(Loc l, Mat image) {
-        return new Loc(0, l.x + image.cols() / 2, l.y + image.rows() / 2);
+        return toCenter(l.x, l.y, image);
+    }
+
+    public static Loc toCenter(int x, int y, Mat image) {
+        return new Loc(x + image.cols() / 2, y + image.rows() / 2);
     }
 }

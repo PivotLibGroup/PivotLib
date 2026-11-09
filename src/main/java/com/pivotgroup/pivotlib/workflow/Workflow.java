@@ -9,13 +9,18 @@ import java.util.List;
 public class Workflow {
 
     private String name;
+    private final ActionSimulator mas;
+    private final ScreenCapturer sc;
 
     private List<Step> steps = new ArrayList<>();
 
     private WorkflowContext workflowContext = new WorkflowContext();
 
-    public Workflow(String name) {
+    public Workflow(String name, ActionSimulator mas, ScreenCapturer sc) {
         this.name = name;
+        this.mas = mas;
+        this.sc = sc;
+
     }
 
     /**
@@ -29,6 +34,7 @@ public class Workflow {
         workflowContext.close();
         workflowContext.setActionSimulator(actionSimulator);
         workflowContext.setScreenCapture(screenCapturer);
+
         for (Step step : steps) {
             if (!workflowContext.isStoping()) {
                 step.exec(workflowContext);

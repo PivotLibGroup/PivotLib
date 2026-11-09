@@ -1,97 +1,95 @@
 package com.pivotgroup.pivotlib.action.gesture;
 
-import com.pivotgroup.pivotlib.action.Action;
 import com.pivotgroup.pivotlib.action.CoordMode;
 import com.pivotgroup.pivotlib.action.simulator.ActionSimulator;
-import com.pivotgroup.pivotlib.util.Loc;
-import com.pivotgroup.pivotlib.util.MatMatchUtils;
+import com.pivotgroup.pivotlib.util.coordinate.Loc;
 import com.pivotgroup.pivotlib.util.MatUtils;
 import org.opencv.core.Mat;
 
-public class Swipe implements Action {
+/**
+ * @author xinliu
+ * @email 3536370493@qq.com
+ * @date 2026/11/8 22:04
+ * @description
+ */
 
-    private int startX;
-    private int startY;
-    private int endX;
-    private int endY;
-    private long totalDuration;
+public class Swipe extends Action {
+
+    private Loc start;
+    private Loc end;
+
+    private long duration;
     private int steps;
     private CoordMode coordMode;
 
     /**
-     * 能否执行验证标志位
+     * 识别位置向指定位置拖动
+     * @param canvas 匹配的背景
+     * @param template 识别样本
+     * @param endX to x
+     * @param endY to y
+     * @param coordMode 坐标模式
+     * @param duration 持续时长
+     * @param steps 步数
      */
-    private boolean valid = true;
+    public Swipe(Mat canvas, Mat template, int endX, int endY, CoordMode coordMode, long duration, int steps) {
+        Loc rl = recognize(canvas, template);
 
-    public Swipe(Mat canvas, Mat template, int endX, int endY, CoordMode coordMode, long totalDuration, int steps) {
-        Loc loc = MatMatchUtils.matchMultiScale(canvas, template);
-        if (loc.matchResult < MatMatchUtils.DEFAULT_MIN_SCORE) {
-            valid = false;
-            return;
-        }
-        Loc centerLoc = MatUtils.toCenter(loc, template);
-        this.startX = centerLoc.x;
-        this.startY = centerLoc.y;
-        this.endX = endX;
-        this.endY = endY;
+        start = toCenter(rl, template);
+        end = new Loc(endX,endY);
+
         this.coordMode = coordMode;
-        this.totalDuration = totalDuration;
+        this.duration = duration;
         this.steps = steps;
     }
 
-    public Swipe(Mat canvas, Mat sourceTemplate, Mat targetTemplate, long totalDuration, int steps) {
-        Loc sourceLoc = MatMatchUtils.matchMultiScale(canvas, sourceTemplate);
-        Loc targetLoc = MatMatchUtils.matchMultiScale(canvas, targetTemplate);
-        if (sourceLoc.matchResult < MatMatchUtils.DEFAULT_MIN_SCORE || targetLoc.matchResult < MatMatchUtils.DEFAULT_MIN_SCORE) {
-            valid = false;
-            return;
-        }
-        this.totalDuration = totalDuration;
+    /**
+     * 两个识别点进行位移，源样本位置移动到目标样本位置
+     * @param canvas 匹配的背景
+     * @param sourceTemplate 源识别样本
+     * @param targetTemplate 目标识别样本
+     * @param duration 持续时长
+     * @param steps 步数
+     */
+    public Swipe(Mat canvas, Mat sourceTemplate, Mat targetTemplate, long duration, int steps) {
+        this.duration = duration;
         this.steps = steps;
+        this.coordMode = CoordMode.ABSOLUTE;
 
-        Loc sourceCenterLoc = MatUtils.toCenter(sourceLoc, sourceTemplate);
-        Loc targetCenterLoc = MatUtils.toCenter(targetLoc, targetTemplate);
-        this.startX = sourceCenterLoc.x;
-        this.startY = sourceCenterLoc.y;
-        this.endX = targetCenterLoc.x;
-        this.endY = targetCenterLoc.y;
+        Loc sl = recognize(canvas, sourceTemplate);
+        Loc tl = recognize(canvas, targetTemplate);
+        this.start = toCenter(sl, sourceTemplate);
+        this.end = toCenter(tl, targetTemplate);
+    }
+
+    public Swipe(Loc l1, Loc l2, long duration, int steps) {
+        this.start = l1;
+        this.end = l2;
+        this.steps = steps;
+        this.duration = duration;
         this.coordMode = CoordMode.ABSOLUTE;
     }
 
-    public Swipe(Loc l1, Loc l2, long totalDuration, int steps) {
-        if (l1.matchResult < MatMatchUtils.DEFAULT_MIN_SCORE || l2.matchResult < MatMatchUtils.DEFAULT_MIN_SCORE) {
-            valid = false;
-            return;
-        }
-
-        this.startX = l1.x;
-        this.startY = l1.y;
-        this.endX = l2.x;
-        this.endY = l2.y;
-        this.totalDuration = totalDuration;
-        this.steps = steps;
-        this.coordMode = CoordMode.ABSOLUTE;
-    }
-
-    public Swipe(int startX, int startY, int endX, int endY, CoordMode coordMode, long totalDuration, int steps) {
-        this.startX = startX;
-        this.startY = startY;
-        this.endX = endX;
-        this.endY = endY;
+    public Swipe(int startX, int startY, int endX, int endY, CoordMode coordMode, long duration, int steps) {
+        this.start = new Loc(startX,startY);
+        this.end =  new Loc(endX,endY);
         this.coordMode = coordMode;
-        this.totalDuration = totalDuration;
+        this.duration = duration;
         this.steps = steps;
     }
 
     @Override
     public void exec(ActionSimulator actionSimulator) {
-        if (!valid) {
+        if (!isValid()) {
             return;
         }
+        int actualEndX = end.x;
+        int actualEndY = end.y;
         if (coordMode == CoordMode.RELATIVE) {
-            endX += startX;
-            endY += startY;
+            actualEndX += start.x;
+            actualEndY += start.y;
         }
-        actionSimulator.swipe(startX, startY, endX, endY, totalDuration, steps);
+        actionSimulator.swipe(start.x, start.y, actualEndX, actualEndY, duration, steps);
     }
+
 }

@@ -1,9 +1,6 @@
 package com.pivotgroup.pivotlib.workflow.step;
 
-import com.pivotgroup.pivotlib.util.Loc;
-import com.pivotgroup.pivotlib.util.MatMatchUtils;
-import com.pivotgroup.pivotlib.util.MatUtils;
-import com.pivotgroup.pivotlib.util.MatchInfo;
+import com.pivotgroup.pivotlib.util.*;
 import com.pivotgroup.pivotlib.workflow.Step;
 import com.pivotgroup.pivotlib.workflow.WorkflowContext;
 import org.opencv.core.Mat;
@@ -26,8 +23,8 @@ public class FindImageStep extends Step {
     public void exec(WorkflowContext context) {
         Mat screenshot = context.canvasMat();
         try {
-            Loc loc = MatMatchUtils.matchMultiScale(screenshot, template);
-            context.setData(RESULT_KEY, new MatchInfo(screenshot, template, loc));
+            MaxLocResult loc = MatMatchUtils.matchMultiScale(screenshot, template);
+            context.setData(RESULT_KEY, new MatchInfo(screenshot, template, loc.maxLoc));
         } finally {
             screenshot.release();
         }
