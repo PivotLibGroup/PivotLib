@@ -163,5 +163,4 @@ public class ZmxyAutoLevel {
     private static Mat load(String fileName) {
         return MatUtils.loadResourceImage("/tpl/" + fileName);
     }
-
 }
