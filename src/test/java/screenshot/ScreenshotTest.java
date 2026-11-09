@@ -17,7 +17,7 @@ public class ScreenshotTest {
         System.out.println(d);
         Rectangle screenRect = new Rectangle(d);
         BufferedImage bufferedImage = robot.createScreenCapture(screenRect);
-        File file = new File("截图1.png");
+        File file = new File("build/截图1.png");
         ImageIO.write(bufferedImage, "png", file);
     }
 

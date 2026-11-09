@@ -4,11 +4,15 @@ import com.pivotgroup.pivotlib.util.coordinate.Loc;
 import nu.pattern.OpenCV;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
+import org.opencv.core.MatOfByte;
 import org.opencv.imgcodecs.Imgcodecs;
 
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferByte;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UncheckedIOException;
 
 public class MatUtils {
 
@@ -18,6 +22,23 @@ public class MatUtils {
 
     public static Mat loadImage(String path) {
         return Imgcodecs.imread(path);
+    }
+
+    public static Mat loadResourceImage(String resourcePath) {
+        try (InputStream in = MatUtils.class.getResourceAsStream(resourcePath)) {
+            if (in == null) {
+                System.out.println("[WARN] 找不到 classpath 资源: " + resourcePath);
+                return new Mat();
+            }
+            MatOfByte buffer = new MatOfByte(in.readAllBytes());
+            try {
+                return Imgcodecs.imdecode(buffer, Imgcodecs.IMREAD_COLOR);
+            } finally {
+                buffer.release();
+            }
+        } catch (IOException e) {
+            throw new UncheckedIOException("读取资源失败: " + resourcePath, e);
+        }
     }
 
     public static void saveImage(Mat matrix, String path) {
@@ -37,6 +58,11 @@ public class MatUtils {
         Mat mat = new Mat(h, w, CvType.CV_8UC3);
         mat.put(0, 0, bytes);
         return mat;
+    }
+
+    public static Loc toCenter(Loc l, Mat template, double scale) {
+        return new Loc(l.x + (int) Math.round(template.cols() * scale) / 2,
+                l.y + (int) Math.round(template.rows() * scale) / 2);
     }
 
     public static Loc toCenter(Loc l, Mat image) {

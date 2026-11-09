@@ -15,9 +15,12 @@ public class MaxLocResult {
 
     public final Loc maxLoc;
 
-    public MaxLocResult(double maxVal, Loc maxLoc) {
+    public final double scale;
+
+    public MaxLocResult(double maxVal, Loc maxLoc, double scale) {
         this.maxVal = maxVal;
         this.maxLoc = maxLoc;
+        this.scale = scale;
     }
 
 }

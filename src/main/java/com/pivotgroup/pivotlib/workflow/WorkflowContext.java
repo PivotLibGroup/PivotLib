@@ -1,53 +1,29 @@
 package com.pivotgroup.pivotlib.workflow;
 
-import com.pivotgroup.pivotlib.action.simulator.ActionSimulator;
-import com.pivotgroup.pivotlib.screencapture.ScreenCapturer;
-import org.opencv.core.Mat;
+import com.pivotgroup.pivotlib.capture.ScreenCapturer;
+import com.pivotgroup.pivotlib.input.Pointer;
 
-import java.awt.*;
 import java.util.HashMap;
 import java.util.Map;
 
 public class WorkflowContext {
 
-    private static final Robot robot;
-
-    private boolean stoping = false;
+    private boolean stopping;
+    private boolean failed;
+    private String failureMessage;
 
     private final Map<String, Object> dataMap = new HashMap<>();
 
-    /**
-     * 动作模拟器
-     */
-    private ActionSimulator actionSimulator;
-
-    // TODO 后续在这里放图像工具
-    // TODO 还需要像ActionSimulator一样，从调用者那里获得图像
-    // 然后把那个对象塞进context
+    private Pointer pointer;
     private ScreenCapturer screenCapturer;
 
-    static {
-        try {
-            robot = new Robot();
-
-        } catch (AWTException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public WorkflowContext() {
-
-    }
-
-    public Mat canvasMat() {
-        return screenCapturer.getScreen();
-    }
-
-    public void close() {
-        stoping = false;
-        actionSimulator = null;
-        screenCapturer = null;
+    public void reset() {
+        stopping = false;
+        failed = false;
+        failureMessage = null;
         dataMap.clear();
+        pointer = null;
+        screenCapturer = null;
     }
 
     public void setData(String key, Object data) {
@@ -66,21 +42,38 @@ public class WorkflowContext {
         this.screenCapturer = screenCapturer;
     }
 
-    public void setActionSimulator(ActionSimulator actionSimulator) {
-        this.actionSimulator = actionSimulator;
+    public ScreenCapturer getScreenCapturer() {
+        return screenCapturer;
     }
 
-    public ActionSimulator getActionSimulator() {
-        return actionSimulator;
+    public void setPointer(Pointer pointer) {
+        this.pointer = pointer;
+    }
+
+    public Pointer pointer() {
+        return pointer;
     }
 
     public void stop() {
-        stoping = true;
+        stopping = true;
     }
 
-    public boolean isStoping() {
-        return stoping;
+    public boolean isStopping() {
+        return stopping;
     }
 
+    public void fail(String reason) {
+        if (!failed) {
+            failed = true;
+            failureMessage = reason;
+        }
+    }
 
+    public boolean isFailed() {
+        return failed;
+    }
+
+    public String failureMessage() {
+        return failureMessage;
+    }
 }

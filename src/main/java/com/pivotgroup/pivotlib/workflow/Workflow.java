@@ -1,68 +1,53 @@
 package com.pivotgroup.pivotlib.workflow;
 
-import com.pivotgroup.pivotlib.action.simulator.ActionSimulator;
-import com.pivotgroup.pivotlib.screencapture.ScreenCapturer;
+import com.pivotgroup.pivotlib.capture.ScreenCapturer;
+import com.pivotgroup.pivotlib.input.Pointer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Workflow {
 
-    private String name;
-    private final ActionSimulator mas;
-    private final ScreenCapturer sc;
+    private final String name;
+    private final Pointer pointer;
+    private final ScreenCapturer screenCapturer;
 
-    private List<Step> steps = new ArrayList<>();
+    private final List<Step> steps = new ArrayList<>();
+    private final WorkflowContext context = new WorkflowContext();
 
-    private WorkflowContext workflowContext = new WorkflowContext();
-
-    public Workflow(String name, ActionSimulator mas, ScreenCapturer sc) {
+    public Workflow(String name, Pointer pointer, ScreenCapturer screenCapturer) {
         this.name = name;
-        this.mas = mas;
-        this.sc = sc;
-
+        this.pointer = pointer;
+        this.screenCapturer = screenCapturer;
     }
 
-    /**
-     * 依次执行步骤
-     *
-     * @param actionSimulator
-     * @param screenCapturer
-     */
-    public void exec(ActionSimulator actionSimulator, ScreenCapturer screenCapturer) {
-        // 构建上下文
-        workflowContext.close();
-        workflowContext.setActionSimulator(actionSimulator);
-        workflowContext.setScreenCapture(screenCapturer);
+    public boolean exec() {
+        context.reset();
+        context.setPointer(pointer);
+        context.setScreenCapture(screenCapturer);
 
         for (Step step : steps) {
-            if (!workflowContext.isStoping()) {
-                step.exec(workflowContext);
+            if (context.isStopping()) {
+                break;
             }
+            step.exec(context);
         }
+        return !context.isFailed();
     }
 
-    /**
-     * 添加步骤
-     * @param step
-     */
     public void addStep(Step step) {
         steps.add(step);
     }
 
-    /**
-     * 获取名字
-     * @return
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     * 获得所有步骤
-     * @return 步骤集
-     */
     public List<Step> getSteps() {
         return steps;
+    }
+
+    public WorkflowContext getContext() {
+        return context;
     }
 }

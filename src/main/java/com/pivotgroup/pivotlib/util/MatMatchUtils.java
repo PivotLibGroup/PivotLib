@@ -25,11 +25,14 @@ public class MatMatchUtils {
         }
 
         Mat scores = new Mat();
-        Imgproc.matchTemplate(canvas, template, scores, Imgproc.TM_CCOEFF_NORMED);
-        Core.MinMaxLocResult best = Core.minMaxLoc(scores);
-        scores.release();
-
-        return new MaxLocResult(best.maxVal, new Loc((int) best.maxLoc.x, (int) best.maxLoc.y));
+        try {
+            Imgproc.matchTemplate(canvas, template, scores, Imgproc.TM_CCOEFF_NORMED);
+            Core.MinMaxLocResult best = Core.minMaxLoc(scores);
+            return new MaxLocResult(best.maxVal,
+                    new Loc((int) best.maxLoc.x, (int) best.maxLoc.y), 1.0);
+        } finally {
+            scores.release();
+        }
     }
 
     public static MaxLocResult match(String canvasPath, String templatePath) {
@@ -48,8 +51,13 @@ public class MatMatchUtils {
                 DEFAULT_MIN_SCORE, DEFAULT_MIN_SCALE, DEFAULT_MAX_SCALE, DEFAULT_SCALE_STEP);
     }
 
+    public static MaxLocResult matchMultiScale(Mat canvas, Mat template, double minScore) {
+        return matchMultiScale(canvas, template,
+                minScore, DEFAULT_MIN_SCALE, DEFAULT_MAX_SCALE, DEFAULT_SCALE_STEP);
+    }
+
     public static MaxLocResult matchMultiScale(Mat canvas, Mat template, double minScore,
-                                      double minScale, double maxScale, double scaleStep) {
+                                               double minScale, double maxScale, double scaleStep) {
         MaxLocResult best = match(canvas, template);
         if (best.maxVal >= minScore) {
             return best;
@@ -65,9 +73,9 @@ public class MatMatchUtils {
                 continue;
             }
             try {
-                MaxLocResult loc = match(canvas, scaled);
-                if (loc.maxVal > best.maxVal) {
-                    best = loc;
+                MaxLocResult candidate = match(canvas, scaled);
+                if (candidate.maxVal > best.maxVal) {
+                    best = new MaxLocResult(candidate.maxVal, candidate.maxLoc, scale);
                 }
                 if (best.maxVal >= minScore) {
                     break;

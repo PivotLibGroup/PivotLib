@@ -1,26 +1,35 @@
 package com.pivotgroup.pivotlib.workflow.step;
 
-import com.pivotgroup.pivotlib.action.gesture.Action;
+import com.pivotgroup.pivotlib.input.Action;
+import com.pivotgroup.pivotlib.input.ActionResult;
 import com.pivotgroup.pivotlib.workflow.Step;
 import com.pivotgroup.pivotlib.workflow.WorkflowContext;
 
-/**
- * @author xinliu
- * @email 3536370493@qq.com
- * @date 2026/11/8 12:48
- * @description 动作步骤，接收所有动作
- */
-
 public class ActionStep extends Step {
 
+    public enum OnFailure { STOP, CONTINUE }
+
     private final Action action;
+    private final OnFailure onFailure;
 
     public ActionStep(Action action) {
+        this(action, OnFailure.STOP);
+    }
+
+    public ActionStep(Action action, OnFailure onFailure) {
         this.action = action;
+        this.onFailure = onFailure;
     }
 
     @Override
     public void exec(WorkflowContext context) {
-        action.exec(context.getActionSimulator());
+        ActionResult result = action.exec(context.pointer());
+        if (!result.isOk()) {
+            System.out.println("[FAIL] " + result.message());
+            context.fail(result.message());
+            if (onFailure == OnFailure.STOP) {
+                context.stop();
+            }
+        }
     }
 }

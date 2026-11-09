@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.screencapture;
+package com.pivotgroup.pivotlib.capture;
 
 import org.opencv.core.Mat;
 
