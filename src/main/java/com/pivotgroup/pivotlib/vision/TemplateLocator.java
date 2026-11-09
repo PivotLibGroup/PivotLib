@@ -11,6 +11,13 @@ import org.opencv.core.Mat;
 import java.util.Objects;
 import java.util.Optional;
 
+/**
+ * @author xinliu
+ * @email 3536370493@qq.com
+ * @date 2026/11/9 20:42
+ * @description 模板定位器
+ */
+
 public final class TemplateLocator implements Locator, AutoCloseable {
 
     public static final double DEFAULT_MIN_SCORE = 0.85;
@@ -36,10 +43,12 @@ public final class TemplateLocator implements Locator, AutoCloseable {
     public Optional<Loc> find() {
         Mat canvas = screen.capture();
         try {
-            MaxLocResult result = MatMatchUtils.matchMultiScale(canvas, template, minScore,
+  /*          MaxLocResult result = MatMatchUtils.matchMultiScale(canvas, template, minScore,
                     MatMatchUtils.DEFAULT_MIN_SCALE,
                     MatMatchUtils.DEFAULT_MAX_SCALE,
-                    MatMatchUtils.DEFAULT_SCALE_STEP);
+                    MatMatchUtils.DEFAULT_SCALE_STEP);*/
+
+            MaxLocResult result = MatMatchUtils.matchMultiScale(canvas, template, minScore);
 
             if (!(result.maxVal >= minScore)) {
                 return Optional.empty();

@@ -20,6 +20,7 @@ import org.opencv.core.Mat;
  * @date 2026/11/9 16:58
  * @description 最小识别点击示例
  */
+
 public class SimpleExample {
 
     public static void main(String[] args) {
@@ -33,23 +34,6 @@ public class SimpleExample {
              TemplateLocator chongwu = new TemplateLocator(screenCapturer, load("chongwu.png"))) {
 
             Workflow workflow = new Workflow("example", pointer, screenCapturer);
-
-            // 进入游戏
-            workflow.addStep(new ActionStep(new Tap(Locator.retry(gotoGame,
-                    10000, 500), InputButton.LEFT, 500)));
-
-
-            workflow.addStep(new WaitStep(1000));
-
-
-            workflow.addStep(new ActionStep(new Tap(Locator.retry(start,
-                    10000, 500), InputButton.LEFT, 1000)));
-
-            workflow.addStep(new WaitStep(10000));
-
-            workflow.addStep(new ActionStep(new Tap(0, 0, InputButton.LEFT, 50)));
-
-            workflow.addStep(new WaitStep(1000));
 
             workflow.addStep(new ActionStep(new Tap(Locator.retry(chongwu,
                     10000, 500), InputButton.LEFT, 1000)));

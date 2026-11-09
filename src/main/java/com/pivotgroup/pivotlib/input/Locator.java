@@ -18,7 +18,7 @@ public interface Locator {
 
             @Override
             public String toString() {
-                return "at" + loc;
+                return "at(" + loc + ")";
             }
         };
     }
@@ -37,6 +37,13 @@ public interface Locator {
         };
     }
 
+    /**
+     *
+     * @param base
+     * @param timeoutMs
+     * @param intervalMs
+     * @return
+     */
     static Locator retry(Locator base, long timeoutMs, long intervalMs) {
         return new Locator() {
             @Override
