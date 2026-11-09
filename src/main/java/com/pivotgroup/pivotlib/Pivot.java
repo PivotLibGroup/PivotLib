@@ -1,6 +1,6 @@
 package com.pivotgroup.pivotlib;
 
-import com.pivotgroup.pivotlib.actionsimulator.SimpleActionSimulator;
+import com.pivotgroup.pivotlib.action.simulator.ActionSimulator;
 import com.pivotgroup.pivotlib.screencapture.ScreenCapturer;
 import com.pivotgroup.pivotlib.workflow.Workflow;
 
@@ -11,11 +11,11 @@ public class Pivot {
 
     private List<Workflow> workflows = new ArrayList<>();
 
-    private SimpleActionSimulator actionSimulator;
+    private ActionSimulator actionSimulator;
 
     private ScreenCapturer screenCapturer;
 
-    public Pivot(SimpleActionSimulator actionSimulator, ScreenCapturer screenCapturer) {
+    public Pivot(ActionSimulator actionSimulator, ScreenCapturer screenCapturer) {
         this.actionSimulator = actionSimulator;
         this.screenCapturer = screenCapturer;
 

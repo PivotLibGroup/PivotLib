@@ -1,6 +1,6 @@
 package com.pivotgroup.pivotlib.workflow;
 
-import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
+import com.pivotgroup.pivotlib.action.simulator.ActionSimulator;
 import com.pivotgroup.pivotlib.screencapture.ScreenCapturer;
 import org.opencv.core.Mat;
 

@@ -1,8 +1,8 @@
-package com.pivotgroup.pivotlib.actionsimulator.action;
+package com.pivotgroup.pivotlib.action.gesture;
 
-import com.pivotgroup.pivotlib.actionsimulator.Action;
-import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
-import com.pivotgroup.pivotlib.actionsimulator.CoordMode;
+import com.pivotgroup.pivotlib.action.Action;
+import com.pivotgroup.pivotlib.action.CoordMode;
+import com.pivotgroup.pivotlib.action.simulator.ActionSimulator;
 import com.pivotgroup.pivotlib.util.Loc;
 import com.pivotgroup.pivotlib.util.MatMatchUtils;
 import com.pivotgroup.pivotlib.util.MatUtils;
@@ -89,14 +89,8 @@ public class Swipe implements Action {
             return;
         }
         if (coordMode == CoordMode.RELATIVE) {
-            // 计算出移动目标位置
-            // 比如endX = 200 endY = 200
-            // 此时落点会在左上角
-            // 要想相对于第一个坐标移动200x200的话
-            //
             endX += startX;
-            endX += startY;
-            // 好吧，这样就可以了。是我没睡好吗？
+            endY += startY;
         }
         actionSimulator.swipe(startX, startY, endX, endY, totalDuration, steps);
     }

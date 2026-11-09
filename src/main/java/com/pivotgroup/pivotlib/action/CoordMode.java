@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.actionsimulator;
+package com.pivotgroup.pivotlib.action;
 
 /**
  * @author xinliu

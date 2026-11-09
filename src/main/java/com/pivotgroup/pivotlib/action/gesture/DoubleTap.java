@@ -1,7 +1,8 @@
-package com.pivotgroup.pivotlib.actionsimulator.action;
+package com.pivotgroup.pivotlib.action.gesture;
 
-import com.pivotgroup.pivotlib.actionsimulator.Action;
-import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
+import com.pivotgroup.pivotlib.action.Action;
+import com.pivotgroup.pivotlib.action.simulator.ActionSimulator;
+import com.pivotgroup.pivotlib.action.simulator.TouchButton;
 
 /**
  * 双击动作
@@ -27,8 +28,8 @@ public class DoubleTap implements Action {
 
     @Override
     public void exec(ActionSimulator actionSimulator) {
-        actionSimulator.tap(x, y, duration);
+        actionSimulator.tap(x, y, TouchButton.LEFT, duration);
         actionSimulator.sleep(duration);
-        actionSimulator.tap(x, y, duration);
+        actionSimulator.tap(x, y, TouchButton.LEFT, duration);
     }
 }

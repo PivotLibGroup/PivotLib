@@ -1,7 +1,7 @@
-package com.pivotgroup.pivotlib.actionsimulator.action;
+package com.pivotgroup.pivotlib.action.gesture;
 
-import com.pivotgroup.pivotlib.actionsimulator.Action;
-import com.pivotgroup.pivotlib.actionsimulator.ActionSimulator;
+import com.pivotgroup.pivotlib.action.Action;
+import com.pivotgroup.pivotlib.action.simulator.ActionSimulator;
 
 /**
  * 点击动作

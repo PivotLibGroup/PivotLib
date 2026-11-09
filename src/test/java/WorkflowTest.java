@@ -1,6 +1,6 @@
-import com.pivotgroup.pivotlib.actionsimulator.CoordMode;
-import com.pivotgroup.pivotlib.actionsimulator.MouseActionSimulator;
-import com.pivotgroup.pivotlib.actionsimulator.action.Swipe;
+import com.pivotgroup.pivotlib.action.CoordMode;
+import com.pivotgroup.pivotlib.action.simulator.ActionSimulator;
+import com.pivotgroup.pivotlib.action.gesture.Swipe;
 import com.pivotgroup.pivotlib.screencapture.ScreenCapturer;
 import com.pivotgroup.pivotlib.workflow.Workflow;
 import com.pivotgroup.pivotlib.workflow.step.ActionStep;
@@ -19,7 +19,7 @@ public class WorkflowTest {
 
     @Test
     public void test() {
-        MouseActionSimulator mas = new MouseActionSimulator(new RobotMouseTouchPoint());
+        ActionSimulator mas = new ActionSimulator(new RobotTouchPoint());
         ScreenCapturer sc = new ScreenCapturer(new RobotScreenCapturer());
         RobotScreenCapturer rsc = new RobotScreenCapturer();
 
@@ -41,7 +41,7 @@ public class WorkflowTest {
                 -150,
                 0,
                 CoordMode.RELATIVE,
-                10000,
+                1000,
                 100)));
 
         lwf.exec(mas, sc);
