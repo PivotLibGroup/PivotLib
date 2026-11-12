@@ -5,56 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627f1380-1532-4223-8693-533b6cdf340a" name="更改" comment="msg">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/Operable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/OperationSimulator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/TouchCapturer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Pivot.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/vision/ImageCapturer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/capture/Capturer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/util/MatMatchUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/vision/TemplateLocator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/BasicOperationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/qq2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/operation/ClickOperation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/operation/MoveOperation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/example/SimpleExample.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/example/ZmxyAutoLevel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/Pivot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/Pivot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/capture/Capturer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/capture/ScreenCapturer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/capture/ScreenCapturer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/device/robot/RobotInputDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/device/robot/RobotInputDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/device/robot/RobotScreenCapturer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/device/robot/RobotScreenCapturer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/device/robot/RobotSingleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/device/robot/RobotSingleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/input/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/input/Action.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/input/ActionResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/input/ActionResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/input/InputButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/input/InputButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/input/InputDevice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/input/InputDevice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/input/Locator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/input/Locator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/input/Pointer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/input/Pointer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/input/gesture/DoubleTap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/input/gesture/DoubleTap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/input/gesture/Swipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/input/gesture/Swipe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/input/gesture/Tap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/input/gesture/Tap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/MatMatchUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/MatUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/util/MatUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/MatchInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/util/MatchInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/MaxLocResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/util/MaxLocResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/util/Pair.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/TapType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/util/TapType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/coordinate/Loc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/util/coordinate/Loc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/function/BiExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/util/function/BiExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/util/function/Executor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/util/function/Executor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/vision/TemplateLocator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Step.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/workflow/Step.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/Workflow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/workflow/Workflow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/WorkflowContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/workflow/WorkflowContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/ActionStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/workflow/step/ActionStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/workflow/step/WaitStep.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib_old/workflow/step/WaitStep.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/WorkflowTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/opencv/FaceRecognition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/opencv/MatchDemoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/opencv/OpenCVTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/opencv/util/MatUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/screenshot/ScreenshotTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/Operable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/Operable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/OperationSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/OperationSimulator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Pivot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Pivot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/BasicOperationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BasicOperationTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -141,6 +98,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.BasicOperationTest.executor": "Run",
     "Gradle.BasicOperationTest.test.executor": "Run",
     "Gradle.CursorTest.biFindSwipeStepTest.executor": "Run",
     "Gradle.CursorTest.cursorTest.executor": "Run",
@@ -193,20 +151,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.BasicOperationTest.test">
-    <configuration name="DailySignInExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.pivotgroup.example.DailySignInExample" />
-      <module name="PivotLib.main" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.pivotgroup_old.example.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Gradle.BasicOperationTest">
     <configuration name="SimpleExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.pivotgroup.example.SimpleExample" />
       <module name="PivotLib.main" />
@@ -232,6 +177,33 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="BasicOperationTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;BasicOperationTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
     </configuration>
     <configuration name="BasicOperationTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -289,11 +261,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.BasicOperationTest" />
         <item itemvalue="Gradle.BasicOperationTest.test" />
         <item itemvalue="Gradle.OpenCVTest.test" />
         <item itemvalue="应用程序.ZmxyAutoLevel" />
         <item itemvalue="应用程序.SimpleExample" />
-        <item itemvalue="应用程序.DailySignInExample" />
       </list>
     </recent_temporary>
   </component>
@@ -317,7 +289,8 @@
       <workItem from="1794306284541" duration="81000" />
       <workItem from="1794306417481" duration="705000" />
       <workItem from="1794307131075" duration="4065000" />
-      <workItem from="1794469644386" duration="9799000" />
+      <workItem from="1794469644386" duration="10404000" />
+      <workItem from="1794481335660" duration="1291000" />
     </task>
     <task id="LOCAL-00001" summary="msg">
       <option name="closed" value="true" />
@@ -567,7 +540,23 @@
       <option name="project" value="LOCAL" />
       <updated>1794238552236</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="msg">
+      <option name="closed" value="true" />
+      <created>1794480727128</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1794480727128</updated>
+    </task>
+    <task id="LOCAL-00033" summary="msg">
+      <option name="closed" value="true" />
+      <created>1794480739515</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1794480739515</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

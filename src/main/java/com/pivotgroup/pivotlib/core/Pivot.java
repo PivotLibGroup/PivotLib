@@ -1,6 +1,10 @@
 package com.pivotgroup.pivotlib.core;
 
+import com.pivotgroup.pivotlib.action.Operable;
 import com.pivotgroup.pivotlib.action.OperationSimulator;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author xinliu
@@ -12,12 +16,20 @@ public class Pivot {
 
     private OperationSimulator os;
 
+    private List<Operable> operables = new ArrayList<>();
+
     public Pivot(OperationSimulator os) {
         this.os = os;
     }
 
     public void start() {
-        os.move(100, 100, 2000, 100);
+        for (Operable operable : operables) {
+            operable.operate(os);
+        }
+    }
+
+    public void addOperation(Operable operable) {
+        operables.add(operable);
     }
 
 }

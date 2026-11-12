@@ -19,6 +19,14 @@ public class OperationSimulator {
         this.tc = touchCapturer;
     }
 
+    public void down(int button){
+        tc.down(button);
+    }
+
+    public void release(int button){
+        tc.release(button);
+    }
+
     /**
      * 使触点点击
      * @param button 点击的键位

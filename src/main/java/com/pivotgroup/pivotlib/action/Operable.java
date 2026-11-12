@@ -8,6 +8,6 @@ package com.pivotgroup.pivotlib.action;
 
 public interface Operable {
 
-    void operate();
+    void operate(OperationSimulator operationSimulator);
 
 }
