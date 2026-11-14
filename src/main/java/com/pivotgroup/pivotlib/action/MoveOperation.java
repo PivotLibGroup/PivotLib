@@ -8,7 +8,7 @@ import com.pivotgroup.pivotlib.model.Location;
  * @date 2026/11/12 19:11
  */
 
-public class MoveOperation implements Operable {
+public class MoveOperation extends Operation {
 
     public enum Type {
         RELATIVE, DIRECTLY
@@ -27,6 +27,7 @@ public class MoveOperation implements Operable {
     }
 
     public MoveOperation(Location loc, long durationMs, Type type, int steps) {
+        super("移动");
         this.loc = loc;
         this.type = type;
         this.durationMs = durationMs;

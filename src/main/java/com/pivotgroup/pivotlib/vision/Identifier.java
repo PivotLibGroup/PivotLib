@@ -25,6 +25,7 @@ public class Identifier {
         Mat scores = new Mat();
         Imgproc.matchTemplate(canvas, identifiedMat, scores, Imgproc.TM_CCOEFF_NORMED);
         Core.MinMaxLocResult best = Core.minMaxLoc(scores);
+        System.out.println(best.maxVal);
         return !(best.maxVal <= DEFAULT_MIN_SCORE);
     }
 

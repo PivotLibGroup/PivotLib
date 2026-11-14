@@ -6,13 +6,14 @@ package com.pivotgroup.pivotlib.action;
  * @date 2026/11/12 18:56
  */
 
-public class ClickOperation implements Operable {
+public class ClickOperation extends Operation {
 
     private int button;
 
     private long durationMs;
 
     public ClickOperation(int button, long durationMs) {
+        super("点击");
         this.button = button;
         this.durationMs = durationMs;
     }

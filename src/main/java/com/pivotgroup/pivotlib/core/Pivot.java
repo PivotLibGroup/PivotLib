@@ -1,9 +1,12 @@
 package com.pivotgroup.pivotlib.core;
 
-import com.pivotgroup.pivotlib.action.Operable;
+import com.pivotgroup.pivotlib.action.Operation;
 import com.pivotgroup.pivotlib.action.OperationSimulator;
 import com.pivotgroup.pivotlib.vision.Identifier;
+import com.pivotgroup.pivotlib.vision.ImageCapturable;
 import org.opencv.core.Mat;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +18,8 @@ import java.util.List;
  */
 
 public class Pivot {
+
+    private static final Logger log = LoggerFactory.getLogger(Pivot.class);
 
     /**
      * 操作模拟器
@@ -34,26 +39,35 @@ public class Pivot {
     /**
      * 操作集
      */
-    private List<Operable> operationList = new ArrayList<>();
+    private List<Operation> operationList = new ArrayList<>();
 
-    public Pivot(OperationSimulator os, Identifier identifier) {
+    public Pivot(OperationSimulator os, ImageCapturable imageCapturable) {
         this.os = os;
-        this.identifier = identifier;
+        this.identifier = new Identifier(imageCapturable);
     }
 
     public void start() {
-        for (Operable operable : operationList) {
-            boolean flag = false;
-            for (Mat mat : identifiedList) {
-                flag = identifier.identify(mat);
+        for (Operation operation : operationList) {
+            boolean flag = true;
+            if (!identifiedList.isEmpty()) {
+                flag = false;
+                for (Mat mat : identifiedList) {
+                    flag = identifier.identify(mat);
+                    if (flag) {
+                        break;
+                    }
+                }
             }
             if (flag) {
-                operable.operate(os);
+                operation.operate(os);
+                log.info("\"{}\"操作执行完成", operation.getName());
+            } else {
+                log.info("识别失败, 并没有执行\"{}\"", operation.getName());
             }
         }
     }
 
-    public void addOperation(Operable operable) {
+    public void addOperation(Operation operable) {
         operationList.add(operable);
     }
 
