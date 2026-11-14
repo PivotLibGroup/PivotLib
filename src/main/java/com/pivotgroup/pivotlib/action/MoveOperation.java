@@ -1,7 +1,5 @@
-package com.pivotgroup.pivotlib.action.operation;
+package com.pivotgroup.pivotlib.action;
 
-import com.pivotgroup.pivotlib.action.Operable;
-import com.pivotgroup.pivotlib.action.OperationSimulator;
 import com.pivotgroup.pivotlib.model.Location;
 
 /**

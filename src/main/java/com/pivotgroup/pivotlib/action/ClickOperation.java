@@ -1,7 +1,4 @@
-package com.pivotgroup.pivotlib.action.operation;
-
-import com.pivotgroup.pivotlib.action.Operable;
-import com.pivotgroup.pivotlib.action.OperationSimulator;
+package com.pivotgroup.pivotlib.action;
 
 /**
  * @author xinliu

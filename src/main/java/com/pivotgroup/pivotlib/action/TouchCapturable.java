@@ -8,7 +8,7 @@ import com.pivotgroup.pivotlib.model.Location;
  * @date 2026/11/12 16:28
  */
 
-public interface TouchCapturer {
+public interface TouchCapturable {
 
     /**
      * 触点按下

@@ -13,10 +13,10 @@ import com.pivotgroup.pivotlib.model.Location;
  */
 public class OperationSimulator {
 
-    private TouchCapturer tc;
+    private TouchCapturable tc;
 
-    public OperationSimulator(TouchCapturer touchCapturer) {
-        this.tc = touchCapturer;
+    public OperationSimulator(TouchCapturable touchCapturable) {
+        this.tc = touchCapturable;
     }
 
     public void down(int button){
