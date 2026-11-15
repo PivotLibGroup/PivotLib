@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.action;
+package com.pivotgroup.pivotlib.device;
 
 import com.pivotgroup.pivotlib.model.Location;
 

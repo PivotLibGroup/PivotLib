@@ -1,5 +1,6 @@
 package com.pivotgroup.pivotlib.vision;
 
+import com.pivotgroup.pivotlib.device.ImageCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 import com.pivotgroup.pivotlib.model.ResultLoc;
 import org.opencv.core.Core;
@@ -35,7 +36,7 @@ public class Identifier {
     }
 
     private Location offsetToCenter(int x, int y, Mat templ) {
-        return new Location(x + templ.cols() / 2, y + templ.rows() / 2);
+        return new Location(x, y).offset(templ.cols() / 2, templ.rows() / 2);
     }
 
 }

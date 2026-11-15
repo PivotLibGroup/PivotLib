@@ -9,6 +9,7 @@ package com.pivotgroup.pivotlib.model;
 public class Location {
 
     public int x;
+
     public int y;
 
     public Location(int x, int y) {
@@ -20,6 +21,22 @@ public class Location {
         x += xDelta;
         y += yDelta;
         return this;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 
     @Override

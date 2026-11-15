@@ -1,4 +1,6 @@
-import com.pivotgroup.pivotlib.action.TouchCapturable;
+package com.pivotgroup.pivotlib.device.awt;
+
+import com.pivotgroup.pivotlib.device.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 
 import java.awt.*;
@@ -14,12 +16,8 @@ public class RobotTouchCapturer implements TouchCapturable {
 
     private Robot robot;
 
-    public RobotTouchCapturer() {
-        try {
-            this.robot = new Robot();
-        } catch (AWTException e) {
-            throw new RuntimeException(e);
-        }
+    public RobotTouchCapturer(Robot robot) {
+        this.robot = robot;
     }
 
     @Override

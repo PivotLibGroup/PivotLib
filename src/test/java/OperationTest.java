@@ -1,5 +1,8 @@
-import com.pivotgroup.pivotlib.action.operation.ClickOperation;
+import com.pivotgroup.pivotlib.action.CoordMode;
+import com.pivotgroup.pivotlib.action.operation.MoveOperation;
+import com.pivotgroup.pivotlib.bootstrap.DesktopPivot;
 import com.pivotgroup.pivotlib.core.Pivot;
+import com.pivotgroup.pivotlib.model.Location;
 import nu.pattern.OpenCV;
 import org.junit.jupiter.api.Test;
 import org.opencv.core.Mat;
@@ -13,8 +16,14 @@ import org.opencv.imgcodecs.Imgcodecs;
 
 public class OperationTest {
 
-    Mat qqMat = readMat("src/test/resources/qq.png");
-    Pivot pivot = new Pivot(new RobotTouchCapturer(), new RobotImageCapturer());
+    private Mat qqMat;
+    private Pivot pivot;
+
+    public OperationTest() {
+        qqMat = readMat("src/test/resources/qq.png");
+        pivot = DesktopPivot.create();
+
+    }
 
     static {
         OpenCV.loadLocally();
@@ -70,11 +79,11 @@ public class OperationTest {
                 100));*/
 
         // 以相对坐标的方式, 使鼠标向左上角移动50个像素 完成
-        /*pivot.addOperation(new MoveOperation(
-                () -> new Location(-50,-50),
+        pivot.addOperation(new MoveOperation(
+                () -> new Location(-50, -50),
                 CoordMode.RELATIVE,
                 1000,
-                100));*/
+                100));
 
         // 采用直接移动的方式移动到目标位置 完成
         /*pivot.addOperation(new MoveOperation(

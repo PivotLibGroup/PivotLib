@@ -3,7 +3,7 @@ package com.pivotgroup.pivotlib.action.operation;
 import com.pivotgroup.pivotlib.action.CoordMode;
 import com.pivotgroup.pivotlib.action.Operation;
 import com.pivotgroup.pivotlib.action.OperationSimulator;
-import com.pivotgroup.pivotlib.action.TouchCapturable;
+import com.pivotgroup.pivotlib.device.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 
 import java.util.function.Supplier;

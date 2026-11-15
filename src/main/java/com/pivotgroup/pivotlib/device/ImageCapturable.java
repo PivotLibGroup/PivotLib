@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.vision;
+package com.pivotgroup.pivotlib.device;
 
 import org.opencv.core.Mat;
 
