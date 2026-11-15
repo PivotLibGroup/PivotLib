@@ -1,7 +1,10 @@
 package com.pivotgroup.pivotlib.vision;
 
+import com.pivotgroup.pivotlib.model.Location;
+import com.pivotgroup.pivotlib.model.ResultLoc;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
+import org.opencv.core.Point;
 import org.opencv.imgproc.Imgproc;
 
 /**
@@ -20,13 +23,17 @@ public class Identifier {
         this.imageCapturer = imageCapturer;
     }
 
-    public boolean identify(Mat identifiedMat) {
+    public boolean ifPresent(Mat templ) {
+        return !(identify(templ).maxVal <= DEFAULT_MIN_SCORE);
+    }
+
+    public ResultLoc identify(Mat templ) {
         Mat canvas = imageCapturer.capture();
         Mat scores = new Mat();
-        Imgproc.matchTemplate(canvas, identifiedMat, scores, Imgproc.TM_CCOEFF_NORMED);
+        Imgproc.matchTemplate(canvas, templ, scores, Imgproc.TM_CCOEFF_NORMED);
         Core.MinMaxLocResult best = Core.minMaxLoc(scores);
-        System.out.println(best.maxVal);
-        return !(best.maxVal <= DEFAULT_MIN_SCORE);
+        Point pLoc = best.maxLoc;
+        return new ResultLoc(best.maxVal, new Location((int) pLoc.x, (int) pLoc.y));
     }
 
 }

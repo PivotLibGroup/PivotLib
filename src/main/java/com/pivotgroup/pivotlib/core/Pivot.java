@@ -2,6 +2,7 @@ package com.pivotgroup.pivotlib.core;
 
 import com.pivotgroup.pivotlib.action.Operation;
 import com.pivotgroup.pivotlib.action.OperationSimulator;
+import com.pivotgroup.pivotlib.model.ResultLoc;
 import com.pivotgroup.pivotlib.vision.Identifier;
 import com.pivotgroup.pivotlib.vision.ImageCapturable;
 import org.opencv.core.Mat;
@@ -48,17 +49,19 @@ public class Pivot {
 
     public void start() {
         for (Operation operation : operationList) {
+            // 识别画面是否存在样本图, 如果存在不予执行操作
             boolean flag = true;
             if (!identifiedList.isEmpty()) {
                 flag = false;
                 for (Mat mat : identifiedList) {
-                    flag = identifier.identify(mat);
+                    flag = identifier.ifPresent(mat);
                     if (flag) {
                         break;
                     }
                 }
             }
             if (flag) {
+                // 执行操作
                 operation.operate(os);
                 log.info("\"{}\"操作执行完成", operation.getName());
             } else {
@@ -73,6 +76,10 @@ public class Pivot {
 
     public void addIdentified(Mat identifiedMat) {
         identifiedList.add(identifiedMat);
+    }
+
+    public ResultLoc identify(Mat templ) {
+        return identifier.identify(templ);
     }
 
 }
