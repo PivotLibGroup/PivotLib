@@ -76,7 +76,7 @@ public class OperationTest {
                 1000,
                 100));*/
 
-        // 采用直接移动的方式移动到目标位置
+        // 采用直接移动的方式移动到目标位置 完成
         /*pivot.addOperation(new MoveOperation(
                 () -> new Location(-50,-50),
                 CoordMode.RELATIVE));*/
