@@ -2,6 +2,8 @@ package com.pivotgroup.pivotlib.action;
 
 import com.pivotgroup.pivotlib.model.Location;
 
+import java.util.function.Supplier;
+
 /**
  * @author xinliu
  * @email 3536370493@qq.com
@@ -14,7 +16,7 @@ public class MoveOperation extends Operation {
         RELATIVE, DIRECTLY
     }
 
-    private Location loc;
+    private Supplier<Location> locSupplier;
 
     private Type type;
 
@@ -22,23 +24,26 @@ public class MoveOperation extends Operation {
 
     private int steps;
 
-    public MoveOperation(int x, int y,long durationMs, Type type, int steps) {
-        this(new Location(x, y), durationMs, type, steps);
-    }
-
-    public MoveOperation(Location loc, long durationMs, Type type, int steps) {
-        super("移动");
-        this.loc = loc;
+    public MoveOperation(Supplier<Location> locSupplier,
+                         Type type, long durationMs,
+                         int steps) {
+        this();
+        this.locSupplier = locSupplier;
         this.type = type;
         this.durationMs = durationMs;
         this.steps = steps;
     }
 
+    private MoveOperation() {
+        super("移动");
+    }
+
     @Override
     public void operate(OperationSimulator operationSimulator) {
+        Location l = locSupplier.get();
         switch (type) {
-            case RELATIVE -> operationSimulator.move(loc.x, loc.y, durationMs, steps);
-            case DIRECTLY -> operationSimulator.moveDirectly(loc.x, loc.y);
+            case RELATIVE -> operationSimulator.move(l.x, l.y, durationMs, steps);
+            case DIRECTLY -> operationSimulator.moveDirectly(l.x, l.y);
         }
     }
 }

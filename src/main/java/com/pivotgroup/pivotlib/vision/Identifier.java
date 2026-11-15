@@ -31,7 +31,11 @@ public class Identifier {
         Imgproc.matchTemplate(canvas, templ, scores, Imgproc.TM_CCOEFF_NORMED);
         Core.MinMaxLocResult best = Core.minMaxLoc(scores);
         Point pLoc = best.maxLoc;
-        return new ResultLoc(best.maxVal, new Location((int) pLoc.x, (int) pLoc.y));
+        return new ResultLoc(best.maxVal, offsetToCenter((int) pLoc.x, (int) pLoc.y, templ));
+    }
+
+    private Location offsetToCenter(int x, int y, Mat templ) {
+        return new Location(x + templ.cols() / 2, y + templ.rows() / 2);
     }
 
 }

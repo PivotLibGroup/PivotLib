@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627f1380-1532-4223-8693-533b6cdf340a" name="更改" comment="msg">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/DragOperation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/ClickOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/ClickOperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/MoveOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/MoveOperation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Pivot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Pivot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/ResultLoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/ResultLoc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/vision/Identifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/vision/Identifier.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/BasicOperationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/BasicOperationTest.java" afterDir="false" />
     </list>
@@ -293,7 +295,7 @@
       <workItem from="1794551263261" duration="1500000" />
       <workItem from="1794637358779" duration="260000" />
       <workItem from="1794660262236" duration="12801000" />
-      <workItem from="1794716960792" duration="2384000" />
+      <workItem from="1794716960792" duration="15801000" />
     </task>
     <task id="LOCAL-00001" summary="msg">
       <option name="closed" value="true" />
@@ -591,7 +593,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794718220400</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="msg">
+      <option name="closed" value="true" />
+      <created>1794719349958</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1794719349958</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

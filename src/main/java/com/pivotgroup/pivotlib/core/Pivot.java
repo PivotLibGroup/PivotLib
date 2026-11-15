@@ -2,6 +2,8 @@ package com.pivotgroup.pivotlib.core;
 
 import com.pivotgroup.pivotlib.action.Operation;
 import com.pivotgroup.pivotlib.action.OperationSimulator;
+import com.pivotgroup.pivotlib.action.TouchCapturable;
+import com.pivotgroup.pivotlib.model.Location;
 import com.pivotgroup.pivotlib.model.ResultLoc;
 import com.pivotgroup.pivotlib.vision.Identifier;
 import com.pivotgroup.pivotlib.vision.ImageCapturable;
@@ -10,7 +12,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author xinliu
@@ -36,20 +40,22 @@ public class Pivot {
      * 识别图集
      */
     private List<Mat> identifiedList = new ArrayList<>();
+    private Map<String, Mat> identifiedMap = new HashMap<>();
 
     /**
      * 操作集
      */
     private List<Operation> operationList = new ArrayList<>();
 
-    public Pivot(OperationSimulator os, ImageCapturable imageCapturable) {
-        this.os = os;
+    public Pivot(TouchCapturable tc, ImageCapturable imageCapturable) {
+        this.os = new OperationSimulator(tc);
         this.identifier = new Identifier(imageCapturable);
+
     }
 
     public void start() {
         for (Operation operation : operationList) {
-            // 识别画面是否存在样本图, 如果存在不予执行操作
+            // 识别画面是否存在样本图, 如果不存在不予执行操作
             boolean flag = true;
             if (!identifiedList.isEmpty()) {
                 flag = false;
@@ -62,8 +68,10 @@ public class Pivot {
             }
             if (flag) {
                 // 执行操作
+                long startTime = System.currentTimeMillis();
                 operation.operate(os);
-                log.info("\"{}\"操作执行完成", operation.getName());
+                long endTime = System.currentTimeMillis();
+                log.info("\"{}\"操作执行完成,耗时:{}ms", operation.getName(), (endTime - startTime));
             } else {
                 log.info("识别失败, 并没有执行\"{}\"", operation.getName());
             }
@@ -74,8 +82,21 @@ public class Pivot {
         operationList.add(operable);
     }
 
+    public void putIdentified(String name, Mat identifiedMat) {
+        identifiedMap.put(name, identifiedMat);
+    }
+
     public void addIdentified(Mat identifiedMat) {
         identifiedList.add(identifiedMat);
+    }
+
+    public Location locate(Mat templ) {
+        ResultLoc identify = identifier.identify(templ);
+        if (identify.isPresent()) {
+            return identify.loc;
+        }
+        throw new NullPointerException("\"" + templ.toString() + "\"" +
+                "This Mat does not exist on the canvas.");
     }
 
     public ResultLoc identify(Mat templ) {
