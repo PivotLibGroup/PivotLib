@@ -15,16 +15,14 @@ import org.opencv.imgproc.Imgproc;
 
 public class Identifier {
 
-    public static final double DEFAULT_MIN_SCORE = 0.85;
-
     private final ImageCapturable imageCapturer;
 
     public Identifier(ImageCapturable imageCapturer) {
         this.imageCapturer = imageCapturer;
     }
 
-    public boolean ifPresent(Mat templ) {
-        return !(identify(templ).maxVal <= DEFAULT_MIN_SCORE);
+    public boolean isPresent(Mat templ) {
+        return identify(templ).isPresent();
     }
 
     public ResultLoc identify(Mat templ) {

@@ -54,7 +54,7 @@ public class Pivot {
             if (!identifiedList.isEmpty()) {
                 flag = false;
                 for (Mat mat : identifiedList) {
-                    flag = identifier.ifPresent(mat);
+                    flag = identifier.isPresent(mat);
                     if (flag) {
                         break;
                     }
