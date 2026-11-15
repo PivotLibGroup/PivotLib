@@ -13,7 +13,7 @@ import com.pivotgroup.pivotlib.model.Location;
  */
 public class OperationSimulator {
 
-    private TouchCapturable tc;
+    private final TouchCapturable tc;
 
     public OperationSimulator(TouchCapturable touchCapturable) {
         this.tc = touchCapturable;
@@ -105,6 +105,10 @@ public class OperationSimulator {
      */
     public void moveDirectly(int x, int y) {
         tc.move(x, y);
+    }
+
+    public TouchCapturable getTouchCapturer() {
+        return tc;
     }
 
     /**

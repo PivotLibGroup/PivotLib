@@ -1,5 +1,7 @@
-package com.pivotgroup.pivotlib.action;
+package com.pivotgroup.pivotlib.action.operation;
 
+import com.pivotgroup.pivotlib.action.Operation;
+import com.pivotgroup.pivotlib.action.OperationSimulator;
 import com.pivotgroup.pivotlib.model.Location;
 
 import java.util.function.Supplier;

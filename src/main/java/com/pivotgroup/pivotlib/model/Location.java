@@ -16,6 +16,12 @@ public class Location {
         this.y = y;
     }
 
+    public Location offset(int xDelta, int yDelta) {
+        x += xDelta;
+        y += yDelta;
+        return this;
+    }
+
     @Override
     public String toString() {
         return "Location{" +
