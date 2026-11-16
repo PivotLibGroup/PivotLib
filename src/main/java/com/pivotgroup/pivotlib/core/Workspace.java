@@ -6,14 +6,14 @@ package com.pivotgroup.pivotlib.core;
  * @date 2026/11/16 19:44
  */
 
-import com.pivotgroup.pivotlib.action.OperationSimulator;
+import com.pivotgroup.pivotlib.action.simulator.DesktopOperationSimulator;
 
 /**
  * 自动化程序的顶级容器
  */
 public class Workspace extends Container {
 
-    OperationSimulator simulator;
+    DesktopOperationSimulator simulator;
 
 
 

@@ -1,7 +1,7 @@
 package com.pivotgroup.pivotlib.action.operation;
 
+import com.pivotgroup.pivotlib.action.simulator.DesktopOperationSimulator;
 import com.pivotgroup.pivotlib.action.Operation;
-import com.pivotgroup.pivotlib.action.OperationSimulator;
 import com.pivotgroup.pivotlib.model.Location;
 
 import java.util.function.Supplier;
@@ -37,12 +37,9 @@ public class DragOperation extends Operation {
     }
 
     @Override
-    public void operate(OperationSimulator os) {
-        Location startLoc = startLocSupplier.get();
-        Location endLoc = endLocSupplier.get();
-        os.move(startLoc.x, startLoc.y);
-        os.down(button);
-        os.move(endLoc.x, endLoc.y, durationMs, steps);
-        os.release(button);
+    public void operate(DesktopOperationSimulator os) {
+        Location sl = startLocSupplier.get();
+        Location el = endLocSupplier.get();
+        os.drag(sl.x, sl.y, el.x, el.y, button, durationMs, steps);
     }
 }

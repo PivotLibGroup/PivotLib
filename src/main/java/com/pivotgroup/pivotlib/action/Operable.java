@@ -1,5 +1,7 @@
 package com.pivotgroup.pivotlib.action;
 
+import com.pivotgroup.pivotlib.action.simulator.DesktopOperationSimulator;
+
 /**
  * @author xinliu
  * @email 3536370493@qq.com
@@ -8,6 +10,6 @@ package com.pivotgroup.pivotlib.action;
 
 public interface Operable {
 
-    void operate(OperationSimulator operationSimulator);
+    void operate(DesktopOperationSimulator desktopOperationSimulator);
 
 }

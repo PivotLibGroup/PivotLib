@@ -1,7 +1,7 @@
 package com.pivotgroup.pivotlib.action.operation;
 
+import com.pivotgroup.pivotlib.action.simulator.DesktopOperationSimulator;
 import com.pivotgroup.pivotlib.action.Operation;
-import com.pivotgroup.pivotlib.action.OperationSimulator;
 import com.pivotgroup.pivotlib.model.Location;
 
 import java.util.function.Supplier;
@@ -39,13 +39,13 @@ public class ClickOperation extends Operation {
     }
 
     @Override
-    public void operate(OperationSimulator os) {
+    public void operate(DesktopOperationSimulator os) {
         if (!directlyClick) {
             Location location = locSupplier.get();
             if (location == null) {
                 return;
             }
-            os.move(location.x, location.y);
+            os.move(location.x, location.y, 0, 0);
         }
         os.click(button, durationMs);
     }

@@ -1,4 +1,5 @@
 import com.pivotgroup.pivotlib.action.CoordMode;
+import com.pivotgroup.pivotlib.action.operation.DragOperation;
 import com.pivotgroup.pivotlib.action.operation.MoveOperation;
 import com.pivotgroup.pivotlib.bootstrap.DesktopPivot;
 import com.pivotgroup.pivotlib.core.Pivot;
@@ -95,7 +96,13 @@ public class OperationTest {
 
     @Test
     public void dragTest() {
-
+        pivot.addOperation(new DragOperation(
+                () -> new Location(600, 600),
+                () -> new Location(700, 700),
+                1,
+                1000,
+                100
+        ));
         pivot.start();
     }
 

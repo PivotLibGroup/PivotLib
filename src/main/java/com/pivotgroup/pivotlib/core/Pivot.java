@@ -1,7 +1,7 @@
 package com.pivotgroup.pivotlib.core;
 
 import com.pivotgroup.pivotlib.action.Operation;
-import com.pivotgroup.pivotlib.action.OperationSimulator;
+import com.pivotgroup.pivotlib.action.simulator.DesktopOperationSimulator;
 import com.pivotgroup.pivotlib.device.ImageCapturable;
 import com.pivotgroup.pivotlib.device.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
@@ -38,7 +38,7 @@ public class Pivot {
     /**
      * 操作模拟器
      */
-    private OperationSimulator os;
+    private DesktopOperationSimulator os;
 
     /**
      * 画面识别器
@@ -66,7 +66,7 @@ public class Pivot {
      * @param image
      */
     public Pivot(TouchCapturable tc, ImageCapturable image) {
-        this.os = new OperationSimulator(tc);
+        this.os = new DesktopOperationSimulator(tc);
         this.identifier = new Identifier(image);
     }
 

@@ -2,7 +2,7 @@ package com.pivotgroup.pivotlib.action.operation;
 
 import com.pivotgroup.pivotlib.action.CoordMode;
 import com.pivotgroup.pivotlib.action.Operation;
-import com.pivotgroup.pivotlib.action.OperationSimulator;
+import com.pivotgroup.pivotlib.action.simulator.DesktopOperationSimulator;
 import com.pivotgroup.pivotlib.device.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 
@@ -47,7 +47,7 @@ public class MoveOperation extends Operation {
     }
 
     @Override
-    public void operate(OperationSimulator os) {
+    public void operate(DesktopOperationSimulator os) {
         Location l = locSupplier.get();
         switch (coordMode) {
             case ABSOLUTE -> linearOrDirectlyMove(os, l.x, l.y);
@@ -59,9 +59,9 @@ public class MoveOperation extends Operation {
         }
     }
 
-    private void linearOrDirectlyMove(OperationSimulator os, int x, int y) {
+    private void linearOrDirectlyMove(DesktopOperationSimulator os, int x, int y) {
         if (directly) {
-            os.move(x, y);
+            os.move(x, y,0,0);
             return;
         }
         os.move(x, y, durationMs, steps);
