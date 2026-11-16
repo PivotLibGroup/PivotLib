@@ -4,8 +4,6 @@ import com.pivotgroup.pivotlib.action.Operation;
 import com.pivotgroup.pivotlib.action.OperationSimulator;
 import com.pivotgroup.pivotlib.device.ImageCapturable;
 import com.pivotgroup.pivotlib.device.TouchCapturable;
-import com.pivotgroup.pivotlib.device.awt.RobotImageCapturer;
-import com.pivotgroup.pivotlib.device.awt.RobotTouchCapturer;
 import com.pivotgroup.pivotlib.model.Location;
 import com.pivotgroup.pivotlib.model.Rect;
 import com.pivotgroup.pivotlib.model.ResultLoc;
@@ -57,7 +55,17 @@ public class Pivot {
      */
     private List<Operation> operationList = new ArrayList<>();
 
-    public Pivot(TouchCapturable tc, ImageCapturable image){
+    /**
+     * 顶级容器
+     */
+    private Workspace workspace;
+
+    /**
+     *
+     * @param tc
+     * @param image
+     */
+    public Pivot(TouchCapturable tc, ImageCapturable image) {
         this.os = new OperationSimulator(tc);
         this.identifier = new Identifier(image);
     }
@@ -83,10 +91,22 @@ public class Pivot {
         operationList.add(operable);
     }
 
+    /**
+     * 添加识别对象
+     *
+     * @param name
+     * @param identifiedMat
+     */
     public void putIdentified(String name, Mat identifiedMat) {
         identifiedMap.put(name, identifiedMat);
     }
 
+    /**
+     * 识别图像位置
+     *
+     * @param templ
+     * @return
+     */
     public Location locate(Mat templ) {
         ResultLoc identify = identifier.identify(templ);
         if (identify.isPresent()) {

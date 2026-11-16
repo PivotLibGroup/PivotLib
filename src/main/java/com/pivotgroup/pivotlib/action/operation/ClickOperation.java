@@ -45,7 +45,7 @@ public class ClickOperation extends Operation {
             if (location == null) {
                 return;
             }
-            os.moveDirectly(location.x, location.y);
+            os.move(location.x, location.y);
         }
         os.click(button, durationMs);
     }

@@ -6,9 +6,6 @@ package com.pivotgroup.pivotlib.model;
  * @date 2026/11/15 22:10
  */
 
-/**
- * Region of interest
- */
 public class Rect {
 
     private Location location;

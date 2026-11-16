@@ -8,35 +8,38 @@ package com.pivotgroup.pivotlib.model;
 
 public class Location {
 
-    public int x;
+    public final int x;
 
-    public int y;
+    public final int y;
 
     public Location(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
+    public static Location of(int x, int y) {
+        return new Location(x, y);
+    }
+
     public Location offset(int xDelta, int yDelta) {
-        x += xDelta;
-        y += yDelta;
-        return this;
+        return new Location(x + xDelta, y + yDelta);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Location location = (Location) o;
+        return x == location.x && y == location.y;
     }
 
     public int getX() {
         return x;
     }
 
-    public void setX(int x) {
-        this.x = x;
-    }
-
     public int getY() {
         return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
     }
 
     @Override

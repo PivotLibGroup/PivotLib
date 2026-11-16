@@ -20,6 +20,10 @@ public class OperationSimulator {
         this.tc = touchCapturable;
     }
 
+    /**
+     * 按键按下
+     * @param button
+     */
     public void down(int button){
         tc.down(button);
     }
@@ -81,7 +85,7 @@ public class OperationSimulator {
      */
     public void move(int x, int y, int toX, int toY, long durationMs, int steps) {
         int n = Math.max(1, steps);
-        moveDirectly(x, y);
+        move(x, y);
         long t0 = System.nanoTime();
         for (int i = 1; i <= n; i++) {
             if (Thread.currentThread().isInterrupted()) {
@@ -95,7 +99,7 @@ public class OperationSimulator {
             int dy = toY - y;
             int px = x + (int) Math.round(dx * (double) i / n);
             int py = y + (int) Math.round(dy * (double) i / n);
-            moveDirectly(px, py);
+            move(px, py);
         }
     }
 
@@ -104,7 +108,7 @@ public class OperationSimulator {
      * @param x
      * @param y
      */
-    public void moveDirectly(int x, int y) {
+    public void move(int x, int y) {
         tc.move(x, y);
     }
 

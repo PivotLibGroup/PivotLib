@@ -40,7 +40,7 @@ public class DragOperation extends Operation {
     public void operate(OperationSimulator os) {
         Location startLoc = startLocSupplier.get();
         Location endLoc = endLocSupplier.get();
-        os.moveDirectly(startLoc.x, startLoc.y);
+        os.move(startLoc.x, startLoc.y);
         os.down(button);
         os.move(endLoc.x, endLoc.y, durationMs, steps);
         os.release(button);

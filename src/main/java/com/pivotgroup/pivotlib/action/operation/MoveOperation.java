@@ -61,7 +61,7 @@ public class MoveOperation extends Operation {
 
     private void linearOrDirectlyMove(OperationSimulator os, int x, int y) {
         if (directly) {
-            os.moveDirectly(x, y);
+            os.move(x, y);
             return;
         }
         os.move(x, y, durationMs, steps);
