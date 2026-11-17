@@ -1,12 +1,14 @@
 package com.pivotgroup.pivotlib.roi;
 
 /**
+ * Coordinate origin used by recognition and input actions.
+ *
  * @author xinliu
- * @email 3536370493@qq.com
- * @date 2026/11/17 18:04
  */
-
 public enum CoordinateSpace {
+    /** Uses the screen origin. */
     SCREEN,
+
+    /** Uses the ROI origin. */
     ROI
 }

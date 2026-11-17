@@ -6,12 +6,11 @@ import com.pivotgroup.pivotlib.model.Rect;
 import java.util.Objects;
 
 /**
+ * Converts ROI-relative coordinates to absolute screen coordinates.
+ *
  * @author xinliu
- * @email 3536370493@qq.com
- * @date 2026/11/17 17:52
  */
-
-public class RoiRelativeTouchCapturer implements TouchCapturable {
+public final class RoiRelativeTouchCapturer implements TouchCapturable {
 
     private final RoiTouchCapturer delegate;
 
@@ -37,19 +36,7 @@ public class RoiRelativeTouchCapturer implements TouchCapturable {
     public void move(int x, int y) {
         int screenX = Math.addExact(roi.getX(), x);
         int screenY = Math.addExact(roi.getY(), y);
-
-        int maxScreenX = Math.addExact(roi.getX(), roi.getWidth() - 1);
-        int maxScreenY = Math.addExact(roi.getY(), roi.getHeight() - 1);
-
-        int clampedX = Math.max(
-                roi.getX(),
-                Math.min(screenX, maxScreenX));
-
-        int clampedY = Math.max(
-                roi.getY(),
-                Math.min(screenY, maxScreenY));
-
-        delegate.move(clampedX, clampedY);
+        delegate.move(screenX, screenY);
     }
 
     @Override
@@ -57,7 +44,6 @@ public class RoiRelativeTouchCapturer implements TouchCapturable {
         Location screenLocation = delegate.getLocation();
         return Location.of(
                 Math.subtractExact(screenLocation.x, roi.getX()),
-                Math.subtractExact(screenLocation.y, roi.getY())
-        );
+                Math.subtractExact(screenLocation.y, roi.getY()));
     }
 }

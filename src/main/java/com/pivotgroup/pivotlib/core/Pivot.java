@@ -126,7 +126,7 @@ public class Pivot {
      * Locates a registered image template.
      *
      * @param name template name
-     * @return absolute screen location
+     * @return location in the configured coordinate space
      */
     public Location locate(String name) {
         return locate(templates.get(name));
@@ -136,7 +136,7 @@ public class Pivot {
      * Locates an image template within the current ROI.
      *
      * @param templ template image
-     * @return absolute screen location
+     * @return location in the configured coordinate space
      */
     public Location locate(Mat templ) {
         Rect currentRoi = roiState.get().orElse(null);
@@ -144,8 +144,17 @@ public class Pivot {
                 ? identifier.identify(templ)
                 : identifier.identify(templ, currentRoi);
         if (result.isPresent()) {
-            return result.loc;
+            return toActionLocation(result.loc, currentRoi);
         }
         throw new NoSuchElementException("The template does not exist on the canvas");
+    }
+
+    private Location toActionLocation(Location screenLocation, Rect currentRoi) {
+        if (currentRoi != null && roiState.getCoordinateSpace() == CoordinateSpace.ROI) {
+            return Location.of(
+                    Math.subtractExact(screenLocation.x, currentRoi.getX()),
+                    Math.subtractExact(screenLocation.y, currentRoi.getY()));
+        }
+        return screenLocation;
     }
 }

@@ -1,10 +1,13 @@
 package com.pivotgroup.pivotlib.core;
 
+import com.pivotgroup.pivotlib.action.gesture.CoordMode;
+import com.pivotgroup.pivotlib.action.gesture.MoveGesture;
 import com.pivotgroup.pivotlib.device.ImageCapturable;
 import com.pivotgroup.pivotlib.device.RoiTouchCapturer;
 import com.pivotgroup.pivotlib.device.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 import com.pivotgroup.pivotlib.model.Rect;
+import com.pivotgroup.pivotlib.roi.CoordinateSpace;
 import nu.pattern.OpenCV;
 import org.junit.jupiter.api.Test;
 import org.opencv.core.CvType;
@@ -97,6 +100,26 @@ class RoiTest {
 
         assertEquals(Location.of(109, 207), location);
         assertFalse(image.fullCapture);
+        assertEquals(List.of(100, 200, 30, 20), image.captureArguments);
+        template.release();
+        canvas.release();
+    }
+
+    @Test
+    void roiRelativeSpaceConnectsIdentificationAndMovement() {
+        Mat canvas = createCanvas();
+        Mat template = canvas.submat(5, 9, 7, 11).clone();
+        FakeTouchCapturer touch = new FakeTouchCapturer(Location.of(100, 200));
+        FakeImageCapturer image = new FakeImageCapturer(canvas);
+        Pivot pivot = new Pivot(touch, image);
+        pivot.setRoi(Rect.of(100, 200, 30, 20));
+        pivot.setCoordinateSpace(CoordinateSpace.ROI);
+        pivot.addAction(new MoveGesture(
+                () -> pivot.locate(template), CoordMode.ABSOLUTE, 0, 1));
+
+        pivot.start();
+
+        assertEquals(Location.of(109, 207), touch.getLocation());
         assertEquals(List.of(100, 200, 30, 20), image.captureArguments);
         template.release();
         canvas.release();

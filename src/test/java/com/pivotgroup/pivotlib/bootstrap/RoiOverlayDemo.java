@@ -7,6 +7,9 @@ import com.pivotgroup.pivotlib.model.Dimension;
 import com.pivotgroup.pivotlib.model.Location;
 import com.pivotgroup.pivotlib.model.Rect;
 import com.pivotgroup.pivotlib.roi.CoordinateSpace;
+import nu.pattern.OpenCV;
+import org.opencv.core.Mat;
+import org.opencv.imgcodecs.Imgcodecs;
 
 /**
  * Manual ROI editor entry point.
@@ -15,10 +18,16 @@ import com.pivotgroup.pivotlib.roi.CoordinateSpace;
  */
 public final class RoiOverlayDemo {
 
+    static {
+        OpenCV.loadLocally();
+    }
+
     private RoiOverlayDemo() {
     }
 
     public static void main(String[] args) {
+        Mat qqMat = Imgcodecs.imread("src/test/resources/qq.png");
+
         Pivot pivot = DesktopPivot.create();
         pivot.setCoordinateSpace(CoordinateSpace.ROI);
 
@@ -29,39 +38,12 @@ public final class RoiOverlayDemo {
         pivot.editRoi();
 
         pivot.addAction(new MoveGesture(
-                () -> new Location(-100, 100),
-                CoordMode.RELATIVE,
+                () -> pivot.locate(qqMat),
+                CoordMode.ABSOLUTE,
                 1000,
                 100
         ));
 
-        pivot.addAction(new MoveGesture(
-                () -> new Location(50, 100),
-                CoordMode.RELATIVE,
-                1000,
-                100
-        ));
-
-        pivot.addAction(new MoveGesture(
-                () -> new Location(-100, 100),
-                CoordMode.RELATIVE,
-                1000,
-                100
-        ));
-
-        pivot.addAction(new MoveGesture(
-                () -> new Location(-100, -100),
-                CoordMode.RELATIVE,
-                1000,
-                100
-        ));
-
-        pivot.addAction(new MoveGesture(
-                () -> new Location(-50, -100),
-                CoordMode.RELATIVE,
-                1000,
-                100
-        ));
 
         pivot.start();
     }
