@@ -37,6 +37,8 @@ public class Pivot {
 
     private final TemplateRepository templates;
 
+
+
     /**
      * Creates an automation facade with platform-specific devices.
      *
