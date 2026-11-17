@@ -1,7 +1,6 @@
 package com.pivotgroup.pivotlib.action.gesture;
 
 import com.pivotgroup.pivotlib.action.ActionContext;
-import com.pivotgroup.pivotlib.action.BiGesture;
 import com.pivotgroup.pivotlib.device.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 
@@ -12,15 +11,15 @@ import java.util.function.Supplier;
  *
  * @author xinliu
  */
-public class DragGesture extends BiGesture {
+public class DragGesture extends BasePathGesture {
 
     private final LinearMotion motion;
 
     private final int button;
 
-    public DragGesture(Supplier<Location> startLoc, Supplier<Location> endLocSupplier,
+    public DragGesture(Supplier<Location> start, Supplier<Location> end,
                        int button, long durationMs, int steps) {
-        super(startLoc, endLocSupplier);
+        super(start, end);
         this.button = button;
         motion = new LinearMotion(durationMs, steps);
     }
@@ -28,8 +27,8 @@ public class DragGesture extends BiGesture {
     @Override
     public void apply(ActionContext context) {
         TouchCapturable touchCapturer = context.getTouchCapturer();
-        Location start = resolveFirstLocation();
-        Location end = resolveSecondLocation();
+        Location start = resolveStart();
+        Location end = resolveEnd();
         touchCapturer.move(start.x, start.y);
         touchCapturer.down(button);
         try {

@@ -1,7 +1,6 @@
 package com.pivotgroup.pivotlib.action.gesture;
 
 import com.pivotgroup.pivotlib.action.ActionContext;
-import com.pivotgroup.pivotlib.action.enums.CoordMode;
 import com.pivotgroup.pivotlib.device.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 import org.junit.jupiter.api.Test;

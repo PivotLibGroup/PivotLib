@@ -1,8 +1,6 @@
 package com.pivotgroup.pivotlib.action.gesture;
 
 import com.pivotgroup.pivotlib.action.ActionContext;
-import com.pivotgroup.pivotlib.action.Gesture;
-import com.pivotgroup.pivotlib.action.enums.CoordMode;
 import com.pivotgroup.pivotlib.device.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 
@@ -14,14 +12,14 @@ import java.util.function.Supplier;
  *
  * @author xinliu
  */
-public class MoveGesture extends Gesture {
+public class MoveGesture extends BaseGesture {
 
     private final CoordMode coordMode;
 
     private final LinearMotion motion;
 
-    public MoveGesture(Supplier<Location> toLoc, CoordMode coordMode, long durationMs, int steps) {
-        super(toLoc);
+    public MoveGesture(Supplier<Location> target, CoordMode coordMode, long durationMs, int steps) {
+        super(target);
         this.coordMode = Objects.requireNonNull(coordMode, "coordMode");
         motion = new LinearMotion(durationMs, steps);
     }
@@ -29,7 +27,7 @@ public class MoveGesture extends Gesture {
     @Override
     public void apply(ActionContext context) {
         TouchCapturable touchCapturer = context.getTouchCapturer();
-        Location target = coordMode.resolve(getLoc(), touchCapturer.getLocation());
+        Location target = coordMode.resolve(getTarget(), touchCapturer.getLocation());
         move(touchCapturer, target);
     }
 
