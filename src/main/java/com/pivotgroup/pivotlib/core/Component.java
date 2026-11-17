@@ -4,26 +4,22 @@ import com.pivotgroup.pivotlib.model.Dimension;
 import com.pivotgroup.pivotlib.model.Location;
 
 /**
+ * Base node of the workspace composite hierarchy.
+ *
  * @author xinliu
- * @email 3536370493@qq.com
- * @date 2026/11/16 19:46
  */
-
+@SuppressWarnings("PMD.AbstractClassShouldStartWithAbstractNamingRule")
 public abstract class Component {
 
-    int x;
+    private int x;
 
-    int y;
+    private int y;
 
-    int width;
+    private int width;
 
-    int height;
+    private int height;
 
-    Component parent;
-
-    public Component() {
-
-    }
+    private Component parent;
 
     public Component getParent() {
         return parent;
@@ -47,4 +43,7 @@ public abstract class Component {
         this.height = height;
     }
 
+    void setParent(Component parent) {
+        this.parent = parent;
+    }
 }

@@ -1,17 +1,42 @@
 plugins {
     id 'java'
+    id 'pmd'
 }
 
 group = 'com.pivotgroup'
 version = '1.0-SNAPSHOT'
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
 dependencies {
     implementation 'org.slf4j:slf4j-api:1.7.36'
-    runtimeOnly      'ch.qos.logback:logback-classic:1.2.13'
+    runtimeOnly 'ch.qos.logback:logback-classic:1.2.13'
     implementation 'org.openpnp:opencv:4.9.0-0'
     testImplementation platform('org.junit:junit-bom:6.0.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+    pmd 'com.alibaba.p3c:p3c-pmd:2.1.1'
+    pmd 'net.sourceforge.pmd:pmd-java:6.55.0'
+    pmd 'net.sourceforge.pmd:pmd-vm:6.55.0'
+}
+
+pmd {
+    toolVersion = '6.55.0'
+    consoleOutput = true
+    incrementalAnalysis = false
+    ignoreFailures = false
+    ruleSets = []
+    ruleSetFiles = files("${rootDir}/config/pmd/p3c.xml")
+}
+
+tasks.withType(Pmd).configureEach {
+    reports {
+        xml.required = true
+        html.required = true
+    }
 }
 
 test {
@@ -20,4 +45,5 @@ test {
 
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
+    options.release = 17
 }

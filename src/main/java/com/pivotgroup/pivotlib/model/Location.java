@@ -1,11 +1,10 @@
 package com.pivotgroup.pivotlib.model;
 
 /**
+ * Immutable two-dimensional coordinate.
+ *
  * @author xinliu
- * @email 3536370493@qq.com
- * @date 2026/11/12 18:35
  */
-
 public class Location {
 
     public final int x;
@@ -22,16 +21,7 @@ public class Location {
     }
 
     public Location offset(int xDelta, int yDelta) {
-        return new Location(x + xDelta, y + yDelta);
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        Location location = (Location) o;
-        return x == location.x && y == location.y;
+        return new Location(Math.addExact(x, xDelta), Math.addExact(y, yDelta));
     }
 
     public int getX() {
@@ -43,10 +33,24 @@ public class Location {
     }
 
     @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Location location = (Location) o;
+        return x == location.x && y == location.y;
+    }
+
+    @Override
+    public int hashCode() {
+        return 31 * x + y;
+    }
+
+    @Override
     public String toString() {
-        return "Location{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
+        return "Location{" + "x=" + x + ", y=" + y + '}';
     }
 }

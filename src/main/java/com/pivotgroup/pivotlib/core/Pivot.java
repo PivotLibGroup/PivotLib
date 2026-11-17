@@ -1,119 +1,141 @@
 package com.pivotgroup.pivotlib.core;
 
-import com.pivotgroup.pivotlib.action.Operation;
-import com.pivotgroup.pivotlib.action.simulator.DesktopOperationSimulator;
+import com.pivotgroup.pivotlib.action.Action;
+import com.pivotgroup.pivotlib.action.ActionContext;
+import com.pivotgroup.pivotlib.action.ActionSequence;
 import com.pivotgroup.pivotlib.device.ImageCapturable;
 import com.pivotgroup.pivotlib.device.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 import com.pivotgroup.pivotlib.model.Rect;
 import com.pivotgroup.pivotlib.model.ResultLoc;
+import com.pivotgroup.pivotlib.roi.RoiState;
+import com.pivotgroup.pivotlib.ui.RoiEditor;
+import com.pivotgroup.pivotlib.ui.RoiOverlay;
 import com.pivotgroup.pivotlib.vision.Identifier;
 import org.opencv.core.Mat;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.NoSuchElementException;
+import java.util.Objects;
 
 /**
+ * Facade for image recognition, gestures, and ROI editing.
+ *
  * @author xinliu
- * @email 3536370493@qq.com
- * @date 2026/11/10 20:05
  */
-
 public class Pivot {
 
-    /**
-     * log
-     */
-    private static final Logger log = LoggerFactory.getLogger(Pivot.class);
+    private final TouchCapturable touchCapturer;
+
+    private final Identifier identifier;
+
+    private final ActionSequence actions;
+
+    private final RoiState roiState;
+
+    private final RoiEditor roiEditor;
+
+    private final TemplateRepository templates;
 
     /**
-     * Region of interest
-     */
-    private Rect roi;
-
-    /**
-     * 操作模拟器
-     */
-    private DesktopOperationSimulator os;
-
-    /**
-     * 画面识别器
-     */
-    private Identifier identifier;
-
-    /**
-     * 识别图集
-     */
-    private Map<String, Mat> identifiedMap = new HashMap<>();
-
-    /**
-     * 操作集
-     */
-    private List<Operation> operationList = new ArrayList<>();
-
-    /**
-     * 顶级容器
-     */
-    private Workspace workspace;
-
-    /**
+     * Creates an automation facade with platform-specific devices.
      *
-     * @param tc
-     * @param image
+     * @param touchCapturer touch device
+     * @param imageCapturer image device
      */
-    public Pivot(TouchCapturable tc, ImageCapturable image) {
-        this.os = new DesktopOperationSimulator(tc);
-        this.identifier = new Identifier(image);
+    public Pivot(TouchCapturable touchCapturer, ImageCapturable imageCapturer) {
+        this.touchCapturer = Objects.requireNonNull(touchCapturer, "touchCapturer");
+        identifier = new Identifier(imageCapturer);
+        actions = new ActionSequence();
+        roiState = new RoiState();
+        roiEditor = new RoiEditor(roiState);
+        templates = new TemplateRepository();
     }
 
     /**
-     * 执行操作
+     * Restricts recognition and input to the specified region.
+     *
+     * @param roi region of interest
+     */
+    public void setRoi(Rect roi) {
+        roiState.set(roi);
+    }
+
+    /**
+     * Removes the region restriction.
+     */
+    public void clearRoi() {
+        roiState.clear();
+    }
+
+    /**
+     * Shows the ROI editor and returns after the window becomes visible.
+     *
+     * @return visible ROI editor window
+     */
+    public RoiOverlay showRoiOverlay() {
+        return roiEditor.show();
+    }
+
+    /**
+     * Opens the ROI editor and waits until editing finishes.
+     *
+     * @return confirmed ROI, or {@code null} when a new ROI is cancelled
+     */
+    public Rect editRoi() {
+        return roiEditor.edit();
+    }
+
+    /**
+     * Executes actions in insertion order.
      */
     public void start() {
-        for (Operation operation : operationList) {
-            // 执行操作
-            long startTime = System.currentTimeMillis();
-            operation.operate(os);
-            long endTime = System.currentTimeMillis();
-            log.info("\"{}\"操作执行完成,耗时:{}ms", operation.getName(), (endTime - startTime));
-        }
+        ActionContext context = new ActionContext(roiState.decorate(touchCapturer));
+        actions.apply(context);
     }
 
     /**
+     * Appends an action to the execution sequence.
      *
-     * @param operable
+     * @param action action to append
      */
-    public void addOperation(Operation operable) {
-        operationList.add(operable);
+    public void addAction(Action action) {
+        actions.add(action);
     }
 
     /**
-     * 添加识别对象
+     * Registers a named image template.
      *
-     * @param name
-     * @param identifiedMat
+     * @param name template name
+     * @param identifiedMat template image
      */
     public void putIdentified(String name, Mat identifiedMat) {
-        identifiedMap.put(name, identifiedMat);
+        templates.put(name, identifiedMat);
     }
 
     /**
-     * 识别图像位置
+     * Locates a registered image template.
      *
-     * @param templ
-     * @return
+     * @param name template name
+     * @return absolute screen location
      */
-    public Location locate(Mat templ) {
-        ResultLoc identify = identifier.identify(templ);
-        if (identify.isPresent()) {
-            return identify.loc;
-        }
-        throw new NullPointerException("\"" + templ.toString() + "\"" +
-                "This Mat does not exist on the canvas.");
+    public Location locate(String name) {
+        return locate(templates.get(name));
     }
 
+    /**
+     * Locates an image template within the current ROI.
+     *
+     * @param templ template image
+     * @return absolute screen location
+     */
+    public Location locate(Mat templ) {
+        Rect currentRoi = roiState.get().orElse(null);
+        ResultLoc result = currentRoi == null
+                ? identifier.identify(templ)
+                : identifier.identify(templ, currentRoi);
+        if (result.isPresent()) {
+            return result.loc;
+        }
+        throw new NoSuchElementException("The template does not exist on the canvas");
+    }
 }

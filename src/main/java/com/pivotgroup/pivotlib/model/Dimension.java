@@ -1,11 +1,12 @@
 package com.pivotgroup.pivotlib.model;
 
-/**
- * @author xinliu
- * @email 3536370493@qq.com
- * @date 2026/11/15 22:18
- */
+import java.util.Objects;
 
+/**
+ * Immutable width and height.
+ *
+ * @author xinliu
+ */
 public class Dimension {
 
     private final int width;
@@ -30,11 +31,24 @@ public class Dimension {
     }
 
     @Override
-    public String toString() {
-        return "Dimension{" +
-                "width=" + width +
-                ", height=" + height +
-                '}';
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Dimension dimension = (Dimension) o;
+        return width == dimension.width && height == dimension.height;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(width, height);
+    }
+
+    @Override
+    public String toString() {
+        return "Dimension{" + "width=" + width + ", height=" + height + '}';
+    }
 }

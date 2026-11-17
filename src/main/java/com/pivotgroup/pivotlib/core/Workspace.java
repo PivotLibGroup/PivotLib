@@ -1,20 +1,9 @@
 package com.pivotgroup.pivotlib.core;
 
 /**
+ * Root container for an automation workspace.
+ *
  * @author xinliu
- * @email 3536370493@qq.com
- * @date 2026/11/16 19:44
- */
-
-import com.pivotgroup.pivotlib.action.simulator.DesktopOperationSimulator;
-
-/**
- * 自动化程序的顶级容器
  */
 public class Workspace extends Container {
-
-    DesktopOperationSimulator simulator;
-
-
-
 }

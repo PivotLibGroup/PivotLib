@@ -4,17 +4,18 @@ import com.pivotgroup.pivotlib.core.Pivot;
 import com.pivotgroup.pivotlib.device.awt.RobotImageCapturer;
 import com.pivotgroup.pivotlib.device.awt.RobotTouchCapturer;
 
-import java.awt.*;
+import java.awt.AWTException;
+import java.awt.Robot;
 
 /**
+ * Factory for desktop Pivot instances.
+ *
  * @author xinliu
- * @email 3536370493@qq.com
- * @date 2026/11/16 01:16
  */
+public final class DesktopPivot {
 
-public class DesktopPivot {
-
-    private DesktopPivot(){}
+    private DesktopPivot() {
+    }
 
     public static Pivot create() {
         Robot robot = createRobot();

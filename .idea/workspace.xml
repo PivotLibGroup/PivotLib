@@ -5,17 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627f1380-1532-4223-8693-533b6cdf340a" name="更改" comment="msg">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/simulator/DesktopOperationSimulator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/Action.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/ActionContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/BiGesture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/Gesture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/OperSimulator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/Operable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/Operable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/OperationSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/OperationSimulator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/operation/ClickOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/operation/ClickOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/operation/DragOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/operation/DragOperation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/operation/MoveOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/operation/MoveOperation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/CoordMode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/enums/CoordMode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/Operable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/Operation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/OperationSimulator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/operation/ClickOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/ClickGesture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/operation/DragOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/DragGesture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/operation/MoveOperation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/MoveGesture.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/simulator/DesktopOperationSimulator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/bootstrap/DesktopPivot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/bootstrap/DesktopPivot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Component.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Component.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Container.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Pivot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Pivot.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Workspace.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Workspace.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/OperationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/OperationTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/device/awt/RobotImageCapturer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/device/awt/RobotImageCapturer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/device/awt/RobotTouchCapturer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/device/awt/RobotTouchCapturer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/Dimension.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/Dimension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/Rect.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/Rect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/ResultLoc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/ResultLoc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/vision/Identifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/vision/Identifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/OperationTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,9 +122,11 @@
   "keyToString": {
     "Gradle.BasicOperationTest.executor": "Run",
     "Gradle.BasicOperationTest.test.executor": "Run",
+    "Gradle.ContainerTest.maintainsParentAndReadOnlyChildren.executor": "Run",
     "Gradle.CursorTest.biFindSwipeStepTest.executor": "Run",
     "Gradle.CursorTest.cursorTest.executor": "Run",
     "Gradle.CursorTest.main.executor": "Run",
+    "Gradle.GestureTest.dragTest.executor": "Run",
     "Gradle.MatchDemoTest.matchDemo.executor": "Run",
     "Gradle.OpenCVTest.example.executor": "Run",
     "Gradle.OpenCVTest.executor": "Run",
@@ -116,9 +135,18 @@
     "Gradle.OperationTest.clickTest.executor": "Run",
     "Gradle.OperationTest.dragTest.executor": "Run",
     "Gradle.OperationTest.moveTest.executor": "Run",
+    "Gradle.PivotLib [:RoiOverlayDemo.main()].executor": "Run",
     "Gradle.PivotLib [:com.pivotgroup.example.DailySignInExample.main()].executor": "Run",
     "Gradle.PivotLib [:com.pivotgroup.example.SimpleExample.main()].executor": "Run",
     "Gradle.PivotLib [:com.pivotgroup.example.ZmxyAutoLevel.main()].executor": "Run",
+    "Gradle.RoiSelectionTest.clampsInitialRoiToScreen.executor": "Run",
+    "Gradle.RoiSelectionTest.createsCenteredDefaultRoi.executor": "Run",
+    "Gradle.RoiSelectionTest.resizeClampsToOffsetScreen.executor": "Run",
+    "Gradle.RoiSelectionTest.resizeKeepsMinimumSize.executor": "Run",
+    "Gradle.RoiSelectionTest.resizesFromEveryCorner.executor": "Run",
+    "Gradle.RoiTest.clearRoiRestoresFullCanvasIdentification.executor": "Run",
+    "Gradle.RoiTest.pivotAllowsActionsInsideRoi.executor": "Run",
+    "Gradle.RoiTest.pivotRejectsActionOutsideRoiBeforeTouchingDevice.executor": "Run",
     "Gradle.ScoreProbe.probe.executor": "Run",
     "Gradle.ScreenshotTest.example.executor": "Run",
     "Gradle.TestMain.main.executor": "Run",
@@ -140,7 +168,7 @@
     "project.structure.last.edited": "项目",
     "project.structure.proportion": "0.15820312",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -157,14 +185,22 @@
       <recent name="C:\Users\Administrator\Desktop\PivotLib\src\main\resources\tpl" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.pivotgroup.pivotlib.action.gesture.operation" />
       <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.pivotgroup.pivotlib.action.robot" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.OperationTest.dragTest">
-    <configuration name="BasicOperationTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.ContainerTest.maintainsParentAndReadOnlyChildren">
+    <configuration name="RoiOverlayDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RoiOverlayDemo" />
+      <module name="PivotLib.test" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContainerTest.maintainsParentAndReadOnlyChildren" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -177,7 +213,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;BasicOperationTest.test&quot;" />
+            <option value="&quot;com.pivotgroup.pivotlib.core.ContainerTest.maintainsParentAndReadOnlyChildren&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -191,7 +227,7 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
-    <configuration name="OpenCVTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RoiSelectionTest.resizeClampsToOffsetScreen" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -204,7 +240,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;opencv.OpenCVTest.test&quot;" />
+            <option value="&quot;com.pivotgroup.pivotlib.ui.RoiSelectionTest.resizeClampsToOffsetScreen&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -218,7 +254,7 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
-    <configuration name="OperationTest.clickTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RoiSelectionTest.resizeKeepsMinimumSize" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -231,7 +267,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;OperationTest.clickTest&quot;" />
+            <option value="&quot;com.pivotgroup.pivotlib.ui.RoiSelectionTest.resizeKeepsMinimumSize&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -245,7 +281,7 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
-    <configuration name="OperationTest.dragTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="RoiSelectionTest.resizesFromEveryCorner" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -258,34 +294,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;OperationTest.dragTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <GradleProfilingDisabled>false</GradleProfilingDisabled>
-      <GradleCoverageDisabled>false</GradleCoverageDisabled>
-      <method v="2" />
-    </configuration>
-    <configuration name="OperationTest.moveTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;OperationTest.moveTest&quot;" />
+            <option value="&quot;com.pivotgroup.pivotlib.ui.RoiSelectionTest.resizesFromEveryCorner&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -301,11 +310,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.OperationTest.dragTest" />
-        <item itemvalue="Gradle.OperationTest.moveTest" />
-        <item itemvalue="Gradle.OperationTest.clickTest" />
-        <item itemvalue="Gradle.OpenCVTest.test" />
-        <item itemvalue="Gradle.BasicOperationTest.test" />
+        <item itemvalue="Gradle.ContainerTest.maintainsParentAndReadOnlyChildren" />
+        <item itemvalue="应用程序.RoiOverlayDemo" />
+        <item itemvalue="Gradle.RoiSelectionTest.resizeClampsToOffsetScreen" />
+        <item itemvalue="Gradle.RoiSelectionTest.resizeKeepsMinimumSize" />
+        <item itemvalue="Gradle.RoiSelectionTest.resizesFromEveryCorner" />
       </list>
     </recent_temporary>
   </component>
@@ -343,7 +352,9 @@
       <workItem from="1794827808346" duration="58000" />
       <workItem from="1794827875866" duration="280000" />
       <workItem from="1794828164001" duration="518000" />
-      <workItem from="1794828693228" duration="13669000" />
+      <workItem from="1794828693228" duration="13683000" />
+      <workItem from="1794885623855" duration="2462000" />
+      <workItem from="1794888115849" duration="8289000" />
     </task>
     <task id="LOCAL-00001" summary="msg">
       <option name="closed" value="true" />
@@ -697,7 +708,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794838304047</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="msg">
+      <option name="closed" value="true" />
+      <created>1794844138965</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1794844138965</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

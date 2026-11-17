@@ -1,32 +1,43 @@
 package com.pivotgroup.pivotlib.core;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
 /**
+ * Composite component with read-only child access.
+ *
  * @author xinliu
- * @email 3536370493@qq.com
- * @date 2026/11/16 19:48
  */
-
 public class Container extends Component {
 
-    List<Component> components = new ArrayList<>();
+    private final List<Component> components = new ArrayList<>();
 
-    public Container() {
-
+    public List<Component> getChildren() {
+        return Collections.unmodifiableList(components);
     }
 
-    public List<Component> getChildren(){
-        return components;
+    public void add(Component component) {
+        Objects.requireNonNull(component, "component");
+        if (component.getParent() == this && components.contains(component)) {
+            return;
+        }
+        for (Component current = this; current != null; current = current.getParent()) {
+            if (current == component) {
+                throw new IllegalArgumentException("Component hierarchy cannot contain cycles");
+            }
+        }
+        if (component.getParent() instanceof Container) {
+            ((Container) component.getParent()).remove(component);
+        }
+        components.add(component);
+        component.setParent(this);
     }
 
-    public void add(Component comp) {
-        components.add(comp);
+    public void remove(Component component) {
+        if (component != null && components.remove(component)) {
+            component.setParent(null);
+        }
     }
-
-    public void remove(Component comp) {
-        components.remove(comp);
-    }
-
 }

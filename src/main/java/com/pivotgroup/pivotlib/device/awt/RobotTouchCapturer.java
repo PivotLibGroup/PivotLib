@@ -3,31 +3,32 @@ package com.pivotgroup.pivotlib.device.awt;
 import com.pivotgroup.pivotlib.device.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 
-import java.awt.*;
-import java.awt.event.InputEvent;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.Robot;
+import java.util.Objects;
 
 /**
+ * AWT Robot implementation of pointer input.
+ *
  * @author xinliu
- * @email 3536370493@qq.com
- * @date 2026/11/14 20:45
  */
-
 public class RobotTouchCapturer implements TouchCapturable {
 
-    private Robot robot;
+    private final Robot robot;
 
     public RobotTouchCapturer(Robot robot) {
-        this.robot = robot;
+        this.robot = Objects.requireNonNull(robot, "robot");
     }
 
     @Override
     public void down(int button) {
-        robot.mousePress(mapperButton(button));
+        robot.mousePress(MouseButtonMapper.toAwtMask(button));
     }
 
     @Override
     public void release(int button) {
-        robot.mouseRelease(mapperButton(button));
+        robot.mouseRelease(MouseButtonMapper.toAwtMask(button));
     }
 
     @Override
@@ -37,22 +38,7 @@ public class RobotTouchCapturer implements TouchCapturable {
 
     @Override
     public Location getLocation() {
-        Point l = MouseInfo.getPointerInfo().getLocation();
-        return new Location(l.x, l.y);
+        Point location = MouseInfo.getPointerInfo().getLocation();
+        return Location.of(location.x, location.y);
     }
-
-    private int mapperButton(int button) {
-        switch (button) {
-            case 1:
-                return InputEvent.BUTTON1_DOWN_MASK;
-            case 2:
-                return InputEvent.BUTTON2_DOWN_MASK;
-            case 3:
-                return InputEvent.BUTTON3_DOWN_MASK;
-            default:
-                return InputEvent.BUTTON1_DOWN_MASK;
-        }
-    }
-
-
 }
