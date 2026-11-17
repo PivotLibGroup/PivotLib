@@ -8,6 +8,7 @@ import com.pivotgroup.pivotlib.device.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 import com.pivotgroup.pivotlib.model.Rect;
 import com.pivotgroup.pivotlib.model.ResultLoc;
+import com.pivotgroup.pivotlib.roi.CoordinateSpace;
 import com.pivotgroup.pivotlib.roi.RoiState;
 import com.pivotgroup.pivotlib.ui.RoiEditor;
 import com.pivotgroup.pivotlib.ui.RoiOverlay;
@@ -83,6 +84,15 @@ public class Pivot {
      */
     public Rect editRoi() {
         return roiEditor.edit();
+    }
+
+    /**
+     *
+     *
+     * @param coordinateSpace ROI's action coordinate
+     */
+    public void setCoordinateSpace(CoordinateSpace coordinateSpace) {
+        roiState.setCoordinateSpace(coordinateSpace);
     }
 
     /**
