@@ -5,8 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627f1380-1532-4223-8693-533b6cdf340a" name="更改" comment="msg">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/FeatureInspectionHandlingAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/inspection/FeatureRoutingAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/domain/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/domain/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/domain/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/infrastructure/SequentialOrderIdGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/service/IdGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/service/impl/OrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Component.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Container.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Pivot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Pivot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Workspace.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/vision/Identifier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/vision/Identifier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/core/ContainerTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +93,7 @@
     </option>
   </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 2,
+  &quot;associatedIndex&quot;: 5,
   &quot;fromUser&quot;: true
 }</component>
   <component name="ProjectId" id="3LjKuhepTXZfnDgs9kDadF92eb2" />
@@ -86,64 +101,66 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="false" />
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.BasicOperationTest.executor": "Run",
-    "Gradle.BasicOperationTest.test.executor": "Run",
-    "Gradle.ContainerTest.maintainsParentAndReadOnlyChildren.executor": "Run",
-    "Gradle.CursorTest.biFindSwipeStepTest.executor": "Run",
-    "Gradle.CursorTest.cursorTest.executor": "Run",
-    "Gradle.CursorTest.main.executor": "Run",
-    "Gradle.GestureTest.dragTest.executor": "Run",
-    "Gradle.MatchDemoTest.matchDemo.executor": "Run",
-    "Gradle.OpenCVTest.example.executor": "Run",
-    "Gradle.OpenCVTest.executor": "Run",
-    "Gradle.OpenCVTest.syntheticMatch.executor": "Run",
-    "Gradle.OpenCVTest.test.executor": "Run",
-    "Gradle.OperationTest.clickTest.executor": "Run",
-    "Gradle.OperationTest.dragTest.executor": "Run",
-    "Gradle.OperationTest.moveTest.executor": "Run",
-    "Gradle.PivotLib [:RoiOverlayDemo.main()].executor": "Run",
-    "Gradle.PivotLib [:com.pivotgroup.example.DailySignInExample.main()].executor": "Run",
-    "Gradle.PivotLib [:com.pivotgroup.example.SimpleExample.main()].executor": "Run",
-    "Gradle.PivotLib [:com.pivotgroup.example.ZmxyAutoLevel.main()].executor": "Run",
-    "Gradle.PivotLib [:com.pivotgroup.pivotlib.bootstrap.RoiOverlayDemo.main()].executor": "Run",
-    "Gradle.RoiSelectionTest.clampsInitialRoiToScreen.executor": "Run",
-    "Gradle.RoiSelectionTest.createsCenteredDefaultRoi.executor": "Run",
-    "Gradle.RoiSelectionTest.resizeClampsToOffsetScreen.executor": "Run",
-    "Gradle.RoiSelectionTest.resizeKeepsMinimumSize.executor": "Run",
-    "Gradle.RoiSelectionTest.resizesFromEveryCorner.executor": "Run",
-    "Gradle.RoiTest.clearRoiRestoresFullCanvasIdentification.executor": "Run",
-    "Gradle.RoiTest.pivotAllowsActionsInsideRoi.executor": "Run",
-    "Gradle.RoiTest.pivotRejectsActionOutsideRoiBeforeTouchingDevice.executor": "Run",
-    "Gradle.ScoreProbe.probe.executor": "Run",
-    "Gradle.ScreenshotTest.example.executor": "Run",
-    "Gradle.TestMain.main.executor": "Run",
-    "Gradle.TestMain.register.executor": "Run",
-    "Gradle.TestMain.robotTest.executor": "Run",
-    "Gradle.WorkflowTest.test.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Administrator/Desktop/PivotLib/src/main/resources/tpl",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/Administrator/Desktop/SelfServiceLoginSystem/PivotLib/src/main/java/com/pivotgroup/Main.java",
-    "project.structure.last.edited": "模块",
-    "project.structure.proportion": "0.15820312",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.BasicOperationTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.BasicOperationTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ContainerTest.maintainsParentAndReadOnlyChildren.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CursorTest.biFindSwipeStepTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CursorTest.cursorTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.CursorTest.main.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.GestureTest.dragTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MatchDemoTest.matchDemo.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OpenCVTest.example.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OpenCVTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OpenCVTest.syntheticMatch.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OpenCVTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OperationTest.clickTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OperationTest.dragTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OperationTest.moveTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PivotLib [:RoiOverlayDemo.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PivotLib [:com.pivotgroup.example.DailySignInExample.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PivotLib [:com.pivotgroup.example.SimpleExample.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PivotLib [:com.pivotgroup.example.ZmxyAutoLevel.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PivotLib [:com.pivotgroup.pivotlib.bootstrap.RoiOverlayDemo.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.PivotLib [:com.pivotgroup.pivotlib.solid.Main.main()].executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RoiSelectionTest.clampsInitialRoiToScreen.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RoiSelectionTest.createsCenteredDefaultRoi.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RoiSelectionTest.resizeClampsToOffsetScreen.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RoiSelectionTest.resizeKeepsMinimumSize.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RoiSelectionTest.resizesFromEveryCorner.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RoiTest.clearRoiRestoresFullCanvasIdentification.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RoiTest.pivotAllowsActionsInsideRoi.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.RoiTest.pivotRejectsActionOutsideRoiBeforeTouchingDevice.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ScoreProbe.probe.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.ScreenshotTest.example.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestMain.main.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestMain.register.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TestMain.robotTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.WorkflowTest.test.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Desktop/PivotLib/src/main/resources/tpl&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Administrator/Desktop/SelfServiceLoginSystem/PivotLib/src/main/java/com/pivotgroup/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15820312&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Administrator\Desktop\PivotLib\src\main\resources\tpl" />
@@ -164,7 +181,20 @@
       <recent name="com.pivotgroup.pivotlib.action.robot" />
     </key>
   </component>
-  <component name="RunManager" selected="应用程序.com.pivotgroup.pivotlib.bootstrap.RoiOverlayDemo">
+  <component name="RunManager" selected="Application.com.pivotgroup.pivotlib.bootstrap.RoiOverlayDemo">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.pivotgroup.pivotlib.solid.Main" />
+      <module name="PivotLib.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.pivotgroup.pivotlib.solid.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RoiOverlayDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RoiOverlayDemo" />
       <module name="PivotLib.test" />
@@ -239,40 +269,13 @@
       <GradleCoverageDisabled>false</GradleCoverageDisabled>
       <method v="2" />
     </configuration>
-    <configuration name="RoiSelectionTest.resizeKeepsMinimumSize" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;com.pivotgroup.pivotlib.ui.RoiSelectionTest.resizeKeepsMinimumSize&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <GradleProfilingDisabled>false</GradleProfilingDisabled>
-      <GradleCoverageDisabled>false</GradleCoverageDisabled>
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.com.pivotgroup.pivotlib.bootstrap.RoiOverlayDemo" />
-        <item itemvalue="Gradle.ContainerTest.maintainsParentAndReadOnlyChildren" />
-        <item itemvalue="应用程序.RoiOverlayDemo" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.RoiSelectionTest.resizeClampsToOffsetScreen" />
-        <item itemvalue="Gradle.RoiSelectionTest.resizeKeepsMinimumSize" />
+        <item itemvalue="Gradle.ContainerTest.maintainsParentAndReadOnlyChildren" />
+        <item itemvalue="Application.com.pivotgroup.pivotlib.bootstrap.RoiOverlayDemo" />
+        <item itemvalue="Application.RoiOverlayDemo" />
       </list>
     </recent_temporary>
   </component>
@@ -318,15 +321,10 @@
       <workItem from="1794920781573" duration="358000" />
       <workItem from="1794921158712" duration="276000" />
       <workItem from="1794921453560" duration="130000" />
-      <workItem from="1794921602503" duration="3304000" />
-    </task>
-    <task id="LOCAL-00003" summary="msg">
-      <option name="closed" value="true" />
-      <created>1793973783425</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1793973783425</updated>
+      <workItem from="1794921602503" duration="4175000" />
+      <workItem from="1794925793600" duration="7979000" />
+      <workItem from="1794971019884" duration="9711000" />
+      <workItem from="1794983687622" duration="2981000" />
     </task>
     <task id="LOCAL-00004" summary="msg">
       <option name="closed" value="true" />
@@ -712,7 +710,15 @@
       <option name="project" value="LOCAL" />
       <updated>1794913506311</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="msg">
+      <option name="closed" value="true" />
+      <created>1794925199589</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1794925199590</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

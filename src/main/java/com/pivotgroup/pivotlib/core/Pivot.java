@@ -5,6 +5,8 @@ import com.pivotgroup.pivotlib.action.ActionContext;
 import com.pivotgroup.pivotlib.action.ActionSequence;
 import com.pivotgroup.pivotlib.device.ImageCapturable;
 import com.pivotgroup.pivotlib.device.TouchCapturable;
+import com.pivotgroup.pivotlib.action.routing.Feature;
+import com.pivotgroup.pivotlib.action.routing.FeatureInspector;
 import com.pivotgroup.pivotlib.model.Location;
 import com.pivotgroup.pivotlib.model.Rect;
 import com.pivotgroup.pivotlib.model.ResultLoc;
@@ -13,8 +15,10 @@ import com.pivotgroup.pivotlib.roi.RoiState;
 import com.pivotgroup.pivotlib.ui.RoiEditor;
 import com.pivotgroup.pivotlib.ui.RoiOverlay;
 import com.pivotgroup.pivotlib.vision.Identifier;
+import com.pivotgroup.pivotlib.vision.OpenCvFeatureInspector;
 import org.opencv.core.Mat;
 
+import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 
@@ -36,8 +40,6 @@ public class Pivot {
     private final RoiEditor roiEditor;
 
     private final TemplateRepository templates;
-
-
 
     /**
      * Creates an automation facade with platform-specific devices.
@@ -122,6 +124,16 @@ public class Pivot {
      */
     public void putIdentified(String name, Mat identifiedMat) {
         templates.put(name, identifiedMat);
+    }
+
+    /**
+     * Creates an inspector that evaluates feature templates within the current ROI.
+     *
+     * @param featureTemplates feature templates in inspection order
+     * @return inspector backed by this pivot's image device
+     */
+    public FeatureInspector createFeatureInspector(Map<Feature, Mat> featureTemplates) {
+        return new OpenCvFeatureInspector(identifier, featureTemplates, roiState::get);
     }
 
     /**

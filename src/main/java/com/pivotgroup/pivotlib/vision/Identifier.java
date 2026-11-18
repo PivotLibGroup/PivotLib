@@ -9,6 +9,8 @@ import org.opencv.core.Mat;
 import org.opencv.core.Point;
 import org.opencv.imgproc.Imgproc;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -31,28 +33,62 @@ public class Identifier {
     }
 
     public ResultLoc identify(Mat templ) {
-        Mat canvas = imageCapturer.capture();
-        return identifyCaptured(templ, canvas, Location.of(0, 0));
+        return identifyAll(List.of(templ)).get(0);
     }
 
     public ResultLoc identify(Mat templ, Rect roi) {
         Objects.requireNonNull(roi, "roi");
-        Mat canvas = imageCapturer.capture(roi.getX(), roi.getY(), roi.getWidth(), roi.getHeight());
-        return identifyCaptured(templ, canvas, roi.getLocation());
+        return identifyAll(List.of(templ), roi).get(0);
+    }
+
+    /**
+     * Identifies templates on one captured canvas.
+     *
+     * @param templates templates in matching order
+     * @return results in the same order as the templates
+     */
+    public List<ResultLoc> identifyAll(List<Mat> templates) {
+        Objects.requireNonNull(templates, "templates");
+        Mat canvas = imageCapturer.capture();
+        return identifyAllCaptured(templates, canvas, Location.of(0, 0));
+    }
+
+    /**
+     * Identifies templates on one captured ROI canvas.
+     *
+     * @param templates templates in matching order
+     * @param roi region of interest
+     * @return results in the same order as the templates
+     */
+    public List<ResultLoc> identifyAll(List<Mat> templates, Rect roi) {
+        Objects.requireNonNull(templates, "templates");
+        Objects.requireNonNull(roi, "roi");
+        Mat canvas = imageCapturer.capture(
+                roi.getX(), roi.getY(), roi.getWidth(), roi.getHeight());
+        return identifyAllCaptured(templates, canvas, roi.getLocation());
+    }
+
+    private List<ResultLoc> identifyAllCaptured(
+            List<Mat> templates, Mat canvas, Location origin) {
+        Objects.requireNonNull(canvas, "canvas");
+        try {
+            List<ResultLoc> results = new ArrayList<>(templates.size());
+            for (Mat templ : templates) {
+                results.add(identifyCaptured(templ, canvas, origin));
+            }
+            return List.copyOf(results);
+        } finally {
+            canvas.release();
+        }
     }
 
     private ResultLoc identifyCaptured(Mat templ, Mat canvas, Location origin) {
         Objects.requireNonNull(templ, "templ");
-        Objects.requireNonNull(canvas, "canvas");
-        try {
-            if (canvas.empty() || templ.empty()
-                    || templ.cols() > canvas.cols() || templ.rows() > canvas.rows()) {
-                return new ResultLoc(NOT_FOUND_SCORE, origin);
-            }
-            return match(templ, canvas, origin);
-        } finally {
-            canvas.release();
+        if (canvas.empty() || templ.empty()
+                || templ.cols() > canvas.cols() || templ.rows() > canvas.rows()) {
+            return new ResultLoc(NOT_FOUND_SCORE, origin);
         }
+        return match(templ, canvas, origin);
     }
 
     private ResultLoc match(Mat templ, Mat canvas, Location origin) {
