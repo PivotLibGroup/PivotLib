@@ -1,6 +1,8 @@
 package com.pivotgroup.pivotlib.ui;
 
 import com.pivotgroup.pivotlib.model.Rect;
+import com.pivotgroup.pivotlib.ui.roi.RoiHandle;
+import com.pivotgroup.pivotlib.ui.roi.RoiSelection;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

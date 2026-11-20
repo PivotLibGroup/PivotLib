@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.action.routing;
+package com.pivotgroup.pivotlib.inspection;
 
 import java.util.Optional;
 

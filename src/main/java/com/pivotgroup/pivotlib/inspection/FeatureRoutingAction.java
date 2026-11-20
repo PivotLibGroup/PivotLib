@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.action.routing;
+package com.pivotgroup.pivotlib.inspection;
 
 import com.pivotgroup.pivotlib.action.Action;
 import com.pivotgroup.pivotlib.action.ActionContext;

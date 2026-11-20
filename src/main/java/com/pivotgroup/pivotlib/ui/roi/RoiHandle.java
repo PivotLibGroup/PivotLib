@@ -1,11 +1,11 @@
-package com.pivotgroup.pivotlib.ui;
+package com.pivotgroup.pivotlib.ui.roi;
 
 /**
  * ROI resize handles.
  *
  * @author xinliu
  */
-enum RoiHandle {
+public enum RoiHandle {
     /** Top-left corner. */
     NORTH_WEST(true, true),
     /** Top-right corner. */

@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.ui;
+package com.pivotgroup.pivotlib.ui.roi;
 
 import com.pivotgroup.pivotlib.model.Rect;
 import com.pivotgroup.pivotlib.roi.RoiState;

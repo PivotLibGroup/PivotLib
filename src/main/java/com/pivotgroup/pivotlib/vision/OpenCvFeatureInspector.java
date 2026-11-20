@@ -1,7 +1,7 @@
 package com.pivotgroup.pivotlib.vision;
 
-import com.pivotgroup.pivotlib.action.routing.Feature;
-import com.pivotgroup.pivotlib.action.routing.FeatureInspector;
+import com.pivotgroup.pivotlib.inspection.Feature;
+import com.pivotgroup.pivotlib.inspection.FeatureInspector;
 import com.pivotgroup.pivotlib.model.Rect;
 import com.pivotgroup.pivotlib.model.ResultLoc;
 import org.opencv.core.Mat;

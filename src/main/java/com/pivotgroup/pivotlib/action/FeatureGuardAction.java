@@ -2,6 +2,7 @@ package com.pivotgroup.pivotlib.action.routing;
 
 import com.pivotgroup.pivotlib.action.Action;
 import com.pivotgroup.pivotlib.action.ActionContext;
+import com.pivotgroup.pivotlib.inspection.FeatureInspector;
 
 import java.util.Objects;
 

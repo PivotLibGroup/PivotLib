@@ -2,8 +2,6 @@ package com.pivotgroup.pivotlib.inspection;
 
 import com.pivotgroup.pivotlib.action.Action;
 import com.pivotgroup.pivotlib.action.ActionContext;
-import com.pivotgroup.pivotlib.action.routing.Feature;
-import com.pivotgroup.pivotlib.action.routing.FeatureRoutingAction;
 import com.pivotgroup.pivotlib.device.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 import org.junit.jupiter.api.Test;

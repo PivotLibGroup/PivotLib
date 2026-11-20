@@ -1,10 +1,10 @@
-package com.pivotgroup.pivotlib.ui;
+package com.pivotgroup.pivotlib.ui.roi;
 
 import com.pivotgroup.pivotlib.model.Rect;
 
 import java.util.Objects;
 
-final class RoiSelection {
+public final class RoiSelection {
 
     private static final int MIN_SIZE = 40;
 
@@ -16,20 +16,20 @@ final class RoiSelection {
 
     private Rect roi;
 
-    RoiSelection(Rect bounds, Rect initialRoi) {
+    public RoiSelection(Rect bounds, Rect initialRoi) {
         this.bounds = Objects.requireNonNull(bounds, "bounds");
         roi = initialRoi == null ? defaultRoi() : fit(initialRoi);
     }
 
-    Rect getRoi() {
+    public Rect getRoi() {
         return roi;
     }
 
-    void setRoi(Rect roi) {
+    public void setRoi(Rect roi) {
         this.roi = fit(Objects.requireNonNull(roi, "roi"));
     }
 
-    void move(Rect original, int deltaX, int deltaY) {
+    public void move(Rect original, int deltaX, int deltaY) {
         int x = (int) clamp(
                 (long) original.getX() + deltaX,
                 bounds.getX(),
@@ -41,7 +41,7 @@ final class RoiSelection {
         roi = Rect.of(x, y, original.getWidth(), original.getHeight());
     }
 
-    void resize(Rect original, RoiHandle handle, int deltaX, int deltaY) {
+    public void resize(Rect original, RoiHandle handle, int deltaX, int deltaY) {
         Objects.requireNonNull(handle, "handle");
         long left = original.getX();
         long right = right(original);

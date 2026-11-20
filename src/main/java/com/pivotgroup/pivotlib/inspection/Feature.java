@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.action.routing;
+package com.pivotgroup.pivotlib.inspection;
 
 /**
  * A domain feature that can select an action.
