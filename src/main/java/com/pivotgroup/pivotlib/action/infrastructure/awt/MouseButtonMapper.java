@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.device.awt;
+package com.pivotgroup.pivotlib.action.infrastructure.awt;
 
 import java.awt.event.InputEvent;
 

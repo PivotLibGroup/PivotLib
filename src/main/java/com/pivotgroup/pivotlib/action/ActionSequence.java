@@ -13,11 +13,16 @@ import java.util.concurrent.TimeUnit;
  *
  * @author xinliu
  */
-public final class ActionSequence implements Action {
-
-    private static final Logger LOGGER = LoggerFactory.getLogger(ActionSequence.class);
-
+public final class ActionSequence implements Action{
     private final List<Action> actions = new CopyOnWriteArrayList<>();
+
+    @Override
+    public void apply(ActionContext context) {
+        Objects.requireNonNull(context, "context");
+        for (Action action : actions) {
+            action.apply(context);
+        }
+    }
 
     public void add(Action action) {
         actions.add(Objects.requireNonNull(action, "action"));
@@ -27,14 +32,4 @@ public final class ActionSequence implements Action {
         return actions.remove(action);
     }
 
-    @Override
-    public void apply(ActionContext context) {
-        Objects.requireNonNull(context, "context");
-        for (Action action : actions) {
-            long startedAt = System.nanoTime();
-            action.apply(context);
-            long elapsedMillis = TimeUnit.NANOSECONDS.toMillis(System.nanoTime() - startedAt);
-            LOGGER.info("\"{}\"操作执行完成,耗时:{}ms", action.getClass().getSimpleName(), elapsedMillis);
-        }
-    }
 }

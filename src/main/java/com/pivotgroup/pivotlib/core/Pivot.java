@@ -3,24 +3,21 @@ package com.pivotgroup.pivotlib.core;
 import com.pivotgroup.pivotlib.action.Action;
 import com.pivotgroup.pivotlib.action.ActionContext;
 import com.pivotgroup.pivotlib.action.ActionSequence;
+import com.pivotgroup.pivotlib.action.TouchCapturable;
 import com.pivotgroup.pivotlib.device.ImageCapturable;
-import com.pivotgroup.pivotlib.device.TouchCapturable;
-import com.pivotgroup.pivotlib.inspection.Feature;
-import com.pivotgroup.pivotlib.inspection.FeatureInspector;
 import com.pivotgroup.pivotlib.model.Location;
 import com.pivotgroup.pivotlib.model.Rect;
-import com.pivotgroup.pivotlib.model.ResultLoc;
 import com.pivotgroup.pivotlib.roi.CoordinateSpace;
 import com.pivotgroup.pivotlib.roi.RoiState;
 import com.pivotgroup.pivotlib.ui.roi.RoiEditor;
 import com.pivotgroup.pivotlib.ui.roi.RoiOverlay;
 import com.pivotgroup.pivotlib.vision.Identifier;
-import com.pivotgroup.pivotlib.vision.OpenCvFeatureInspector;
+import com.pivotgroup.pivotlib.vision.Point;
+import com.pivotgroup.pivotlib.vision.opencv.OpenCVIdentifier;
 import org.opencv.core.Mat;
 
-import java.util.Map;
-import java.util.NoSuchElementException;
 import java.util.Objects;
+import java.util.Optional;
 
 /**
  * Facade for image recognition, gestures, and ROI editing.
@@ -49,7 +46,7 @@ public class Pivot {
      */
     public Pivot(TouchCapturable touchCapturer, ImageCapturable imageCapturer) {
         this.touchCapturer = Objects.requireNonNull(touchCapturer, "touchCapturer");
-        identifier = new Identifier(imageCapturer);
+        identifier = new OpenCVIdentifier();
         actions = new ActionSequence();
         roiState = new RoiState();
         roiEditor = new RoiEditor(roiState);
@@ -92,7 +89,6 @@ public class Pivot {
 
     /**
      *
-     *
      * @param coordinateSpace ROI's action coordinate
      */
     public void setCoordinateSpace(CoordinateSpace coordinateSpace) {
@@ -103,8 +99,8 @@ public class Pivot {
      * Executes actions in insertion order.
      */
     public void start() {
-        ActionContext context = new ActionContext(roiState.decorate(touchCapturer));
-        actions.apply(context);
+        ActionContext actionContext = new ActionContext(roiState.decorate(touchCapturer));
+        actions.apply(actionContext);
     }
 
     /**
@@ -117,58 +113,14 @@ public class Pivot {
     }
 
     /**
-     * Registers a named image template.
-     *
-     * @param name template name
-     * @param identifiedMat template image
-     */
-    public void putIdentified(String name, Mat identifiedMat) {
-        templates.put(name, identifiedMat);
-    }
-
-    /**
-     * Creates an inspector that evaluates feature templates within the current ROI.
-     *
-     * @param featureTemplates feature templates in inspection order
-     * @return inspector backed by this pivot's image device
-     */
-    public FeatureInspector createFeatureInspector(Map<Feature, Mat> featureTemplates) {
-        return new OpenCvFeatureInspector(identifier, featureTemplates, roiState::get);
-    }
-
-    /**
-     * Locates a registered image template.
-     *
-     * @param name template name
-     * @return location in the configured coordinate space
-     */
-    public Location locate(String name) {
-        return locate(templates.get(name));
-    }
-
-    /**
      * Locates an image template within the current ROI.
      *
      * @param templ template image
      * @return location in the configured coordinate space
      */
     public Location locate(Mat templ) {
-        Rect currentRoi = roiState.get().orElse(null);
-        ResultLoc result = currentRoi == null
-                ? identifier.identify(templ)
-                : identifier.identify(templ, currentRoi);
-        if (result.isPresent()) {
-            return toActionLocation(result.loc, currentRoi);
-        }
-        throw new NoSuchElementException("The template does not exist on the canvas");
+        Optional<Point> identify = identifier.identify();
+
     }
 
-    private Location toActionLocation(Location screenLocation, Rect currentRoi) {
-        if (currentRoi != null && roiState.getCoordinateSpace() == CoordinateSpace.ROI) {
-            return Location.of(
-                    Math.subtractExact(screenLocation.x, currentRoi.getX()),
-                    Math.subtractExact(screenLocation.y, currentRoi.getY()));
-        }
-        return screenLocation;
-    }
 }

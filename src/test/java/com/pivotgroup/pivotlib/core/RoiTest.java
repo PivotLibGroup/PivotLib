@@ -4,7 +4,7 @@ import com.pivotgroup.pivotlib.action.gesture.CoordMode;
 import com.pivotgroup.pivotlib.action.gesture.MoveGesture;
 import com.pivotgroup.pivotlib.device.ImageCapturable;
 import com.pivotgroup.pivotlib.device.RoiTouchCapturer;
-import com.pivotgroup.pivotlib.device.TouchCapturable;
+import com.pivotgroup.pivotlib.action.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 import com.pivotgroup.pivotlib.model.Rect;
 import com.pivotgroup.pivotlib.roi.CoordinateSpace;
@@ -147,7 +147,6 @@ class RoiTest {
         Mat canvas = createCanvas();
         Mat template = canvas.submat(5, 9, 7, 11).clone();
         Pivot pivot = new Pivot(new FakeTouchCapturer(Location.of(0, 0)), new FakeImageCapturer(canvas));
-        pivot.putIdentified("target", template);
 
         assertEquals(Location.of(9, 7), pivot.locate("target"));
         assertThrows(NoSuchElementException.class, () -> pivot.locate("missing"));

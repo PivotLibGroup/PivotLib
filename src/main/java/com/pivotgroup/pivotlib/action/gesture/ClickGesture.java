@@ -1,7 +1,7 @@
 package com.pivotgroup.pivotlib.action.gesture;
 
 import com.pivotgroup.pivotlib.action.ActionContext;
-import com.pivotgroup.pivotlib.device.TouchCapturable;
+import com.pivotgroup.pivotlib.action.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 
 import java.util.concurrent.TimeUnit;
@@ -15,7 +15,7 @@ import java.util.function.Supplier;
  */
 public class ClickGesture extends BaseGesture {
 
-    private static final long DEFAULT_PRESS_DURATION_MS = 1_000L;
+    private static final long DEFAULT_PRESS_DURATION_MS = 500L;
 
     private final int button;
 

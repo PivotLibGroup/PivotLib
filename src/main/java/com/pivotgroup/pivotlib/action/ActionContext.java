@@ -1,7 +1,5 @@
 package com.pivotgroup.pivotlib.action;
 
-import com.pivotgroup.pivotlib.device.TouchCapturable;
-
 import java.util.Objects;
 
 /**

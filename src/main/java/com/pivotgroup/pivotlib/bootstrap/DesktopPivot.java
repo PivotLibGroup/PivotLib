@@ -1,8 +1,8 @@
 package com.pivotgroup.pivotlib.bootstrap;
 
 import com.pivotgroup.pivotlib.core.Pivot;
-import com.pivotgroup.pivotlib.device.awt.RobotImageCapturer;
-import com.pivotgroup.pivotlib.device.awt.RobotTouchCapturer;
+import com.pivotgroup.pivotlib.device.RobotImageCapturer;
+import com.pivotgroup.pivotlib.action.infrastructure.awt.RobotTouchCapturer;
 
 import java.awt.AWTException;
 import java.awt.Robot;

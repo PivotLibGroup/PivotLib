@@ -1,5 +1,6 @@
 package com.pivotgroup.pivotlib.device;
 
+import com.pivotgroup.pivotlib.action.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 import com.pivotgroup.pivotlib.model.Rect;
 

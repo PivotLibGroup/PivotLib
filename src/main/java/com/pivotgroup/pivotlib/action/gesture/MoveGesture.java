@@ -1,7 +1,7 @@
 package com.pivotgroup.pivotlib.action.gesture;
 
 import com.pivotgroup.pivotlib.action.ActionContext;
-import com.pivotgroup.pivotlib.device.TouchCapturable;
+import com.pivotgroup.pivotlib.action.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 
 import java.util.Objects;

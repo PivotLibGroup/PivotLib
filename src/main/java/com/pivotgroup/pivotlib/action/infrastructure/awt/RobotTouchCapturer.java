@@ -1,6 +1,6 @@
-package com.pivotgroup.pivotlib.device.awt;
+package com.pivotgroup.pivotlib.action.infrastructure.awt;
 
-import com.pivotgroup.pivotlib.device.TouchCapturable;
+import com.pivotgroup.pivotlib.action.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 
 import java.awt.MouseInfo;

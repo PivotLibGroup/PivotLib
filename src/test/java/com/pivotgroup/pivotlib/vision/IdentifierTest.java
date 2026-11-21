@@ -27,7 +27,7 @@ class IdentifierTest {
     void returnsNoMatchAndReleasesCanvasForOversizedTemplate() {
         TrackingMat canvas = new TrackingMat(10);
         Mat template = Mat.ones(20, 20, CvType.CV_8UC3);
-        Identifier identifier = new Identifier(new FixedImage(canvas));
+        OpenCVIdentifier identifier = new OpenCVIdentifier(new FixedImage(canvas));
 
         ResultLoc result = identifier.identify(template, Rect.of(5, 6, 10, 10));
 

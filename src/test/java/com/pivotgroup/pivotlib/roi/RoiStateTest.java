@@ -1,7 +1,7 @@
 package com.pivotgroup.pivotlib.roi;
 
 import com.pivotgroup.pivotlib.device.RoiTouchCapturer;
-import com.pivotgroup.pivotlib.device.TouchCapturable;
+import com.pivotgroup.pivotlib.action.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 import com.pivotgroup.pivotlib.model.Rect;
 import org.junit.jupiter.api.Test;

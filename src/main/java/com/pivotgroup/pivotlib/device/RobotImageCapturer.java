@@ -1,6 +1,5 @@
-package com.pivotgroup.pivotlib.device.awt;
+package com.pivotgroup.pivotlib.device;
 
-import com.pivotgroup.pivotlib.device.ImageCapturable;
 import org.opencv.core.Mat;
 
 import java.awt.Dimension;

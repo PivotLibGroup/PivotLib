@@ -14,4 +14,5 @@ public interface Action {
      * @param context action dependencies
      */
     void apply(ActionContext context);
+
 }

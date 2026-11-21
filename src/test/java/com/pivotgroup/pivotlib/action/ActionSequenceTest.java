@@ -1,6 +1,5 @@
 package com.pivotgroup.pivotlib.action;
 
-import com.pivotgroup.pivotlib.device.TouchCapturable;
 import com.pivotgroup.pivotlib.model.Location;
 import org.junit.jupiter.api.Test;
 
@@ -24,7 +23,7 @@ class ActionSequenceTest {
         sequence.add(context -> executions.add("first"));
         sequence.add(context -> executions.add("second"));
 
-        sequence.apply(new ActionContext(new NoOpTouch()));
+        sequence.start(new ActionContext(new NoOpTouch()));
 
         assertEquals(List.of("first", "second"), executions);
     }
@@ -37,7 +36,7 @@ class ActionSequenceTest {
         sequence.add(action);
 
         assertTrue(sequence.remove(action));
-        sequence.apply(new ActionContext(new NoOpTouch()));
+        sequence.start(new ActionContext(new NoOpTouch()));
     }
 
     private static final class NoOpTouch implements TouchCapturable {

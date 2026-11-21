@@ -1,5 +1,6 @@
 package com.pivotgroup.pivotlib.device.awt;
 
+import com.pivotgroup.pivotlib.action.awt.MouseButtonMapper;
 import org.junit.jupiter.api.Test;
 
 import java.awt.event.InputEvent;

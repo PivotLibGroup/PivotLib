@@ -2,7 +2,7 @@ package com.pivotgroup.pivotlib.vision;
 
 import com.pivotgroup.pivotlib.core.Pivot;
 import com.pivotgroup.pivotlib.device.ImageCapturable;
-import com.pivotgroup.pivotlib.device.TouchCapturable;
+import com.pivotgroup.pivotlib.action.TouchCapturable;
 import com.pivotgroup.pivotlib.inspection.Feature;
 import com.pivotgroup.pivotlib.inspection.FeatureInspector;
 import com.pivotgroup.pivotlib.model.Location;
