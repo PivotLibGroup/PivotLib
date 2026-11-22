@@ -1,7 +1,8 @@
 package com.pivotgroup.pivotlib.core;
 
-import com.pivotgroup.pivotlib.infrastructure.action.Action;
-import com.pivotgroup.pivotlib.infrastructure.action.ActionSequence;
+import com.pivotgroup.pivotlib.action.Action;
+import com.pivotgroup.pivotlib.action.ActionContext;
+import com.pivotgroup.pivotlib.action.ActionSequence;
 
 /**
  *
@@ -18,7 +19,12 @@ public class Pivot {
     }
 
     public void startActions() {
-        actionSequence.apply();
+        ActionContext actionContext = new ActionContext();
+        actionSequence.apply(actionContext);
+    }
+
+    public void addActionWithLocation(String name) {
+
     }
 
     public void addAction(Action action) {

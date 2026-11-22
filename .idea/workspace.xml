@@ -5,82 +5,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="627f1380-1532-4223-8693-533b6cdf340a" name="更改" comment="msg">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/domain/Location.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/infrastructure/action/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/infrastructure/action/ActionSequence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/infrastructure/action/AddCalculationAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/infrastructure/action/TouchCapturer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/infrastructure/vision/Locater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/infrastructure/vision/opencv/OpenCVLocater.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/PivotTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/infrastructure/vision/VisionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/ActionContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/KeyboardCapturer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/WaitAction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/DownGesture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/Gesture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/GestureSequence.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/MoveGesture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/ReleaseGesture.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/keyboard/CharKeyboard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/capturer/awt/AwtInputButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/capturer/awt/AwtKeyboardCapturer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/capturer/awt/AwtTouchCapturer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/capturer/awt/RobotSingleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/Action.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/ActionContext.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/ActionSequence.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/TouchCapturable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/BaseGesture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/BasePathGesture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/ClickGesture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/CoordMode.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/DragGesture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/LinearMotion.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/gesture/MoveGesture.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/infrastructure/awt/MouseButtonMapper.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/infrastructure/awt/RobotTouchCapturer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/bootstrap/DesktopPivot.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Pivot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/Pivot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/core/TemplateRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/device/BufferedImageMatConverter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/device/ImageCapturable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/device/RobotImageCapturer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/device/RoiRelativeTouchCapturer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/device/RoiTouchCapturer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/inspection/Feature.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/inspection/FeatureInspector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/inspection/FeatureRoutingAction.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/Dimension.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/Location.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/Rect.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/ResultLoc.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/roi/CoordinateSpace.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/roi/RoiState.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/design_principle/lsp/Animal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/design_principle/lsp/FlyingAnimal.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/design_principle/lsp/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/design_principle/lsp/animal/Ostrich.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/design_principle/lsp/animal/Parrot.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/design_principle/lsp/service/CalculateTimeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/design_principle/lsp/service/impl/CalculateFlyingTimeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/design_principle/lsp/service/impl/CalculateRunTimeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/domain/Item.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/domain/Order.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/domain/User.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/infrastructure/SequentialOrderIdGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/service/IdGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/service/OrderService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/sample/solid/service/impl/OrderServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/ui/roi/RoiEditor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/ui/roi/RoiHandle.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/ui/roi/RoiOverlay.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/ui/roi/RoiPanel.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/ui/roi/RoiSelection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/vision/Identifier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/vision/Point.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/vision/opencv/OpenCVIdentifier.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/action/ActionSequenceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/action/gesture/GestureTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/bootstrap/RoiOverlayDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/core/RoiTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/device/RoiRelativeTouchCapturerTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/device/awt/MouseButtonMapperTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/inspection/FeatureRoutingActionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/model/ModelTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/roi/RoiStateTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/ui/RoiSelectionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/vision/IdentifierTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/vision/OpenCvFeatureInspectorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/domain/Location.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/model/Location.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/infrastructure/action/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/infrastructure/action/ActionSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/ActionSequence.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/infrastructure/action/AddCalculationAction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/AddCalculationAction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/infrastructure/action/TouchCapturer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/action/TouchCapturer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/infrastructure/vision/Locater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/vision/Locater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/infrastructure/vision/opencv/OpenCVLocater.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/pivotgroup/pivotlib/opencv/OpenCVLocater.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/PivotTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/core/PivotTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/pivotgroup/pivotlib/infrastructure/vision/VisionTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,10 +63,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
-        <option value="Interface" />
         <option value="package-info" />
+        <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -189,6 +137,8 @@
     "Gradle.PivotLib [:com.pivotgroup.pivotlib.bootstrap.RoiOverlayDemo.main()].executor": "Run",
     "Gradle.PivotLib [:com.pivotgroup.pivotlib.sample.design_principle.lsp.Main.main()].executor": "Run",
     "Gradle.PivotLib [:com.pivotgroup.pivotlib.solid.Main.main()].executor": "Run",
+    "Gradle.PivotTest.executor": "Run",
+    "Gradle.PivotTest.test (1).executor": "Run",
     "Gradle.PivotTest.test.executor": "Run",
     "Gradle.RoiSelectionTest.clampsInitialRoiToScreen.executor": "Run",
     "Gradle.RoiSelectionTest.createsCenteredDefaultRoi.executor": "Run",
@@ -217,7 +167,7 @@
     "last_opened_file_path": "C:/Users/Administrator/Desktop/PivotLib/src/main/java/com/pivotgroup",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/Administrator/Desktop/SelfServiceLoginSystem/PivotLib/src/main/java/com/pivotgroup/Main.java",
-    "project.structure.last.edited": "模块",
+    "project.structure.last.edited": "问题",
     "project.structure.proportion": "0.15820312",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.pluginManager",
@@ -245,7 +195,61 @@
       <recent name="com.pivotgroup.pivotlib.action.robot" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.VisionTest.test">
+  <component name="RunManager" selected="Gradle.PivotTest.test (1)">
+    <configuration name="PivotTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.pivotgroup.pivotlib.core.PivotTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="PivotTest.test (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.pivotgroup.pivotlib.core.PivotTest.test&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <ExternalSystemDebugDisabled>false</ExternalSystemDebugDisabled>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <GradleProfilingDisabled>false</GradleProfilingDisabled>
+      <GradleCoverageDisabled>false</GradleCoverageDisabled>
+      <method v="2" />
+    </configuration>
     <configuration name="PivotTest.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -301,11 +305,15 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle.PivotTest" />
+      <item itemvalue="Gradle.PivotTest.test (1)" />
       <item itemvalue="Gradle.VisionTest.test" />
       <item itemvalue="Gradle.PivotTest.test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.PivotTest.test (1)" />
+        <item itemvalue="Gradle.PivotTest" />
         <item itemvalue="Gradle.VisionTest.test" />
         <item itemvalue="Gradle.PivotTest.test" />
       </list>
@@ -364,15 +372,9 @@
       <workItem from="1795239043938" duration="1072000" />
       <workItem from="1795240125439" duration="8292000" />
       <workItem from="1795249992982" duration="48000" />
-      <workItem from="1795250048036" duration="2354000" />
-    </task>
-    <task id="LOCAL-00008" summary="msg">
-      <option name="closed" value="true" />
-      <created>1793988077257</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1793988077257</updated>
+      <workItem from="1795250048036" duration="22790000" />
+      <workItem from="1795320925686" duration="1561000" />
+      <workItem from="1795360805999" duration="2008000" />
     </task>
     <task id="LOCAL-00009" summary="msg">
       <option name="closed" value="true" />
@@ -758,7 +760,15 @@
       <option name="project" value="LOCAL" />
       <updated>1795248974535</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="msg">
+      <option name="closed" value="true" />
+      <created>1795252409194</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1795252409194</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

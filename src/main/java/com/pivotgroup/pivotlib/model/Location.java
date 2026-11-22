@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.domain;
+package com.pivotgroup.pivotlib.model;
 
 import java.util.Objects;
 

@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.infrastructure.action;
+package com.pivotgroup.pivotlib.action;
 
 /**
  *
@@ -9,5 +9,5 @@ package com.pivotgroup.pivotlib.infrastructure.action;
 
 public interface Action {
 
-    void apply();
+    void apply(ActionContext context);
 }

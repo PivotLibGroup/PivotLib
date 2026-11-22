@@ -1,4 +1,4 @@
-package com.pivotgroup.pivotlib.infrastructure.action;
+package com.pivotgroup.pivotlib.action;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +13,7 @@ import org.slf4j.LoggerFactory;
 public class AddCalculationAction implements Action {
 
     private static final Logger log = LoggerFactory.getLogger(AddCalculationAction.class);
+
     private final double left;
 
     private final double right;
@@ -23,7 +24,7 @@ public class AddCalculationAction implements Action {
     }
 
     @Override
-    public void apply() {
+    public void apply(ActionContext context) {
         double result = left + right;
         log.info(String.format("%f + %f = %f", left, right, result));
     }

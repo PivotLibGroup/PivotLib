@@ -1,7 +1,7 @@
-package com.pivotgroup.pivotlib.infrastructure.vision.opencv;
+package com.pivotgroup.pivotlib.opencv;
 
-import com.pivotgroup.pivotlib.domain.Location;
-import com.pivotgroup.pivotlib.infrastructure.vision.Locater;
+import com.pivotgroup.pivotlib.model.Location;
+import com.pivotgroup.pivotlib.vision.Locater;
 import org.opencv.core.Core;
 import org.opencv.core.Mat;
 import org.opencv.core.Point;
